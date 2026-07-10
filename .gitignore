@@ -24,5 +24,10 @@ npm-debug.log
 # Netlify local config (NOT needed for GitHub)
 .netlify/
 
+# Local build tooling (not part of the website)
+design-to-code-dist/
+deploy-netlify.mjs
+deploy-netlify.ps1
+
 # Keep your actual website files!
 # Your HTML, CSS, JS, and Images will be deployed

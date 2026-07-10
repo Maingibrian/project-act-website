@@ -1,0 +1,10 @@
+[build]
+  # This is a static HTML site - no build command needed
+  command = ""
+  publish = "."
+
+# Redirect all unknown routes to index.html for clean navigation
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
