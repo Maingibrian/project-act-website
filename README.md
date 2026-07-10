@@ -29,19 +29,17 @@ git push -u origin main
 
 ### **Step 2: Netlify Setup**
 
+> **Note:** A `netlify.toml` file is already included in this repo, so Netlify will automatically use the correct settings (no build command, publish directory = `.`). You do NOT need to type any build command.
+
 1. **Sign up / Log in to Netlify**: https://app.netlify.com
 
 2. **Connect your GitHub repo**:
    - Click "Add new site" → "Import an existing project"
    - Connect your GitHub account
-   - Select your repository
+   - Select your repository (`project-act-website`)
 
-3. **Configure build settings**:
-   - **Build command**: `npm run build` (leave empty - no build needed for static site)
-   - **Publish directory**: `.` (current directory - all files are at root)
-   - **Build status**: Skip build step ✅
-
-4. **Deploy**:
+3. **Deploy**:
+   - The build settings are read from `netlify.toml` automatically.
    - Click "Deploy site"
    - Your site will be live at a random URL (e.g., `https://project-act.netlify.app`)
 
@@ -92,4 +90,4 @@ ACT WEB/
 
 ## 🎯 Quick Start
 
-Just open `index.html` in any browser - no server required! For production, deploy to Netlify for global CDN, HTTPS, and automatic deployments.
+
