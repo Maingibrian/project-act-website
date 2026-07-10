@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phase 04 — Vipingo Kichinjioni Intervention | Project A.C.T.</title>
+    <link rel="icon" type="image/png" href="images/act-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/vipingo.css" />
+</head>
+
+<body>
+    <nav class="site-nav" id="siteNav">
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <div class="nav-logo">
+                <div class="logo-placeholder">
+                    <div class="logo-icon">
+                        <img src="images/act-logo.png" alt="Project A.C.T."
+                            onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
+                    </div>
+                    <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                            class="dot">.</span></span>
+                </div>
+                <span class="nav-pipe"></span>
+                <span class="nav-sub">Action Changes Things</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#coalition">Coalition</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#budget">Budget</a></li>
+            <li><a href="#gallery">Site</a></li>
+            <li><a href="#roster">Personnel</a></li>
+        </ul>
+        <div class="nav-progress" id="navProgress"></div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="hero-bg-container">
+            <img src="images/vipingo-hero-bg.jpg" class="hero-bg-slide active" alt="Vipingo site" loading="lazy" />
+            <img src="images/vipingo-extraction.jpg" class="hero-bg-slide" alt="Extraction in progress"
+                loading="lazy" />
+            <img src="images/vipingo-ppe-team.jpg" class="hero-bg-slide" alt="PPE team" loading="lazy" />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-ghost">PHASE 04</div>
+        <div class="hero-left">
+            <div class="hero-eyebrow reveal">⬤ Phase 04 &middot; Public Health Crisis &middot; 26 March 2026</div>
+            <h1 class="hero-title reveal d1">Vipingo<br><em>Kichinjioni</em><br>Intervention<span class="red">.</span>
+            </h1>
+            <p class="hero-desc reveal d2">
+                <strong>Comprehensive Post-Event Summary & Strategic Impact Report.</strong> A specialized strike team
+                extracted <strong>2.35 tonnes</strong> of bio‑hazardous waste from deep drainage channels and dense
+                brush,
+                neutralizing an imminent public health threat. This operation set the standard for Project A.C.T.'s
+                rapid‑response capability — transitioning from general environmental stewardship to targeted,
+                data-driven
+                Public Health Risk Mitigation.
+            </p>
+            <div class="hero-kpis reveal d3">
+                <div>
+                    <div class="hero-kpi-val counter" data-target="2.35">0<span style="font-size:18px;">t</span></div>
+                    <div class="hero-kpi-lbl">Tonnes Extracted</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val counter" data-target="470">0<span style="font-size:18px;">kg</span></div>
+                    <div class="hero-kpi-lbl">Fecal Matter</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val counter" data-target="7800">0</div>
+                    <div class="hero-kpi-lbl">Soiled Diapers</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val">4</div>
+                    <div class="hero-kpi-lbl">Sectors Cleared</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right reveal">
+            <div class="capsule-container">
+                <div class="capsule-echo"></div>
+                <div class="capsule-wrap">
+                    <img id="capsuleImage" src="images/vipingo-hero-bg.jpg" alt="Vipingo site" loading="lazy" />
+                    <div class="capsule-overlay"></div>
+                </div>
+                <div class="phase-medallion">
+                    <span class="pm-vol">Vol. 04</span>
+                    <span class="pm-num">04</span>
+                    <span class="pm-lbl">Public Health<br>Crisis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── EXTRACTION MANIFEST ── -->
+    <div class="manifest">
+        <div class="manifest-item reveal">
+            <div class="manifest-num counter" data-target="2.35">0</div>
+            <div class="manifest-lbl">Tonnes Extracted</div>
+        </div>
+        <div class="manifest-separator"></div>
+        <div class="manifest-item reveal d1">
+            <div class="manifest-num counter" data-target="470">0</div>
+            <div class="manifest-lbl">Kg Fecal Matter</div>
+        </div>
+        <div class="manifest-separator"></div>
+        <div class="manifest-item reveal d2">
+            <div class="manifest-num counter" data-target="7800">0</div>
+            <div class="manifest-lbl">Soiled Diapers</div>
+        </div>
+        <div class="manifest-separator"></div>
+        <div class="manifest-item reveal d3">
+            <div class="manifest-num">4</div>
+            <div class="manifest-lbl">Sectors Cleared</div>
+        </div>
+        <div class="manifest-separator"></div>
+        <div class="manifest-item reveal d4">
+            <div class="manifest-num counter" data-target="18">0</div>
+            <div class="manifest-lbl">Field Operatives</div>
+        </div>
+    </div>
+
+    <!-- ── EXECUTIVE SUMMARY ── -->
+    <section class="exec-summary" id="overview">
+        <div class="exec-left reveal">
+            <div class="section-label">⬤ 1.0 Executive Summary</div>
+            <h2 class="exec-heading">Rapid-Response<br><em>Bio-Hazard<br>Neutralization.</em></h2>
+        </div>
+        <div class="exec-right reveal d1">
+            <div class="section-label">⬤ Community Initiative</div>
+            <p class="exec-body">
+                On <strong>Thursday, March 26, 2026</strong>, Revital Healthcare (EPZ) Ltd, through its corporate social
+                responsibility arm, <span class="highlight">Project A.C.T. (Action Changes Things)</span>, executed a
+                targeted public health and environmental intervention at <strong>Vipingo Kichinjioni</strong>. Unlike
+                previous coastline restoration efforts, this initiative was a rapid-response mobilization addressing a
+                severe, localized bio-hazard crisis. Operating in a high-level coalition with the
+                <strong>Mtwapa Municipality</strong>, the <strong>Department of Public Health (Kilifi South)</strong>,
+                and leading local environmental groups, Revital deployed a specialized strike team of
+                <strong>18 staff volunteers</strong>.
+            </p>
+            <p class="exec-body" style="margin-top:16px;">
+                The operation yielded <strong>record-breaking results</strong> for the municipality. By neutralizing
+                this
+                immediate threat to groundwater and disease transmission, Revital Healthcare actively fulfilled its core
+                corporate mandate: <strong>the preservation and protection of human life.</strong>
+            </p>
+            <div class="exec-meta-row">
+                <div class="exec-meta-item"><span>Date</span>26 MARCH 2026</div>
+                <div class="exec-meta-item"><span>Location</span>VIPINGO KICHINJIONI</div>
+                <div class="exec-meta-item"><span>Total Extracted</span>2.35 TONNES</div>
+                <div class="exec-meta-item"><span>Status</span>MISSION COMPLETE</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STRATEGIC EVOLUTION ── -->
+    <section class="evolution">
+        <div class="evolution-quote-block reveal">
+            "Transitioning from general environmental stewardship to targeted, data-driven Public Health Risk
+            Mitigation."
+        </div>
+        <div class="evolution-body reveal d1">
+            <div class="section-label">⬤ 2.0 Institutional Context</div>
+            <p style="margin-bottom:16px;">
+                <strong>2.1 The Strategic Evolution of Project A.C.T.</strong> Since its inception, Project A.C.T. has
+                focused on executing verifiable, high-impact community interventions. The Vipingo Kichinjioni operation
+                marks a <strong>strategic evolution</strong> for the project — shifting from broad environmental
+                stewardship toward precision-targeted public health risk mitigation. This aligns flawlessly with Revital
+                Healthcare's identity as <strong>Africa's leading medical device manufacturer</strong>.
+            </p>
+            <p>
+                By deploying in-house PPE, clinical-grade containment protocols, and factory-trained personnel, the
+                operation demonstrated that a corporate entity can function as an extension of the public health
+                infrastructure — delivering outcomes that directly preserve human life at the community level.
+            </p>
+        </div>
+    </section>
+
+    <!-- ── CRISIS BACKGROUND ── -->
+    <section class="crisis-bg">
+        <div class="crisis-inner">
+            <div class="reveal">
+                <div class="section-label">⬤ 2.2 The Crisis</div>
+                <h2 class="crisis-heading">Kichinjioni:<br><em>The Hot-Spot.</em></h2>
+            </div>
+            <div class="reveal d1">
+                <p class="crisis-body">
+                    The target location, <strong>Kichinjioni</strong>, was identified by municipal authorities as a
+                    critical hot-spot for the <strong>illegal dumping of sanitary waste</strong>. The accumulation of
+                    non-biodegradable, soiled diapers in open spaces and drainage channels created a severe bio-hazard,
+                    posing an <strong>imminent risk of groundwater contamination</strong> and the outbreak of diarrheal
+                    diseases such as <strong>cholera and typhoid</strong> among the local population.
+                </p>
+                <div class="crisis-threat-tags">
+                    <span class="crisis-threat-tag">Groundwater Contamination</span>
+                    <span class="crisis-threat-tag">Cholera Risk</span>
+                    <span class="crisis-threat-tag">Typhoid Risk</span>
+                    <span class="crisis-threat-tag">Vector Breeding</span>
+                    <span class="crisis-threat-tag">Soil Toxicity</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── AFTER-ACTION REPORT ── -->
+    <section class="aar">
+        <div class="aar-left reveal">
+            <div class="section-label">⬤ 3.0 After-Action Review</div>
+            <h2 class="aar-heading">Execution<br><em>on the</em><br>Ground.</h2>
+            <p class="aar-body">
+                The Vipingo Kichinjioni site presented a severe, localized public health crisis. Abandoned sanitary
+                waste
+                had accumulated in drainage ditches, creating breeding grounds for disease vectors and threatening
+                groundwater integrity. Revital Healthcare A.C.T. mobilized an 18-person strike team within hours of the
+                initial assessment.
+            </p>
+            <div class="aar-quote reveal d2">
+                "We treat the environment to treat the patient — before they ever reach the hospital."
+            </div>
+            <p class="aar-body">
+                On March 26th, the operation required grueling manual labor, extracting water-logged and heavily soiled
+                sanitary waste from deep drainage ditches and dense brush. The integration of Revital staff with local
+                CBO members ensured the workforce had both the protective gear required and the critical local
+                geographical knowledge. Utilizing industrial-grade protective equipment and extraction tools, the team
+                cleared four densely contaminated sectors in a single operational window.
+            </p>
+        </div>
+        <div class="aar-right reveal d1">
+            <h3 style="font-family:'JetBrains Mono',monospace; font-size:13px; margin-bottom:20px; color:var(--red);">
+                OPERATIONAL DOSSIER</h3>
+            <table class="aar-table">
+                <tr>
+                    <td>Date</td>
+                    <td>26 MARCH 2026</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>VIPINGO KICHINJIONI</td>
+                </tr>
+                <tr>
+                    <td>Total Haul</td>
+                    <td>2.35 TONNES (2,349.35 KG)</td>
+                </tr>
+                <tr>
+                    <td>Fecal Matter</td>
+                    <td>470 KG</td>
+                </tr>
+                <tr>
+                    <td>Diapers Removed</td>
+                    <td>7,800 UNITS</td>
+                </tr>
+                <tr>
+                    <td>Sectors Cleared</td>
+                    <td>4 (Alpha–Delta)</td>
+                </tr>
+                <tr>
+                    <td>Operatives Deployed</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>PPE Sets Used</td>
+                    <td>36 (PVC Gloves + Face Masks)</td>
+                </tr>
+                <tr>
+                    <td>Containment Sacks</td>
+                    <td>20 Gunny Sacks (ECO Essentials)</td>
+                </tr>
+                <tr>
+                    <td>Total Cash Expenditure</td>
+                    <td>KES 4,260</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td style="color:#4ade80;">MISSION COMPLETE ✓</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- ── LOGISTICS & OHS ── -->
+    <section class="logistics">
+        <div class="reveal">
+            <div class="section-label">⬤ 4.0 Logistics & Safety</div>
+            <h2 class="logistics-heading">Pre-Intervention<br><em>OHS Protocol.</em></h2>
+            <p class="logistics-body">
+                Given the hazardous nature of the waste targeted for extraction, standard clean-up protocols were deemed
+                insufficient. <strong>Strict Occupational Health and Safety (OHS) measures</strong> were prioritized. To
+                safely handle biological waste, 18 Revital volunteers were equipped utilizing internal resources —
+                gloves,
+                masks, and containment sacks sourced directly from existing factory inventory and in-kind partnerships.
+            </p>
+            <p class="logistics-body">
+                <strong>In-House Mobilization:</strong> All protective equipment was capitalized internally, resulting
+                in
+                <strong style="color:var(--red);">KES 0 additional OHS cash cost</strong> — 100% internally capitalized.
+            </p>
+        </div>
+        <div class="ohs-cards reveal d1">
+            <div class="ohs-card">
+                <div class="ohs-card-icon">🧤</div>
+                <div class="ohs-card-title">PVC Gloves</div>
+                <div class="ohs-card-desc">Impermeable to fluids. Full-hand protection for all 18 operatives.</div>
+            </div>
+            <div class="ohs-card">
+                <div class="ohs-card-icon">😷</div>
+                <div class="ohs-card-title">Face Masks</div>
+                <div class="ohs-card-desc">18 factory-grade masks deployed for respiratory protection.</div>
+            </div>
+            <div class="ohs-card">
+                <div class="ohs-card-icon">🛍️</div>
+                <div class="ohs-card-title">Gunny Sacks</div>
+                <div class="ohs-card-desc">20 heavy-duty containment sacks. Donated in-kind by ECO Essentials.</div>
+            </div>
+            <div class="ohs-card">
+                <div class="ohs-card-icon">🔧</div>
+                <div class="ohs-card-title">Rakes & Tools</div>
+                <div class="ohs-card-desc">Retained from Phase 2 operations. Minimized direct hand contact.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STRATEGIC COALITION ── -->
+    <section class="coalition" id="coalition">
+        <div class="coalition-inner">
+            <div class="section-label reveal">⬤ 5.0 Strategic Coalition</div>
+            <h2 class="coalition-heading reveal d1">Multi-Agency<br><em>Task Force.</em></h2>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:36px;max-width:700px;" class="reveal d2">
+                The success of the Kichinjioni intervention relied on the <strong>seamless integration of corporate
+                    manpower with government authority and grassroots civic groups.</strong> Revital Healthcare
+                volunteers
+                operated within a highly coordinated coalition.
+            </p>
+            <div class="coalition-grid">
+                <div class="coalition-card reveal d1">
+                    <div class="coalition-card-label">Government Partner</div>
+                    <div class="coalition-card-org">Mtwapa Municipality</div>
+                    <div class="coalition-card-name">Grace Wanjiru</div>
+                    <div class="coalition-card-role">Environment Officer</div>
+                </div>
+                <div class="coalition-card reveal d2">
+                    <div class="coalition-card-label">Government Partner</div>
+                    <div class="coalition-card-org">Dept. of Public Health</div>
+                    <div class="coalition-card-name">Kevin Anungo Shikuku</div>
+                    <div class="coalition-card-role">Public Health Officer · Kilifi South</div>
+                </div>
+                <div class="coalition-card reveal d3">
+                    <div class="coalition-card-label">Civil Society</div>
+                    <div class="coalition-card-org">Mtwapa Go Green</div>
+                    <div class="coalition-card-name">Baha Madzo Gadze</div>
+                    <div class="coalition-card-role">Environmental Group Lead</div>
+                </div>
+                <div class="coalition-card reveal d4">
+                    <div class="coalition-card-label">Civil Society</div>
+                    <div class="coalition-card-org">Timboni Environmental Group</div>
+                    <div class="coalition-card-name">Community-Based Organization</div>
+                    <div class="coalition-card-role">Grassroots Mobilization</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── IMPACT ANALYSIS ── -->
+    <section class="impact-analysis" id="impact">
+        <div class="section-label reveal">⬤ 6.0 Quantitative & Qualitative Impact</div>
+        <h2 class="impact-heading reveal d1">Four Threats<br><em>Neutralized.</em></h2>
+        <p class="impact-subtitle reveal d2">
+            According to the official post-event audit by the Kilifi South Public Health Office, the extraction of this
+            2.35-tonne mass directly mitigated four immediate community threats. The project demonstrated an
+            exceptionally
+            high <strong>"Impact-to-Spend" ratio</strong>, executing a multi-tonne bio-hazard removal for less than KES
+            5,000 in direct cash outflow.
+        </p>
+        <div class="impact-grid">
+            <div class="impact-card reveal d1">
+                <div class="impact-card-num">01</div>
+                <div class="impact-card-title">Water Security</div>
+                <div class="impact-card-desc">Prevented imminent contamination of groundwater and surface runoff that
+                    supplies the local community.</div>
+            </div>
+            <div class="impact-card reveal d2">
+                <div class="impact-card-num">02</div>
+                <div class="impact-card-title">Disease Prevention</div>
+                <div class="impact-card-desc">Drastically reduced transmission vectors for cholera and typhoid among the
+                    vulnerable local population.</div>
+            </div>
+            <div class="impact-card reveal d3">
+                <div class="impact-card-num">03</div>
+                <div class="impact-card-title">Vector Control</div>
+                <div class="impact-card-desc">Destroyed established breeding grounds for disease-carrying flies and
+                    other
+                    pathogen-spreading insects.</div>
+            </div>
+            <div class="impact-card reveal d4">
+                <div class="impact-card-num">04</div>
+                <div class="impact-card-title">Soil Integrity</div>
+                <div class="impact-card-desc">Halted the leaching of synthetic polymers and toxins from
+                    non-biodegradable
+                    waste into local soil systems.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── BUDGET & RESOURCE CAPITALIZATION ── -->
+    <section class="budget" id="budget">
+        <div class="budget-inner">
+            <div class="reveal">
+                <div class="section-label">⬤ 7.0 Financial Efficiency</div>
+                <h2 class="budget-heading">Budget Utility<br><em>& In-Kind</em><br>Value.</h2>
+                <p class="budget-body">
+                    Executed with <strong>extreme fiscal discipline</strong> utilizing a micro-budget designed
+                    specifically for rapid deployment. Direct cash outflow was subsidized by carried-over funds
+                    <strong>(KES 500)</strong> from the previous Kuruitu event, requiring only
+                    <strong>KES 3,760</strong> in new approved cash. The true operational cost was heavily subsidized by
+                    Revital Healthcare's internal capitalization — the deployment of in-house PVC gloves, 18 factory
+                    face
+                    masks, and 20 gunny sacks (donated in-kind by ECO Essentials) resulted in a highly efficient fiscal
+                    model.
+                </p>
+            </div>
+            <div class="budget-table-wrap reveal d1">
+                <h3
+                    style="font-family:'JetBrains Mono',monospace; font-size:11px; margin-bottom:16px; color:var(--white);">
+                    CASH EXPENDITURE BREAKDOWN</h3>
+                <table class="budget-table">
+                    <tr>
+                        <td>Transport (Return Fares × 13 @ KES 200)</td>
+                        <td>KES 2,600</td>
+                    </tr>
+                    <tr>
+                        <td>Emergency Hydration (2 Cartons Water)</td>
+                        <td>KES 660</td>
+                    </tr>
+                    <tr>
+                        <td>Miscellaneous / Contingency</td>
+                        <td>KES 1,000</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>Total Cash Expenditure</td>
+                        <td>KES 4,260</td>
+                    </tr>
+                </table>
+                <div class="budget-highlight-box">
+                    ⚡ KES 0 ADDITIONAL OHS CASH COST — 100% Internally Capitalized
+                </div>
+                <p style="font-size:10px;color:var(--muted);margin-top:12px;text-align:center;">
+                    New Approved Cash: KES 3,760 &nbsp;|&nbsp; Carried Over (Kuruitu): KES 500
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── GALLERY 01 — GROUND ZERO ── -->
+    <section class="gallery" id="gallery">
+        <div class="section-label reveal">⬤ Gallery 01 — Ground Zero</div>
+        <h2 class="gallery-heading reveal d1">The Strike<br><em>Force.</em></h2>
+        <p class="gallery-subtitle reveal d2">
+            Visual documentation of the rapid-response mobilization. The 18-person task force operated in highly complex
+            terrain, extracting 7,800 units of bio-hazard waste from deep drainage channels and dense brush. By
+            integrating corporate staff with local CBO members, the operation maintained strict safety protocols while
+            navigating the unpredictable landscape of the Kichinjioni illegal dumping hot-spot.
+        </p>
+        <div class="gallery-grid">
+            <div class="gallery-item tall reveal">
+                <img src="images/vipingo-drain-before.jpg" alt="Drainage before intervention" loading="lazy" />
+            </div>
+            <div class="gallery-item wide reveal d1">
+                <img src="images/vipingo-extraction.jpg" alt="Extraction in progress at Kichinjioni" loading="lazy" />
+            </div>
+            <div class="gallery-item reveal d2">
+                <img src="images/vipingo-ppe-team.jpg" alt="PPE-clad team members" loading="lazy" />
+            </div>
+            <div class="gallery-item reveal d3">
+                <img src="images/vipingo-sorted.jpg" alt="Sorted and contained waste" loading="lazy" />
+            </div>
+            <div class="gallery-item wide reveal d4">
+                <img src="images/vipingo-drain-after.jpg" alt="Post-clearance verification" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ── GALLERY 02 — OPERATIONAL QUADRANTS ── -->
+    <section class="quadrants">
+        <div class="section-label reveal">⬤ Gallery 02 — Documentation</div>
+        <h2 class="gallery-heading reveal d1" style="margin-bottom:8px;">Absolute<br><em>Precision.</em></h2>
+        <p class="gallery-subtitle reveal d2">
+            The extraction of hazardous sanitary waste required clinical coordination. To ensure 100% containment and
+            zero secondary contamination, the task force divided the residential drainage paths into
+            <strong>four rigid operational quadrants</strong>. Every sector was systematically mapped, cleared, and
+            visually verified by the Department of Public Health prior to the team advancing.
+        </p>
+        <div class="quadrants-grid reveal d3">
+            <div class="quadrant-card">
+                <div class="quadrant-letter">A</div>
+                <div class="quadrant-name">Sector Alpha</div>
+                <div class="quadrant-ref">Drainage Path Ref. 01</div>
+            </div>
+            <div class="quadrant-card">
+                <div class="quadrant-letter">B</div>
+                <div class="quadrant-name">Sector Beta</div>
+                <div class="quadrant-ref">Dense Brush Ref. 02</div>
+            </div>
+            <div class="quadrant-card">
+                <div class="quadrant-letter">C</div>
+                <div class="quadrant-name">Sector Gamma</div>
+                <div class="quadrant-ref">Open Spaces Ref. 03</div>
+            </div>
+            <div class="quadrant-card">
+                <div class="quadrant-letter">D</div>
+                <div class="quadrant-name">Sector Delta</div>
+                <div class="quadrant-ref">Containment Point Ref. 04</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FUTURE FOCUS ── -->
+    <section class="future-focus">
+        <div class="future-quote reveal">
+            "The extraction of 7,800 diapers treats the symptom, not the disease. The sheer volume highlights a critical
+            deficit in community education."
+        </div>
+        <div class="future-body reveal d1">
+            <div class="section-label">⬤ 8.0 The Underlying Issue</div>
+            <p style="margin-bottom:16px;">
+                <strong>Future Focus.</strong> As noted by the Public Health Office, the sheer volume of sanitary waste
+                extracted — <strong>7,800 soiled diapers</strong> — highlights a critical deficit in community education
+                and sustainable waste management infrastructure. Future Project A.C.T. initiatives must pair physical
+                clean-ups with <strong>sensitization campaigns</strong> and the development of lasting waste disposal
+                solutions.
+            </p>
+            <p>
+                This operation solidified the trust between Revital Healthcare and the Department of Public Health,
+                proving that <strong>corporate resources paired with civic duty is a powerful catalyst</strong> for
+                meaningful, measurable change at the community level.
+            </p>
+        </div>
+    </section>
+
+    <!-- ── FACES OF ACTION ── -->
+    <section class="faces">
+        <div class="faces-inner">
+            <div class="section-label reveal" style="justify-content:center;">⬤ The Human Element</div>
+            <h2 class="faces-heading reveal d1">The Faces of<br><em>Action.</em></h2>
+            <p class="faces-body reveal d2">
+                Beyond the metric of <strong>2.35 tonnes extracted</strong> lies the human reality: protecting community
+                health, restoring dignity, and proving that rapid corporate mobilization creates immediate ripples of
+                change. Each operative on the ground represented Revital Healthcare's core commitment — the preservation
+                and protection of human life.
+            </p>
+            <div class="faces-kpi-row reveal d3">
+                <div class="faces-kpi">
+                    <div class="faces-kpi-val">18</div>
+                    <div class="faces-kpi-lbl">Volunteers Deployed</div>
+                </div>
+                <div class="faces-kpi">
+                    <div class="faces-kpi-val">4</div>
+                    <div class="faces-kpi-lbl">Rotating Squads</div>
+                </div>
+                <div class="faces-kpi">
+                    <div class="faces-kpi-val">100<span style="font-size:16px;">%</span></div>
+                    <div class="faces-kpi-lbl">Containment Rate</div>
+                </div>
+                <div class="faces-kpi">
+                    <div class="faces-kpi-val">0</div>
+                    <div class="faces-kpi-lbl">Secondary Incidents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FIELD PERSONNEL ROSTER ── -->
+    <section class="roster" id="roster">
+        <div>
+            <div class="section-label reveal">⬤ Strike Team Roster</div>
+            <h2 class="roster-heading reveal d1">18 Operatives<br><em>in Hazard Zones.</em></h2>
+            <p class="roster-body reveal d2">
+                The rapid-response team operated in four rotating squads, each equipped with full PPE and specialized
+                extraction tools. Their coordinated effort ensured that all four sectors were cleared simultaneously,
+                minimizing community exposure. The integration of Revital staff with local CBO members ensured both
+                protective gear compliance and critical local geographical knowledge.
+            </p>
+        </div>
+        <div class="roster-list reveal d1">
+            <div class="roster-item">
+                <div>
+                    <div class="roster-org">Sector Alpha</div>
+                    <div class="roster-role">Main drainage channel · Ref. 01</div>
+                </div>
+                <div class="roster-count">4</div>
+            </div>
+            <div class="roster-item">
+                <div>
+                    <div class="roster-org">Sector Beta</div>
+                    <div class="roster-role">Dense brush & pathways · Ref. 02</div>
+                </div>
+                <div class="roster-count">5</div>
+            </div>
+            <div class="roster-item">
+                <div>
+                    <div class="roster-org">Sector Gamma</div>
+                    <div class="roster-role">Residential boundary · Ref. 03</div>
+                </div>
+                <div class="roster-count">4</div>
+            </div>
+            <div class="roster-item">
+                <div>
+                    <div class="roster-org">Sector Delta</div>
+                    <div class="roster-role">Market access route · Ref. 04</div>
+                </div>
+                <div class="roster-count">5</div>
+            </div>
+            <div class="roster-item" style="border-top: 2px solid var(--red); padding-top:16px;">
+                <div>
+                    <div class="roster-org" style="color:var(--red);">Total Deployed</div>
+                    <div class="roster-role">All sectors combined · 4 rotating squads</div>
+                </div>
+                <div class="roster-count">18</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PHASE NAVIGATION STRIP ── -->
+    <div class="phase-nav-strip">
+        <span class="phase-nav-item">Phase 1 — Social</span>
+        <span class="phase-nav-item">Phase 2 — Environmental</span>
+        <span class="phase-nav-item">Phase 3 — Public Health Care</span>
+        <span class="phase-nav-item active">Phase 04 — Active</span>
+        <span class="phase-nav-item">Phase 05 — ROI & Legacy</span>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer">
+        <div class="footer-ghost">ACT</div>
+        <div class="footer-inner">
+            <div class="footer-left reveal">
+                <h1 class="footer-title">Action<br><em>Changes</em><br>Things<span class="dot">.</span></h1>
+                <div class="footer-divider"></div>
+                <div class="footer-contact">
+                    Revital Healthcare (EPZ) Ltd.<br>
+                    Kilifi County, Kenya &nbsp;·&nbsp;
+                    <a href="https://revitalhcare.com/" target="_blank" rel="noopener">revitalhcare.com</a>
+                </div>
+                <p style="font-size:10px;color:var(--muted);margin-bottom:20px;line-height:1.6;max-width:380px;">
+                    Project A.C.T. is an employee-led Corporate Social Responsibility initiative dedicated to building a
+                    resilient, healthy, and clean Kilifi County. By neutralizing immediate threats to public health and
+                    groundwater, we actively fulfill our core corporate mandate: the preservation and protection of
+                    human
+                    life.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1112.63 8" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg></a>
+                    <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr" target="_blank"
+                        rel="noopener" class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg></a>
+                    <a href="https://revitalhcare.com/" target="_blank" rel="noopener" class="footer-social-link"
+                        aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-right reveal d1">
+                <div class="footer-headshot">
+                    <div class="headshot-image">
+                        <img src="images/act-logo.png" alt="Project A.C.T. Committee"
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" />
+                    </div>
+                    <div class="headshot-quote">"Rapid response to public health threats requires precision and
+                        partnership. 2.35 tonnes of bio-hazard neutralised through multi-agency collaboration protects
+                        community wellbeing."</div>
+                    <div class="headshot-name">ACT Committee</div>
+                    <div class="headshot-title">Project A.C.T.</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <div class="footer-copy">© 2026 Revital Healthcare (EPZ) Ltd. &nbsp;·&nbsp; Project <span>A.C.T.</span>
+            </div>
+            <div class="footer-copy" style="color:rgba(255,255,255,.25);">Phase 04 — Vipingo Kichinjioni · 26 March 2026
+                · Vol. 04</div>
+        </div>
+        <div class="red-corner"></div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('siteNav'),
+            prog = document.getElementById('navProgress');
+        window.addEventListener('scroll', () => {
+            nav.style.background = window.scrollY > 50 ? 'rgba(0,10,26,.96)' :
+                'linear-gradient(to bottom, rgba(0,10,26,.92) 0%, rgba(0,10,26,.88) 80%, transparent 100%)';
+            const d = document.documentElement.scrollHeight - window.innerHeight;
+            prog.style.width = (d > 0 ? (window.scrollY / d) * 100 : 0) + '%';
+        }, { passive: true });
+
+        const countersDone = new Set();
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                entry.target.querySelectorAll('.counter').forEach(el => {
+                    if (countersDone.has(el)) return;
+                    countersDone.add(el);
+                    const t = parseFloat(el.dataset.target);
+                    let c = 0;
+                    const iv = setInterval(() => {
+                        c += t / 45;
+                        if (c >= t) {
+                            el.textContent = t % 1 !== 0 ? t.toFixed(0) : t;
+                            clearInterval(iv);
+                        } else {
+                            el.textContent = Math.ceil(c);
+                        }
+                    }, 28);
+                });
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Rotating hero background
+        (function () {
+            const slides = document.querySelectorAll('.hero-bg-slide');
+            const capsuleImg = document.getElementById('capsuleImage');
+            if (slides.length < 2) return;
+            let current = 0;
+            const total = slides.length;
+            const imageSources = [];
+            slides.forEach(s => imageSources.push(s.getAttribute('src')));
+            setInterval(() => {
+                slides[current].classList.remove('active');
+                current = (current + 1) % total;
+                slides[current].classList.add('active');
+                if (capsuleImg && imageSources[current]) {
+                    capsuleImg.style.opacity = '0';
+                    setTimeout(() => {
+                        capsuleImg.setAttribute('src', imageSources[current]);
+                        capsuleImg.style.opacity = '1';
+                    }, 400);
+                }
+            }, 5000);
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phase 01 — Green Olive Children's Home | Project A.C.T.</title>
+    <link rel="icon" type="image/png" href="images/act-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/green-olive.css" />
+</head>
+
+<body>
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-progress" id="navProgress"></div>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <div class="nav-logo">
+                <div class="logo-placeholder">
+                    <div class="logo-icon">
+                        <img src="images/act-logo.png" alt="Project A.C.T."
+                            onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
+                    </div>
+                </div>
+                <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                        class="dot">.</span></span>
+                <span class="nav-pipe"></span>
+                <span class="nav-sub">Action Changes Things</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#overview">Report</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg-container">
+            <img src="images/olive-hero-bg.jpg" class="hero-bg-slide active" alt="Green Olive" loading="lazy" />
+            <img src="images/olive-gallery-1.jpg" class="hero-bg-slide" alt="Team with children" loading="lazy" />
+            <img src="images/olive-gallery-3.jpg" class="hero-bg-slide" alt="Stationery" loading="lazy" />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-ghost">CARE</div>
+        <div class="hero-left">
+            <div class="hero-eyebrow reveal">⬤ Phase 01 · Social Welfare · Dec 10, 2025</div>
+            <h1 class="hero-title reveal d1">Green Olive<br><em>Children's Home.</em></h1>
+            <p class="hero-desc reveal d2">
+                <strong>14 Revital Healthcare volunteers</strong> deployed to Green Olive Children's Home with 88
+                personalised dignity packs, 110 plates of hot Pilau, and a commitment to break bread together. The
+                foundation of Project A.C.T. was built here — proving that a small, purpose-driven team can deliver
+                massive community impact.
+            </p>
+            <div class="hero-kpis reveal d3">
+                <div>
+                    <div class="hero-kpi-val counter" data-target="88">0</div>
+                    <div class="hero-kpi-lbl">Children Reached</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val counter" data-target="110">0</div>
+                    <div class="hero-kpi-lbl">Meals Served</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val">48</div>
+                    <div class="hero-kpi-lbl">Sanitary Packs</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val counter" data-target="14">0</div>
+                    <div class="hero-kpi-lbl">Volunteers</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right reveal">
+            <div class="capsule-container">
+                <div class="capsule-echo"></div>
+                <div class="capsule-wrap">
+                    <img id="capsuleImage" src="images/olive-hero-bg.jpg" alt="Green Olive Children" loading="lazy" />
+                    <div class="capsule-overlay"></div>
+                </div>
+                <div class="phase-medallion">
+                    <span class="pm-vol">Phase</span>
+                    <span class="pm-num">01</span>
+                    <span class="pm-lbl">Social<br>Welfare</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bubbles">
+        <div class="bubble-static reveal">
+            <div class="bubble-icon">❤️</div>
+            <div class="bubble-num counter" data-target="88">0</div>
+            <div class="bubble-lbl">Reached</div>
+        </div>
+        <div class="bubble-static reveal d1">
+            <div class="bubble-icon">🍽️</div>
+            <div class="bubble-num counter" data-target="110">0</div>
+            <div class="bubble-lbl">Meals Served</div>
+        </div>
+        <div class="bubble-static reveal d2">
+            <div class="bubble-icon">🎒</div>
+            <div class="bubble-num">48</div>
+            <div class="bubble-lbl">Sanitary Packs</div>
+        </div>
+        <div class="bubble-static reveal d3">
+            <div class="bubble-icon">👥</div>
+            <div class="bubble-num counter" data-target="14">0</div>
+            <div class="bubble-lbl">Volunteers</div>
+        </div>
+    </div>
+
+    <section class="report-section" id="overview">
+        <div class="section-label reveal">1.0 Executive Summary</div>
+        <div class="report-grid">
+            <div class="reveal">
+                <h2 class="report-heading">The Foundation<br><em>of Project A.C.T.</em></h2>
+                <p class="report-body">
+                    On <strong>December 10, 2025</strong>, Revital Healthcare (EPZ) Ltd. launched its corporate social
+                    responsibility arm, <strong>Project: Action Changes Things (A.C.T.)</strong>, with a targeted social
+                    welfare outreach at <strong>Green Olive Children's Home</strong> in Kilifi County. A volunteer team
+                    of <strong>14 employees</strong> delivered 88 individualized dignity packs, 110 plates of freshly
+                    prepared Pilau, and 88 school stationery sets — impacting every single child in the home.
+                </p>
+                <p class="report-body" style="margin-top:16px;">
+                    Unlike generic donation drives, this mission was built on a <strong>Personal Dignity
+                        Strategy</strong>: every pack was colour‑coded by age and gender, 48 adolescent girls received a
+                    month's supply of sanitary products, and volunteers shared the meal seated among the children. The
+                    event proved that corporate empathy, when paired with rigorous resourcefulness, can produce
+                    transformational community outcomes.
+                </p>
+            </div>
+            <div class="report-card reveal d1">
+                <div class="report-card-label">Mission Dossier</div>
+                <table class="report-table">
+                    <tr>
+                        <td>Date</td>
+                        <td>10 DECEMBER 2025</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>GREEN OLIVE CHILDREN'S HOME, KILIFI</td>
+                    </tr>
+                    <tr>
+                        <td>Children Reached</td>
+                        <td>88</td>
+                    </tr>
+                    <tr>
+                        <td>Dignity Packs</td>
+                        <td>88 (incl. 48 sanitary kits)</td>
+                    </tr>
+                    <tr>
+                        <td>Meals Served</td>
+                        <td>110 Plates of Pilau</td>
+                    </tr>
+                    <tr>
+                        <td>Stationery Sets</td>
+                        <td>88 Kartasi School Kits</td>
+                    </tr>
+                    <tr>
+                        <td>Volunteers</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td style="color:#4ade80;">MISSION COMPLETE ✓</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="report-section">
+        <div class="section-label reveal">2.0 Introduction & Strategic Context</div>
+        <div class="report-grid">
+            <div class="reveal">
+                <h2 class="report-heading">Why Green Olive?<br><em>The Selection.</em></h2>
+                <p class="report-body">
+                    Green Olive Children's Home was identified through community networks as a high‑need facility caring
+                    for <strong>88 orphaned and vulnerable children</strong> ranging from toddlers to teenagers. The
+                    home's director, <strong>Esther</strong>, confirmed critical gaps in hygiene supplies, school
+                    stationery, and balanced nutrition. The proximity to Revital Healthcare's headquarters allowed for
+                    streamlined logistics and direct volunteer engagement, maximizing time spent with the children.
+                </p>
+                <div class="report-highlight">
+                    <strong>Strategic Alignment:</strong> Phase 1 was deliberately chosen as a <strong>Social
+                        Welfare</strong> initiative, directly addressing human dignity and education — the foundational
+                    pillars upon which all subsequent Project A.C.T. phases were built.
+                </div>
+            </div>
+            <div class="report-card reveal d1">
+                <div class="report-card-label">Stakeholder Engagement</div>
+                <p class="report-body" style="font-size:14px;">
+                    Pre-event coordination with Director Esther ensured every child's needs were assessed. Formal
+                    notifications were sent to the <strong>local area chief</strong> and community elders, guaranteeing
+                    a smooth, welcomed presence. Revital's internal A.C.T. committee also briefed all 14 volunteers on
+                    the Personal Dignity Strategy, emphasizing respect, warmth, and direct interaction.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="report-section">
+        <div class="section-label reveal">3.0 Operational Design</div>
+        <div class="report-grid">
+            <div class="reveal">
+                <h2 class="report-heading">88 Packs,<br><em>88 Stories.</em></h2>
+                <p class="report-body">
+                    The core innovation was the <strong>Personal Dignity Pack</strong>. Instead of bulk sacks, each
+                    child received a bag tailored to their age and gender. <strong>48 adolescent girls</strong> were
+                    given a month's supply of sanitary pads, while every child received dental kits, soap, a face towel,
+                    and a full set of Kartasi school stationery. Volunteers personally handed each pack, calling the
+                    child by name.
+                </p>
+                <p class="report-body" style="margin-top:16px;">
+                    The shared meal of <strong>110 plates of Pilau</strong> transformed the visit into a celebration.
+                    Volunteers sat with the children, eating together, followed by impromptu games and storytelling.
+                    This unscripted connection proved to be the mission's emotional anchor.
+                </p>
+            </div>
+            <div class="report-card reveal d1">
+                <div class="report-card-label">Resource Mobilization</div>
+                <p class="report-body" style="font-size:14px;">
+                    All supplies were sourced through internal corporate logistics and volunteer contributions. The
+                    operation demonstrated <strong>100% resource efficiency</strong> — every item was accounted for and
+                    directly reached the children. The team leveraged existing supply chains to provide hygiene
+                    products, stationery, and fresh food without external fundraising.
+                </p>
+                <div class="report-highlight" style="margin-top:16px;">
+                    <strong>⚡ Volunteer-Driven Impact:</strong> The entire initiative was powered by employee passion
+                    and corporate resource stewardship, proving that meaningful change doesn't require large budgets —
+                    just commitment and collaboration.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline" id="timeline">
+        <div class="timeline-inner">
+            <div class="section-label reveal">4.0 Chronological Execution</div>
+            <h2 class="timeline-title reveal d1">Day of<br><em>Operations.</em></h2>
+            <div class="tl-grid">
+                <div class="tl-item reveal">
+                    <div class="tl-img"><img src="images/olive-gallery-1.jpg" alt="Assembly" loading="lazy" /></div>
+                    <div class="tl-content">
+                        <div class="tl-time">08:00 AM</div>
+                        <div class="tl-heading">Team Assembly</div>
+                        <div class="tl-desc">14 volunteers gather at Revital HQ. Final briefing on the Personal Dignity
+                            Strategy. Care packs loaded and colour‑coded.</div>
+                    </div>
+                </div>
+                <div class="tl-item reveal d1">
+                    <div class="tl-img"><img src="images/olive-gallery-2.jpg" alt="Arrival" loading="lazy" /></div>
+                    <div class="tl-content">
+                        <div class="tl-time">09:30 AM</div>
+                        <div class="tl-heading">Welcome to Green Olive</div>
+                        <div class="tl-desc">Arrival. Director Esther greets the team. Reality check: 88 children, not
+                            the expected 40. The team adapts instantly.</div>
+                    </div>
+                </div>
+                <div class="tl-item reveal d2">
+                    <div class="tl-img"><img src="images/olive-gallery-3.jpg" alt="Packs" loading="lazy" /></div>
+                    <div class="tl-content">
+                        <div class="tl-time">10:00 AM</div>
+                        <div class="tl-heading">Personal Dignity Packs</div>
+                        <div class="tl-desc">88 individual packs handed out. 48 girls receive sanitary supplies. Every
+                            child gets stationery and hygiene items.</div>
+                    </div>
+                </div>
+                <div class="tl-item reveal d3">
+                    <div class="tl-img"><img src="images/olive-gallery-4.jpg" alt="Meal" loading="lazy" /></div>
+                    <div class="tl-content">
+                        <div class="tl-time">12:30 PM</div>
+                        <div class="tl-heading">Shared Meal</div>
+                        <div class="tl-desc">110 plates of Pilau served. Volunteers sit with the children — eating
+                            together, not apart.</div>
+                    </div>
+                </div>
+                <div class="tl-item reveal d4">
+                    <div class="tl-img"><img src="images/olive-gallery-5.jpg" alt="Games" loading="lazy" /></div>
+                    <div class="tl-content">
+                        <div class="tl-time">14:00 PM</div>
+                        <div class="tl-heading">Games & Connection</div>
+                        <div class="tl-desc">Laughter, football, stories. The unscripted moments that truly defined the
+                            day.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="report-section">
+        <div class="section-label reveal">5.0 Impact Assessment</div>
+        <h2 class="report-heading reveal d1">Quantitative &<br><em>Qualitative.</em></h2>
+        <div class="report-grid" style="margin-top:20px;">
+            <div class="report-card reveal d1">
+                <div class="report-card-label">Immediate Outputs</div>
+                <table class="report-table">
+                    <tr>
+                        <td>Children receiving hygiene supplies</td>
+                        <td>88</td>
+                    </tr>
+                    <tr>
+                        <td>Adolescent girls with sanitary protection</td>
+                        <td>48</td>
+                    </tr>
+                    <tr>
+                        <td>School stationery sets distributed</td>
+                        <td>88</td>
+                    </tr>
+                    <tr>
+                        <td>Nutritious meals served</td>
+                        <td>110</td>
+                    </tr>
+                    <tr>
+                        <td>Volunteer hours contributed</td>
+                        <td>84</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="report-card reveal d2">
+                <div class="report-card-label">Long‑Term Outcomes</div>
+                <p class="report-body" style="font-size:14px;">
+                    <strong>Educational Continuity:</strong> Stationery packs removed the financial barrier for the next
+                    school term, directly supporting school attendance for all 88 children.<br><br>
+                    <strong>Health & Dignity:</strong> Sanitary kits addressed period poverty, reducing absenteeism
+                    among adolescent girls.<br><br>
+                    <strong>Corporate Culture:</strong> The shared physical and emotional experience forged
+                    cross‑departmental bonds among Revital staff, creating a template for all future A.C.T. missions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="story-card reveal">
+            <div class="story-image"><img src="images/olive-story-1.jpg" alt="Team with children" loading="lazy" />
+            </div>
+            <div class="story-text">
+                <div class="story-label">Personal Dignity Strategy</div>
+                <h2 class="story-heading">88 Packs,<br><em>88 Stories.</em></h2>
+                <p class="story-body">Instead of bulk sacks, every child received a <strong>personal care pack</strong>
+                    — colour‑coded by age and gender. 48 adolescent girls got a month's supply of sanitary products;
+                    every child got dental kits, soap, and Kartasi school stationery. No donation leakage. Just
+                    individual dignity.</p>
+            </div>
+        </div>
+        <div class="story-card reverse reveal d1">
+            <div class="story-image"><img src="images/olive-story-2.jpg" alt="Shared meal" loading="lazy" /></div>
+            <div class="story-text">
+                <div class="story-label">Breaking Bread Together</div>
+                <h2 class="story-heading">110 Plates<br><em>of Pilau.</em></h2>
+                <p class="story-body">Volunteers didn't just serve food — they sat down and ate with the children. 110
+                    plates of hot, balanced Pilau turned a handover into a celebration. The games and laughter that
+                    followed were unscripted, but they defined the mission more than any pack did.</p>
+            </div>
+        </div>
+        <div class="story-card reveal d2">
+            <div class="story-image"><img src="images/olive-story-3.jpg" alt="Stationery" loading="lazy" /></div>
+            <div class="story-text">
+                <div class="story-label">Education & Accountability</div>
+                <h2 class="story-heading">88 Stationery Sets<br><em>& Zero Waste.</em></h2>
+                <p class="story-body">88 sets of high‑quality Kartasi stationery removed the financial barrier for the
+                    next school term. The direct-resourcing model proved that <strong>100% resource efficiency</strong>
+                    is achievable — every item reached a child's hands.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-masonry-section" id="gallery">
+        <h2 class="gallery-heading reveal">Moments of<br><em>Joy.</em></h2>
+        <div class="masonry">
+            <div class="masonry-item reveal"><img src="images/olive-gallery-2.jpg" alt="Children" loading="lazy" />
+            </div>
+            <div class="masonry-item reveal d1"><img src="images/olive-gallery-1.jpg" alt="Team" loading="lazy" /></div>
+            <div class="masonry-item reveal d2"><img src="images/olive-gallery-3.jpg" alt="Play" loading="lazy" /></div>
+            <div class="masonry-item reveal d3"><img src="images/olive-gallery-4.jpg" alt="Meal" loading="lazy" /></div>
+            <div class="masonry-item reveal d4"><img src="images/olive-gallery-5.jpg" alt="Stationery" loading="lazy" />
+            </div>
+        </div>
+        <div class="gallery-hidden" id="galleryHidden">
+            <div class="masonry-item"><img src="images/olive-gallery-6.jpg" alt="Team" loading="lazy" /></div>
+            <div class="masonry-item"><img src="images/olive-gallery-7.jpg" alt="Children" loading="lazy" /></div>
+            <div class="masonry-item"><img src="images/olive-gallery-8.jpg" alt="Play" loading="lazy" /></div>
+            <div class="masonry-item"><img src="images/olive-gallery-9.jpg" alt="Meal" loading="lazy" /></div>
+            <div class="masonry-item"><img src="images/olive-gallery-10.jpg" alt="Detail" loading="lazy" /></div>
+        </div>
+        <div class="gallery-toggle-wrap">
+            <button class="gallery-toggle-btn" id="galleryToggle" onclick="toggleGallery()">Show More
+                <span>↓</span></button>
+        </div>
+    </section>
+
+    <section class="thanks" id="thanks">
+        <h2 class="reveal">A Movement,<br><em>Not an Event.</em></h2>
+        <p class="reveal d1">The Green Olive Children's Home visit was the foundation upon which Project A.C.T. was
+            built. It proved that a small team, armed with purpose and resourcefulness, could deliver massive community
+            impact.</p>
+        <div class="thanks-badges reveal d2">
+            <span class="t-badge">Green Olive Children's Home</span>
+            <span class="t-badge">Director Esther</span>
+            <span class="t-badge">14 A.C.T. Volunteers</span>
+            <span class="t-badge">88 Children</span>
+            <span class="t-badge">110 Meals Served</span>
+            <span class="t-badge">48 Sanitary Packs</span>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-ghost">ACT</div>
+        <div class="footer-inner">
+            <div class="footer-left reveal">
+                <h1 class="footer-title">Action<br><em>Changes</em><br>Things<span class="dot">.</span></h1>
+                <div class="footer-divider"></div>
+                <div class="footer-contact">
+                    Revital Healthcare (EPZ) Ltd.<br>
+                    Kilifi County, Kenya · <a href="https://revitalhcare.com/" target="_blank"
+                        rel="noopener">revitalhcare.com</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <path d="M16 11.37A4 4 0 1112.63 8" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg></a>
+                    <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr" target="_blank"
+                        rel="noopener" class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg></a>
+                    <a href="https://revitalhcare.com/" target="_blank" rel="noopener" class="footer-social-link"
+                        aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path d="M12 2a15.3 15.3 0 014 10" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-right reveal d1">
+                <div class="footer-headshot">
+                    <div class="headshot-image">
+                        <img src="images/act-logo.png" alt="Project A.C.T. Committee"
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" />
+                    </div>
+                    <div class="headshot-quote">"Social welfare creates the foundation for all interventions. 88 dignity
+                        packs, 110 meals, and unscripted connections proved that purpose-driven resourcefulness can
+                        transform communities."</div>
+                    <div class="headshot-name">ACT Committee</div>
+                    <div class="headshot-title">Project A.C.T.</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <div class="footer-copy">© 2026 Revital Healthcare (EPZ) Ltd. · Project <span>A.C.T.</span></div>
+            <div class="footer-copy" style="color:rgba(0,0,0,.25);">Phase 01 — Green Olive Children's Home · December
+                10, 2025</div>
+        </div>
+        <div class="red-corner"></div>
+    </footer>
+
+    <script>
+        // ── SCROLL REVEAL ANIMATIONS ──
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        // ── COUNTER ANIMATIONS ──
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseFloat(el.getAttribute('data-target'));
+                if (isNaN(target)) return;
+                const duration = 2000;
+                const interval = 16;
+                const steps = duration / interval;
+                let step = 0;
+                const tick = setInterval(() => {
+                    step++;
+                    const progress = 1 - Math.pow(1 - step / steps, 4);
+                    const current = progress * target;
+                    if (Number.isInteger(target)) {
+                        el.textContent = Math.round(current).toLocaleString();
+                    } else {
+                        el.textContent = current.toFixed(1);
+                    }
+                    if (step >= steps) {
+                        el.textContent = target.toLocaleString();
+                        clearInterval(tick);
+                    }
+                }, interval);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(el => counterObserver.observe(el));
+
+        // ── NAV SCROLL ──
+        const nav = document.getElementById('siteNav'), prog = document.getElementById('navProgress');
+        window.addEventListener('scroll', () => {
+            nav.style.background = window.scrollY > 50 ? 'rgba(255,255,255,.98)' : 'linear-gradient(to bottom, rgba(255,255,255,.98) 0%, rgba(255,255,255,.94) 55%, rgba(255,255,255,.72) 100%)';
+            const d = document.documentElement.scrollHeight - window.innerHeight;
+            prog.style.width = (d > 0 ? (window.scrollY / d) * 100 : 0) + '%';
+        }, { passive: true });
+
+        // ── GALLERY TOGGLE ──
+        function toggleGallery() {
+            const hidden = document.getElementById('galleryHidden');
+            const btn = document.getElementById('galleryToggle');
+            hidden.classList.toggle('open');
+            btn.classList.toggle('open');
+            btn.innerHTML = hidden.classList.contains('open') ? 'Show Less <span>↑</span>' : 'Show More <span>↓</span>';
+        }
+
+        // ── ROTATING HERO BACKGROUND ──
+        (function () {
+            const slides = document.querySelectorAll('.hero-bg-slide');
+            const capsuleImg = document.getElementById('capsuleImage');
+            if (slides.length < 2) return;
+            let current = 0;
+            const total = slides.length;
+            const imageSources = [];
+            slides.forEach(s => imageSources.push(s.getAttribute('src')));
+            setInterval(() => {
+                slides[current].classList.remove('active');
+                current = (current + 1) % total;
+                slides[current].classList.add('active');
+                if (capsuleImg && imageSources[current]) {
+                    capsuleImg.style.opacity = '0';
+                    capsuleImg.style.transition = 'opacity 0.4s ease';
+                    setTimeout(() => {
+                        capsuleImg.setAttribute('src', imageSources[current]);
+                        capsuleImg.style.opacity = '1';
+                    }, 400);
+                }
+            }, 5000);
+        })();
+    </script>
+</body>
+
+</html>

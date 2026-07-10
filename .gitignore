@@ -1,0 +1,28 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Dependency folders (not needed for static site)
+node_modules/
+npm-debug.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Huge archive files (NOT needed for website!)
+*.tar
+*.zip
+
+# Netlify local config (NOT needed for GitHub)
+.netlify/
+
+# Keep your actual website files!
+# Your HTML, CSS, JS, and Images will be deployed

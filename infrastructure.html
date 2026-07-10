@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project A.C.T. — Legacy Infrastructure</title>
+    <link rel="icon" type="image/png" href="images/act-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/infrastructure.css" />
+</head>
+
+<body>
+
+    <!-- ── PAGE PROGRESS ── -->
+    <div id="progress-bar"></div>
+
+    <!-- ── NAVIGATION ── -->
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-progress-indicator" id="navProgressIndicator"></div>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <div class="nav-logo">
+                <div class="logo-placeholder">
+                    <div class="logo-icon">
+                        <img src="images/act-logo.png" alt="Project A.C.T."
+                            onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
+                    </div>
+                </div>
+                <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                        class="dot">.</span></span>
+                <span class="nav-pipe"></span>
+                <span class="nav-sub">Action Changes Things</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="archive.html">Reports Archive</a></li>
+            <li><a href="infrastructure.html" class="active">Infrastructure</a></li>
+        </ul>
+    </nav>
+
+    <!-- ──────────────── HERO ──────────────── -->
+    <section class="hero">
+        <div class="hero-bg-container">
+            <img src="images/outcomes-hero.jpg" class="hero-bg-slide active" alt="Infrastructure" loading="lazy" />
+            <img src="images/infra-installed.jpg" class="hero-bg-slide" alt="Installed bins" loading="lazy" />
+            <img src="images/infra-welding.jpg" class="hero-bg-slide" alt="Welding" loading="lazy" />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-ghost">BUILD</div>
+        <div class="hero-left">
+            <div class="hero-eyebrow reveal">&#9670; Legacy Infrastructure</div>
+            <h1 class="hero-title reveal d1">Legacy<br><em>Infrastructure</em><br>Program<span class="red">.</span></h1>
+            <p class="hero-desc reveal d2">
+                <strong>Zero capital cost.</strong> 20 upcycled legacy bins deployed across Kilifi County. Each bin
+                fabricated from repurposed factory drums, welded in-house, and anchor-bolted at strategic public health
+                access points.
+            </p>
+            <div class="hero-kpis reveal d3">
+                <div>
+                    <div class="hero-kpi-val">20</div>
+                    <div class="hero-kpi-lbl">Legacy Bins</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val">5</div>
+                    <div class="hero-kpi-lbl">Locations</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val">0</div>
+                    <div class="hero-kpi-lbl">Capital Cost</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val">100<span style="font-size:18px;">%</span></div>
+                    <div class="hero-kpi-lbl">Upcycled</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right reveal">
+            <div class="capsule-container">
+                <div class="capsule-echo"></div>
+                <div class="capsule-wrap">
+                    <img id="capsuleImage" src="images/bin-photo-1.jpg" alt="Infrastructure" loading="lazy" />
+                    <div class="capsule-overlay"></div>
+                </div>
+                <div class="phase-medallion">
+                    <span class="pm-vol">Phase</span>
+                    <span class="pm-num">00</span>
+                    <span class="pm-lbl">Legacy<br>Infrastructure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SIGNATURE TIDE DIVIDER ── -->
+    <div class="tide-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Two overlapping tide waves — the signature element -->
+            <path
+                d="M0,45 C120,15 240,75 360,45 C480,15 600,75 720,45 C840,15 960,75 1080,45 C1200,15 1320,75 1440,45 L1440,90 L0,90 Z"
+                fill="rgba(0,27,58,0.4)" />
+            <path
+                d="M0,55 C100,30 200,80 360,55 C520,30 620,80 720,55 C820,30 920,80 1080,55 C1240,30 1340,80 1440,55 L1440,90 L0,90 Z"
+                fill="rgba(217,4,41,0.06)" />
+            <!-- Repeat for seamless loop -->
+            <path
+                d="M1440,45 C1560,15 1680,75 1800,45 C1920,15 2040,75 2160,45 C2280,15 2400,75 2520,45 C2640,15 2760,75 2880,45 L2880,90 L1440,90 Z"
+                fill="rgba(0,27,58,0.4)" />
+            <path
+                d="M1440,55 C1540,30 1640,80 1800,55 C1960,30 2060,80 2160,55 C2260,30 2360,80 2520,55 C2680,30 2780,80 2880,55 L2880,90 L1440,90 Z"
+                fill="rgba(217,4,41,0.06)" />
+        </svg>
+    </div>
+
+    <!-- ──────────────── ORIGINS ──────────────── -->
+    <section class="section-origins" id="origins">
+        <div class="origins-grid">
+
+            <div class="origins-text">
+                <div class="section-eyebrow reveal">From Factory Floor to Shoreline</div>
+                <h2 class="o-title reveal delay-1">55 Bins.<br><em>Zero Budget.</em></h2>
+                <p class="o-desc reveal delay-1">
+                    True corporate social responsibility leverages existing industrial capacity. Rather than purchasing
+                    mass-produced plastic bins — which would themselves become future waste — we intercepted
+                    heavy-duty metal drums from the Revital Healthcare factory floor: drums originally used for
+                    medical-grade raw material storage. In total, <strong>55 bins</strong> have been deployed across
+                    the Kilifi coastline through three distinct phases of installation.
+                </p>
+                <p class="o-desc reveal delay-2">
+                    These units were fully sanitized, welded shut at base seams, structurally reinforced with coastal
+                    corrosion in mind, and fitted with high-visibility livery by our internal engineering team. Every
+                    hour of labor, every weld, and every coat of paint was absorbed within Revital's existing
+                    operational budget — making this one of the most cost-effective waste infrastructure deployments
+                    on the Kenyan coast.
+                </p>
+
+                <div class="field-spec reveal delay-2">
+                    <div class="field-spec-label">Field Engineering Note</div>
+                    <div class="field-spec-text">"The drums were pressure-tested, base-plated and anchor-bolted at the
+                        installation sites. Each unit is rated for a minimum 10-year coastal service life with annual
+                        inspection."</div>
+                </div>
+
+                <div class="kpi-row reveal delay-3">
+                    <div class="kpi-block">
+                        <div class="kpi-val counter" data-target="55">0</div>
+                        <div class="kpi-lbl">Drums Installed</div>
+                    </div>
+                    <div class="kpi-block">
+                        <div class="kpi-val">KES 0</div>
+                        <div class="kpi-lbl">Direct Spend</div>
+                    </div>
+                    <div class="kpi-block">
+                        <div class="kpi-val">10yr</div>
+                        <div class="kpi-lbl">Service Life</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="origins-masonry reveal delay-1">
+                <div class="photo-card card-1">
+                    <img src="images/infra-welding.jpg" alt="Industrial welding and reinforcement" loading="lazy" />
+
+                </div>
+                <div class="photo-card card-2">
+                    <img src="images/infra-installed.jpg" alt="Legacy bins installed on beach" loading="lazy" />
+                    <div class="red-pin"></div>
+
+                </div>
+
+                <!-- Installation site widget -->
+                <div class="install-widget">
+                    <div class="iw-label">Installation Coverage</div>
+                    <div class="iw-dots">
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                        <div class="iw-dot"></div>
+                    </div>
+                    <div class="iw-count">55</div>
+                    <div class="iw-sub">Bins Deployed</div>
+                </div>
+
+                <!-- Materials tag strip -->
+                <div class="materials-strip">
+                    <div class="mat-tag">Heavy-duty steel</div>
+                    <div class="mat-tag">Coastal primer</div>
+                    <div class="mat-tag">Anchor bolt</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ──────────────── MATRIX ──────────────── -->
+    <section class="section-matrix" id="matrix">
+        <div class="matrix-header">
+            <div class="m-eyebrow reveal">The Segregation Matrix</div>
+            <h2 class="m-title reveal delay-1">Engineered for<br><em>Accountability.</em></h2>
+            <p class="m-desc reveal delay-2">
+                Providing a bin solves nothing without dictating what goes in it. We implemented the standard
+                three-colour national segregation system — adapted specifically for a coastal fishing community — to
+                ensure every deposit supports the right downstream outcome.
+            </p>
+        </div>
+
+        <div class="standard-ribbon reveal">
+            <div class="std-line"></div>
+            <div class="std-text">Aligned with Kenya National Solid Waste Management Strategy</div>
+            <div class="std-line"></div>
+        </div>
+
+        <div class="bins-showcase">
+
+            <!-- BLACK BIN: ALL-PURPOSE / RESIDUAL -->
+            <div class="bin-pillar bin-all reveal delay-1">
+                <div class="bin-band"></div>
+                <div class="drum-wrap">
+                    <div class="drum">
+                        <div class="drum-rib"></div>
+                        <div class="drum-rib"></div>
+                        <div class="drum-rib"></div>
+                        <div class="drum-fill"></div>
+                    </div>
+                    <div class="bin-chip">All-Purpose</div>
+                </div>
+                <div class="bin-content">
+                    <div class="bin-category">General Waste</div>
+                    <div class="bin-title">Non-Recyclable<br>Residual</div>
+                    <div class="bin-desc">
+                        The residual stream. Accepts anything that cannot be cleanly separated — mixed materials,
+                        sanitary waste, contaminated packaging, and non-recyclable synthetics. Contents proceed to
+                        licensed municipal incineration, fully isolated from recyclable and compostable streams.
+                    </div>
+                    <div class="bin-items">
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Non-recyclable packaging & multilayer materials</span>
+                        </div>
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Sanitary waste & bio-contaminated items</span>
+                        </div>
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Mixed debris unsuitable for sorting</span>
+                        </div>
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Incineration disposal pathway</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GREEN BIN: BIODEGRADABLE / ORGANIC -->
+            <div class="bin-pillar bin-bio reveal delay-2">
+                <div class="bin-band"></div>
+                <div class="drum-wrap">
+                    <div class="drum">
+                        <div class="drum-rib"></div>
+                        <div class="drum-rib"></div>
+                        <div class="drum-rib"></div>
+                        <div class="drum-fill"></div>
+                    </div>
+                    <div class="bin-chip">Biodegradable</div>
+                </div>
+                <div class="bin-content">
+                    <div class="bin-category">Organic Waste</div>
+                    <div class="bin-title">Compostable<br>Organics</div>
+                    <div class="bin-desc">
+                        The green stream captures organic material that, properly managed, can re-enter the soil cycle.
+                        In a coastal fishing community, this includes fish scraps, seaweed, food waste, and natural
+                        fibre — materials that, if left on the beach, accelerate algae blooms and attract rodent
+                        vectors.
+                    </div>
+                    <div class="bin-items">
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Food waste, fish scraps & marine organics</span>
+                        </div>
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Seaweed, natural fibre & plant matter</span>
+                        </div>
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Composting or biogas pathway</span>
+                        </div>
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Reduces shoreline algae & rodent attraction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLUE BIN: PLASTICS / RECYCLABLES -->
+            <div class="bin-pillar bin-plastic reveal delay-3">
+                <div class="bin-band"></div>
+                <div class="drum-wrap">
+                    <div class="drum">
+                        <div class="drum-rib"></div>
+                        <div class="drum-rib"></div>
+                        <div class="drum-rib"></div>
+                        <div class="drum-fill"></div>
+                    </div>
+                    <div class="bin-chip">Recyclables</div>
+                </div>
+                <div class="bin-content">
+                    <div class="bin-category">Dry Recyclables</div>
+                    <div class="bin-title">PET Plastics<br>& Ghost Nets</div>
+                    <div class="bin-desc">
+                        The recovery engine of the system. This bin captures dry recyclables — PET plastic bottles,
+                        ghost nets, and rigid plastics — channelling them directly into licensed regional recyclers
+                        and community-run material recovery networks. Every deposit here becomes a tangible asset
+                        for the local Beach Management Unit.
+                    </div>
+                    <div class="bin-items">
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>PET bottles, rigid plastics & film</span>
+                        </div>
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Ghost fishing nets & marine cordage</span>
+                        </div>
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Glass & aluminium cans</span>
+                        </div>
+                        <div class="bin-item">
+                            <div class="bin-item-dot"></div>
+                            <span>Recovered for regional material processing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /bins-showcase -->
+
+        <div class="colour-legend reveal">
+            <div class="cl-item">
+                <div class="cl-swatch" style="background:#555; border:1px solid rgba(255,255,255,0.2);"></div>
+                <div class="cl-label">Black — General / Residual</div>
+            </div>
+            <div class="cl-item">
+                <div class="cl-swatch" style="background:var(--bin-green);"></div>
+                <div class="cl-label">Green — Biodegradable</div>
+            </div>
+            <div class="cl-item">
+                <div class="cl-swatch" style="background:var(--bin-blue);"></div>
+                <div class="cl-label">Blue — Recyclables</div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ──────────────── BIN DEPLOYMENT ──────────────── -->
+    <section class="section-economy" id="deployment">
+        <div class="eco-grid">
+
+            <div class="eco-left">
+                <div class="eco-eyebrow reveal">Coastal Deployment Programme</div>
+                <h2 class="eco-title reveal delay-1">55 Bins.<br><em>Three Communities.</em></h2>
+                <div class="eco-quote reveal delay-2">
+                    "Infrastructure is only meaningful when it is placed where people live, fish, and gather. We
+                    built the network outward — community by community — until the coast had a spine."
+                </div>
+                <div class="eco-author reveal delay-2">
+                    Project A.C.T. Mandate <span>&nbsp;|&nbsp; Coastal Deployment Programme</span>
+                </div>
+
+                <div class="eco-impact reveal delay-3">
+                    <div class="eco-impact-num"><span class="counter" data-target="55">0</span><span> bins</span></div>
+                    <div class="eco-impact-lbl">Total Bins Deployed Across the Kilifi Coastline</div>
+                    <div class="eco-impact-p">
+                        From repurposed industrial drums to purpose-donated units on World Environment Day, every bin
+                        placed on this coastline represents a permanent, community-owned node in a growing waste
+                        management network — built at zero cost to the public purse.
+                    </div>
+                </div>
+            </div>
+
+            <div class="loop-container">
+                <div class="loop-step reveal delay-1">
+                    <div class="loop-gutter">
+                        <div class="loop-step-num">1</div>
+                        <div class="loop-connector"></div>
+                    </div>
+                    <div class="loop-body">
+                        <div class="loop-icon-row">
+                            <div class="loop-icon-badge">📍</div>
+                            <h4 class="loop-h">Copacabana Beach — 20 Bins</h4>
+                        </div>
+                        <p class="loop-p">The largest single deployment in the programme. Twenty bins were strategically
+                            positioned along the Copacabana Beach stretch — a high-traffic recreational and fishing
+                            zone — covering entry points, market stalls, and fish landing sites. Each unit was
+                            labelled, colour-coded, and anchored before handover to the local Beach Management Unit.</p>
+                        <span class="loop-tag">Copacabana · 20 Units</span>
+                    </div>
+                </div>
+
+                <div class="loop-step reveal delay-2">
+                    <div class="loop-gutter">
+                        <div class="loop-step-num">2</div>
+                        <div class="loop-connector"></div>
+                    </div>
+                    <div class="loop-body">
+                        <div class="loop-icon-row">
+                            <div class="loop-icon-badge">📍</div>
+                            <h4 class="loop-h">Kuruwitu Marine Reserve — 15 Bins</h4>
+                        </div>
+                        <p class="loop-p">Kuruwitu is home to Kenya's first community-managed marine conservancy —
+                            a model of grassroots ocean stewardship. Fifteen bins were deployed here in partnership
+                            with the Kuruwitu Conservation &amp; Welfare Association, reinforcing the community's
+                            existing no-take zone commitment with the physical infrastructure to match. Every bin
+                            placed here is a vote of confidence in local governance.</p>
+                        <span class="loop-tag">Kuruwitu · 15 Units</span>
+                    </div>
+                </div>
+
+                <div class="loop-step reveal delay-3">
+                    <div class="loop-gutter">
+                        <div class="loop-step-num">3</div>
+                    </div>
+                    <div class="loop-body">
+                        <div class="loop-icon-row">
+                            <div class="loop-icon-badge">🌍</div>
+                            <h4 class="loop-h">World Environment Day — 20 Bins Donated</h4>
+                        </div>
+                        <p class="loop-p">On World Environment Day this year, Project A.C.T. marked the occasion not
+                            with a press release — but with action. Twenty additional bins were donated to coastal
+                            communities as a public commitment to expanding the infrastructure network. This single-day
+                            event added a third wave of permanent waste stations to the coastline, bringing the total
+                            to <strong>55 deployed units</strong> and signalling that the programme continues to grow.
+                        </p>
+                        <span class="loop-tag">World Environment Day · 20 Units</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ──────────────── FOOTER ──────────────── -->
+    <footer class="site-footer">
+        <div class="footer-ghost">ACT</div>
+        <div class="footer-inner">
+            <div class="footer-left reveal">
+
+                <h1 class="footer-title">Action<br><em>Changes</em><br>Things<span class="dot">.</span></h1>
+                <div class="footer-divider"></div>
+                <div class="footer-contact">
+                    Revital Healthcare (EPZ) Ltd.<br>
+                    Kilifi County, Kenya &nbsp;·&nbsp;
+                    <a href="https://revitalhcare.com/" target="_blank" rel="noopener">revitalhcare.com</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-social-link"
+                        aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <path d="M16 11.37A4 4 0 1112.63 8" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg></a>
+                    <a href="https://www.linkedin.com/company/revital-healthcare" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg></a>
+                    <a href="https://revitalhcare.com/" target="_blank" rel="noopener" class="footer-social-link"
+                        aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path d="M12 2a15.3 15.3 0 014 10" />
+                        </svg></a>
+                </div>
+
+            </div>
+            <div class="footer-right reveal reveal-delay-1">
+                <div class="footer-headshot">
+                    <div class="headshot-image">
+                        <img src="images/act-logo.png" alt="Project A.C.T. Committee"
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" />
+                    </div>
+                    <div class="headshot-quote">"Upcycled infrastructure outlasts any single event. 55 Legacy Bins
+                        demonstrate zero-capital solutions that empower communities long-term."</div>
+                    <div class="headshot-name">ACT Committee</div>
+                    <div class="headshot-title">Project A.C.T.</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <div class="footer-copy">© 2026 Revital Healthcare (EPZ) Ltd. &nbsp;·&nbsp; Project <span>A.C.T.</span>
+            </div>
+            <div class="footer-copy" style="color:rgba(255,255,255,.25);">Infrastructure Vol. I — Legacy Systems</div>
+        </div>
+        <div class="red-corner"></div>
+    </footer>
+
+    <!-- ──────────────── SCRIPTS ──────────────── -->
+    <script>
+        // ── NAV & PROGRESS ──
+        const nav = document.getElementById('siteNav');
+        const navInd = document.getElementById('navProgressIndicator');
+        const progBar = document.getElementById('progress-bar');
+
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+            const docH = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = docH > 0 ? (window.scrollY / docH) * 100 : 0;
+            navInd.style.width = pct + '%';
+            progBar.style.width = pct + '%';
+        }, { passive: true });
+
+        // ── HERO GHOST PARALLAX ──
+        const heroGhost = document.getElementById('heroGhost');
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            heroGhost.style.transform = `translateY(calc(-50% + ${y * 0.18}px))`;
+        }, { passive: true });
+
+        // ── HERO BACKGROUND ROTATION ──
+        const slides = document.querySelectorAll('.hero-bg-slide');
+        let currentSlide = 0;
+        if (slides.length > 1) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 5000);
+        }
+
+        // ── SCROLL REVEAL ──
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+
+                // Run counters on reveal
+                entry.target.querySelectorAll('.counter[data-target]').forEach(counter => {
+                    if (counter.classList.contains('counted')) return;
+                    counter.classList.add('counted');
+                    const target = parseFloat(counter.getAttribute('data-target'));
+                    const duration = 1800, interval = 16, steps = duration / interval;
+                    let step = 0;
+                    const tick = setInterval(() => {
+                        step++;
+                        const progress = 1 - Math.pow(1 - step / steps, 4);
+                        counter.textContent = Math.round(progress * target).toLocaleString();
+                        if (step >= steps) {
+                            counter.textContent = target.toLocaleString();
+                            clearInterval(tick);
+                        }
+                    }, interval);
+                });
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal, .reveal-left').forEach(el => revealObserver.observe(el));
+
+        // ── REDUCED MOTION ──
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('.tide-divider svg').forEach(s => s.style.animation = 'none');
+        }
+    </script>
+</body>
+
+</html>

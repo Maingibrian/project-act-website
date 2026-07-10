@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phase 03 — Kuruitu Coastal Restoration | Project A.C.T.</title>
+    <link rel="icon" type="image/png" href="images/act-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/kuruitu.css" />
+</head>
+
+<body>
+
+    <!-- ── NAV ── -->
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-progress" id="navProgress"></div>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <div class="nav-logo">
+                <div class="logo-placeholder">
+                    <div class="logo-icon">
+                        <img src="images/act-logo.png" alt="Project A.C.T."
+                            onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
+                    </div>
+                    <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                            class="dot">.</span></span>
+                </div>
+                <span class="nav-pipe"></span>
+                <span class="nav-sub">Action Changes Things</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#journal">Overview</a></li>
+            <li><a href="#tide">Stats</a></li>
+            <li><a href="#coalition">Partners</a></li>
+            <li><a href="#transect">Timeline</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── HERO with rotating background ── -->
+    <section class="hero">
+        <div class="hero-bg-container">
+            <img src="images/kuruitu-hero-bg.jpg" class="hero-bg-slide active" alt="Kuruitu Beach" loading="lazy" />
+            <img src="images/kuruitu-strike-team.jpg" class="hero-bg-slide" alt="Strike team" loading="lazy" />
+            <img src="images/kuruitu-gallery-5.jpg" class="hero-bg-slide" alt="Beach sweep" loading="lazy" />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-ghost">OCEAN</div>
+        <div class="hero-left">
+            <div class="hero-eyebrow reveal">&#9670; Phase 03 &middot; Marine Conservation</div>
+            <h1 class="hero-title reveal d1">Kuruitu<br><em>Coalition</em><br>Restoration<span class="red">.</span></h1>
+            <p class="hero-desc reveal d2">
+                <strong>March 7, 2026.</strong> 78 participants from Revital Healthcare, KWS, Kuruitu Conservancy CBO,
+                and Kwa Goa CBO unified on Kuruwitu Beach. In four hours they extracted <strong>495 kg</strong> of
+                marine debris and installed <strong>15 legacy bins</strong>.
+            </p>
+            <div class="hero-kpis reveal d3">
+                <div>
+                    <div class="hero-kpi-val counter" data-target="495">0<span style="font-size:18px;">kg</span></div>
+                    <div class="hero-kpi-lbl">Debris Removed</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val counter" data-target="78">0</div>
+                    <div class="hero-kpi-lbl">Participants</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val">15</div>
+                    <div class="hero-kpi-lbl">Legacy Bins</div>
+                </div>
+                <div>
+                    <div class="hero-kpi-val">6</div>
+                    <div class="hero-kpi-lbl">Strike Teams</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right reveal">
+            <div class="capsule-container">
+                <div class="capsule-echo"></div>
+                <div class="capsule-wrap">
+                    <img id="capsuleImage" src="images/kuruitu-hero-bg.jpg" alt="Kuruitu Beach" loading="lazy" />
+                    <div class="capsule-overlay"></div>
+                </div>
+                <div class="phase-medallion">
+                    <span class="pm-vol">Phase</span>
+                    <span class="pm-num">03</span>
+                    <span class="pm-lbl">Marine<br>Conservation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FIELD JOURNAL ── -->
+    <section class="journal" id="journal">
+        <div class="journal-left reveal">
+            <div class="section-label">⬤ Field Journal</div>
+            <h2 class="journal-heading">The Coalition<br><em>Takes the Shore.</em></h2>
+            <p class="journal-body">
+                Kuruwitu Beach, a locally‑managed marine area in Vipingo, faced an acute pollution crisis driven by the
+                East African Coastal Current. <strong>78 participants</strong> — corporate staff, KWS officers, and CBO
+                members — assembled at dawn to confront it.
+            </p>
+            <p class="journal-body">
+                The operation pivoted from 20 small teams to <strong>6 high‑density strike teams of 10</strong>, each
+                dynamically deployed to trash hotspots. Team leaders surveyed the 300m stretch and eliminated wasted
+                effort on clean sand. <strong>18 participants</strong> served as judges, safety marshals, and hydration
+                logisticians — keeping the operation safe, coordinated, and fully accountable.
+            </p>
+            <div class="journal-mono">— Operation Log · March 7, 2026</div>
+        </div>
+        <div class="journal-right reveal d1">
+            <img src="images/kuruitu-strike-team.jpg" alt="Strike team on Kuruwitu Beach" loading="lazy" />
+        </div>
+    </section>
+
+    <!-- ── TIDE CHART ── -->
+    <section class="tide-chart" id="tide">
+        <div class="tide-inner">
+            <div class="tide-card reveal">
+                <div class="tide-num counter" data-target="495">0<span class="small">kg</span></div>
+                <div class="tide-lbl">Marine Debris</div>
+                <div class="tide-desc">PET plastics, ghost nets, synthetic rubber & glass hauled from the tidal
+                    zone.</div>
+            </div>
+            <div class="tide-card reveal d1">
+                <div class="tide-num counter" data-target="78">0</div>
+                <div class="tide-lbl">Coalition Members</div>
+                <div class="tide-desc">Revital Healthcare, KWS, Kuruitu Conservancy & Kwa Goa CBOs operating as one
+                    unit.</div>
+            </div>
+            <div class="tide-card reveal d2">
+                <div class="tide-num">15</div>
+                <div class="tide-lbl">Legacy Bins</div>
+                <div class="tide-desc">Upcycled from factory drums, welded, sanitized, and anchor‑bolted at key access
+                    points.</div>
+            </div>
+            <div class="tide-card reveal d3">
+                <div class="tide-num">KES 63<span class="small">k</span></div>
+                <div class="tide-lbl">Budget Utilized</div>
+                <div class="tide-desc">KES 63,300 spent from 63,800 allocated — KES 500 returned, every shilling
+                    accounted for.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── COALITION CIRCLE ── -->
+    <section class="coalition" id="coalition">
+        <div class="coalition-header reveal">
+            <div class="section-label" style="justify-content:center;">⬤ Coalition Partners</div>
+            <h2 class="coalition-heading">The Agencies<br><em>Behind the Mission.</em></h2>
+        </div>
+        <div class="coalition-grid">
+            <div class="coalition-card reveal">
+                <div class="coalition-icon">🏛️</div>
+                <div class="coalition-name">Revital Healthcare</div>
+                <div class="coalition-role">Corporate Lead</div>
+            </div>
+            <div class="coalition-card reveal d1">
+                <div class="coalition-icon">🛡️</div>
+                <div class="coalition-name">Kenya Wildlife Service</div>
+                <div class="coalition-role">Government Partner</div>
+            </div>
+            <div class="coalition-card reveal d2">
+                <div class="coalition-icon">🌍</div>
+                <div class="coalition-name">Kuruitu Conservancy CBO</div>
+                <div class="coalition-role">Community Partner</div>
+            </div>
+            <div class="coalition-card reveal d3">
+                <div class="coalition-icon">🤝</div>
+                <div class="coalition-name">Kwa Goa CBO</div>
+                <div class="coalition-role">Community Partner</div>
+            </div>
+            <div class="coalition-card reveal d4">
+                <div class="coalition-icon">♻️</div>
+                <div class="coalition-name">BMU Trash for Cash</div>
+                <div class="coalition-role">Recycling Partner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── BEACH TRANSECT ── -->
+    <section class="transect" id="transect">
+        <div class="transect-header reveal">
+            <div class="section-label">⬤ Operational Transect</div>
+            <h2 class="transect-heading">300 Metres<br><em>of Shoreline.</em></h2>
+        </div>
+        <div class="transect-track">
+            <div class="transect-step reveal">
+                <div class="step-num">07:30</div>
+                <div class="step-title">Assembly & Briefing</div>
+                <div class="step-body">78 participants gather. KWS officers and Revital committee brief the coalition on
+                    zonal deployment and safety protocols.</div>
+            </div>
+            <div class="transect-step reveal d1">
+                <div class="step-num">08:00</div>
+                <div class="step-title">Strike Teams Deploy</div>
+                <div class="step-body">6 teams of 10 move into assigned sectors. Leaders map trash hotspots and adjust
+                    positions dynamically.</div>
+            </div>
+            <div class="transect-step reveal d2">
+                <div class="step-num">08:30 – 12:00</div>
+                <div class="step-title">Extraction & Segregation</div>
+                <div class="step-body">495 kg of debris extracted, sorted, and verified by KWS. PET, ghost nets, glass,
+                    and rubber separated for recycling.</div>
+            </div>
+            <div class="transect-step reveal d3">
+                <div class="step-num">12:30</div>
+                <div class="step-title">Handover to BMU</div>
+                <div class="step-body">Entire haul donated to the Beach Management Unit's Trash for Cash program. 15
+                    legacy bins permanently installed.</div>
+            </div>
+            <div class="transect-step reveal d4">
+                <div class="step-num">13:00</div>
+                <div class="step-title">Coalition Meal</div>
+                <div class="step-body">All 78 participants share a meal — corporate, government, and community breaking
+                    bread together.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="creative-gallery" id="gallery">
+        <div class="section-label reveal">⬤ Visual Record</div>
+        <h2 class="gallery-heading reveal d1">The Coalition<br><em>at Work.</em></h2>
+
+        <div class="gallery-grid">
+            <div class="gallery-item tall reveal">
+                <img src="images/kuruitu-gallery-1.jpg" alt="Coalition strike team" loading="lazy" />
+            </div>
+            <div class="gallery-item reveal d1">
+                <img src="images/kuruitu-gallery-2.jpg" alt="Strike team deploying" loading="lazy" />
+            </div>
+            <div class="gallery-item reveal d2">
+                <img src="images/kuruitu-gallery-3.jpg" alt="Marine debris extraction" loading="lazy" />
+            </div>
+            <div class="gallery-item reveal d3">
+                <img src="images/kuruitu-gallery-4.jpg" alt="Segregation station" loading="lazy" />
+            </div>
+            <div class="gallery-item reveal d4">
+                <img src="images/kuruitu-gallery-5.jpg" alt="Beach sweep" loading="lazy" />
+            </div>
+            <div class="gallery-item wide reveal">
+                <img src="images/kuruitu-gallery-6.jpg" alt="Legacy bin installation" loading="lazy" />
+            </div>
+        </div>
+
+        <div class="gallery-hidden" id="galleryHidden">
+            <div class="gallery-item reveal d1">
+                <img src="images/kuruitu-strike-team.jpg" alt="KWS officer verification" loading="lazy" />
+            </div>
+            <div class="gallery-item reveal d2">
+                <img src="images/kuruitu-gallery-7.jpg" alt="Safety marshal" loading="lazy" />
+            </div>
+            <div class="gallery-item reveal d3">
+                <img src="images/kuruitu-gallery-8.jpg" alt="Shared meal" loading="lazy" />
+            </div>
+        </div>
+
+        <div class="gallery-toggle-wrap">
+            <button class="gallery-toggle-btn" id="galleryToggle" onclick="toggleGallery()">Show More
+                <span>↓</span></button>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer">
+        <div class="footer-ghost">ACT</div>
+        <div class="footer-inner">
+            <div class="footer-left reveal">
+
+                <h1 class="footer-title">Action<br><em>Changes</em><br>Things<span class="dot">.</span></h1>
+                <div class="footer-divider"></div>
+                <div class="footer-contact">
+                    Revital Healthcare (EPZ) Ltd.<br>
+                    Kilifi County, Kenya &nbsp;·&nbsp;
+                    <a href="https://revitalhcare.com/" target="_blank" rel="noopener">revitalhcare.com</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <path d="M16 11.37A4 4 0 1112.63 8" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg></a>
+                    <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr" target="_blank"
+                        rel="noopener" class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg></a>
+                    <a href="https://revitalhcare.com/" target="_blank" rel="noopener" class="footer-social-link"
+                        aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path d="M12 2a15.3 15.3 0 014 10" />
+                        </svg></a>
+                </div>
+
+            </div>
+            <div class="footer-right reveal reveal-delay-1">
+                <div class="footer-headshot">
+                    <div class="headshot-image">
+                        <img src="images/act-logo.png" alt="Project A.C.T. Committee"
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" />
+                    </div>
+                    <div class="headshot-quote">"Coastal restoration requires community partnership. 495kg of marine
+                        debris extracted through coalition with KWS and local CBOs, protecting both ecosystems and
+                        livelihoods."</div>
+                    <div class="headshot-name">ACT Committee</div>
+                    <div class="headshot-title">Project A.C.T.</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <div class="footer-copy">© 2026 Revital Healthcare (EPZ) Ltd. &nbsp;·&nbsp; Project <span>A.C.T.</span>
+            </div>
+            <div class="footer-copy" style="color:rgba(0,0,0,.25);">Phase 03 · Kuruwitu Beach Restoration · March 7,
+                2026</div>
+        </div>
+        <div class="red-corner"></div>
+    </footer>
+
+    <script>
+        // ── NAV SCROLL ──
+        const nav = document.getElementById('siteNav'), prog = document.getElementById('navProgress');
+        window.addEventListener('scroll', () => {
+            nav.style.background = window.scrollY > 50 ? 'rgba(255,255,255,.98)' : 'linear-gradient(to bottom, rgba(255,255,255,.98) 0%, rgba(255,255,255,.94) 55%, rgba(255,255,255,.72) 100%)';
+            nav.style.borderBottom = window.scrollY > 50 ? '1px solid rgba(0,0,0,0.06)' : '1px solid rgba(0,0,0,0.06)';
+            const d = document.documentElement.scrollHeight - window.innerHeight;
+            prog.style.width = (d > 0 ? (window.scrollY / d) * 100 : 0) + '%';
+        }, { passive: true });
+
+        // ── SCROLL REVEAL + COUNTERS ──
+        const countersDone = new Set();
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                entry.target.querySelectorAll('.counter').forEach(el => {
+                    if (countersDone.has(el)) return;
+                    countersDone.add(el);
+                    const t = parseFloat(el.dataset.target);
+                    let c = 0;
+                    const iv = setInterval(() => {
+                        c += t / 45;
+                        if (c >= t) {
+                            el.textContent = t % 1 !== 0 ? t.toFixed(0) : t;
+                            clearInterval(iv);
+                        } else {
+                            el.textContent = Math.ceil(c);
+                        }
+                    }, 28);
+                });
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ── GALLERY TOGGLE ──
+        function toggleGallery() {
+            const hidden = document.getElementById('galleryHidden');
+            const btn = document.getElementById('galleryToggle');
+            hidden.classList.toggle('open');
+            btn.classList.toggle('open');
+            btn.innerHTML = hidden.classList.contains('open') ? 'Show Less <span>↑</span>' : 'Show More <span>↓</span>';
+        }
+    </script>
+</body>
+
+</html>
