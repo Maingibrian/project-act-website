@@ -172,16 +172,90 @@ function handleReducedMotion() {
     }
 }
 
+// ── DRAMATIC PAGE INTRO ──
+function initPageIntro() {
+    const intro = document.getElementById('page-intro');
+    const logo = document.getElementById('introLogo');
+    const textLine = document.getElementById('introTextLine');
+    const words = document.querySelectorAll('.intro-word');
+    const flare = document.getElementById('introFlare');
+    const logotype = document.querySelector('.intro-logotype');
+
+    if (!intro || !logo) return;
+
+    // Skip intro if reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        intro.style.display = 'none';
+        document.body.style.overflow = '';
+        return;
+    }
+
+    // Lock scroll during intro
+    document.body.style.overflow = 'hidden';
+
+    // Sequence timeline
+    const tl = {
+        logoIn: 200,        // Start logo animation
+        logotypeIn: 500,    // Start "A.C.T." text fade-in
+        flareIn: 400,       // Start flare sweep
+        textIn: 1200,       // Start text words appearing
+        hold: 2800,         // Hold full view
+        fadeOut: 3800,      // Start fade out
+        complete: 4600      // Remove overlay
+    };
+
+    // Step 1: Logo scales in dramatically
+    setTimeout(() => {
+        logo.classList.add('animate-in');
+    }, tl.logoIn);
+
+    // Step 2: "A.C.T." logotype fades in below logo
+    setTimeout(() => {
+        if (logotype) logotype.classList.add('animate-in');
+    }, tl.logotypeIn);
+
+    // Step 3: Light flare sweeps across
+    setTimeout(() => {
+        flare.classList.add('animate-in');
+    }, tl.flareIn);
+
+    // Step 4: Words appear staggered (vertical: Action / Changes / Things.)
+    setTimeout(() => {
+        textLine.classList.add('animate-in');
+        words.forEach((word, i) => {
+            const delay = parseFloat(word.dataset.delay) || 0;
+            setTimeout(() => {
+                word.classList.add('animate-in');
+            }, delay * 1000);
+        });
+    }, tl.textIn);
+
+    // Step 5: Fade out the entire overlay
+    setTimeout(() => {
+        intro.classList.add('fade-out');
+    }, tl.fadeOut);
+
+    // Step 6: Remove overlay, unlock scroll, trigger page animations
+    setTimeout(() => {
+        intro.classList.add('hidden');
+        document.body.style.overflow = '';
+
+        // Now trigger all page animations
+        initReveal();
+        initHeroCounters(800);
+        initOutcomeCounters();
+        initNavToggle();
+        initNavProgress();
+        initSectionTracker();
+        initSlider();
+        handleReducedMotion();
+    }, tl.complete);
+}
+
 // ── INIT ALL SHARED COMPONENTS ──
 document.addEventListener('DOMContentLoaded', () => {
-    initReveal();
-    initHeroCounters();
-    initOutcomeCounters();
-    initNavToggle();
-    initNavProgress();
-    initSectionTracker();
-    initSlider();
-    handleReducedMotion();
+    // Start the dramatic intro first
+    initPageIntro();
 });
 
 // ── EXPORT FOR PAGE-SPECIFIC USE ──
