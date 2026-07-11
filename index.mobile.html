@@ -7,7 +7,6 @@
     <title>Project A.C.T. — Action Changes Things</title>
     <link rel="icon" type="image/png" href="images/act-logo.png" />
 
-    <!-- Critical CSS inlined for fastest paint -->
     <style>
         *,
         *::before,
@@ -55,6 +54,78 @@
             --shadow-lg: 0 16px 48px rgba(0, 0, 0, .12);
             --radius: 12px;
             --radius-sm: 10px;
+            --hero-dark: #0a0f14;
+        }
+
+        /* ── SPLASH / LOGO PRELOAD ── */
+        #splash {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: var(--hero-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            transition: opacity 1s ease, visibility 1s ease;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #splash.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .splash-logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            object-fit: contain;
+            animation: splashPulse 1.4s ease-in-out infinite alternate;
+        }
+
+        .splash-logotype {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: -.03em;
+            color: #fff;
+        }
+
+        .splash-logotype .dot {
+            color: var(--red);
+        }
+
+        .splash-loader {
+            width: 120px;
+            height: 2px;
+            background: rgba(255, 255, 255, .1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .splash-loader-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--red);
+            border-radius: 2px;
+            transition: width 2.2s ease;
+        }
+
+        @keyframes splashPulse {
+            0% {
+                transform: scale(1);
+                opacity: .85;
+            }
+
+            100% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
         }
 
         /* ── SCROLL PROGRESS BAR ── */
@@ -83,15 +154,16 @@
             justify-content: space-between;
             height: 56px;
             padding: 0 16px;
-            background: rgba(255, 255, 255, .96);
+            background: rgba(10, 15, 20, .65);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border);
-            transition: box-shadow .3s ease
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            transition: background .3s ease, box-shadow .3s ease;
         }
 
         .nav.scrolled {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, .06)
+            background: rgba(10, 15, 20, .92);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .3);
         }
 
         .nav-logo {
@@ -111,7 +183,7 @@
             font-weight: 900;
             font-size: 16px;
             letter-spacing: -.02em;
-            color: var(--text)
+            color: #fff
         }
 
         .nav-logotype .dot {
@@ -131,18 +203,18 @@
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            transition: background .2s
+            transition: background .2s;
         }
 
         .nav-toggle:active {
-            background: rgba(0, 0, 0, .04)
+            background: rgba(255, 255, 255, .08)
         }
 
         .nav-toggle span {
             display: block;
             width: 22px;
             height: 2px;
-            background: var(--text);
+            background: rgba(255, 255, 255, .8);
             border-radius: 2px;
             transition: transform .3s cubic-bezier(.2, .8, .2, 1), opacity .2s
         }
@@ -165,17 +237,17 @@
             left: 0;
             right: 0;
             flex-direction: column;
-            background: rgba(255, 255, 255, .98);
+            background: rgba(10, 15, 20, .95);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             padding: 16px;
             gap: 0;
             transform: translateY(-120%);
             transition: transform .4s cubic-bezier(.2, .8, .2, 1);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
             max-height: 70vh;
             overflow: auto;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, .08)
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
         }
 
         .nav-links.open {
@@ -187,7 +259,7 @@
             padding: 12px 16px;
             font-size: 13px;
             font-weight: 600;
-            color: var(--muted);
+            color: rgba(255, 255, 255, .6);
             border-radius: 8px;
             transition: all .2s;
             position: relative
@@ -195,13 +267,13 @@
 
         .nav-links a:hover,
         .nav-links a:active {
-            color: var(--text);
-            background: rgba(0, 0, 0, .03)
+            color: #fff;
+            background: rgba(255, 255, 255, .06)
         }
 
         .nav-links a.active {
-            color: var(--text);
-            background: rgba(217, 4, 41, .06)
+            color: #fff;
+            background: rgba(217, 4, 41, .15)
         }
 
         .nav-links a.active::after {
@@ -240,27 +312,27 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 120px 20px 48px;
-            background: #0a0f14 url('images/hero-bg-1.jpg') center/cover no-repeat;
-            isolation: isolate
+            padding: 120px 20px 40px;
+            background: var(--hero-dark) url('images/hero-bg-1.jpg') center/cover no-repeat;
+            isolation: isolate;
         }
 
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(10,15,20,.25) 0%, rgba(10,15,20,.55) 60%, rgba(10,15,20,.85) 100%);
+            background: linear-gradient(180deg, rgba(10, 15, 20, .25) 0%, rgba(10, 15, 20, .55) 60%, rgba(10, 15, 20, .85) 100%);
             pointer-events: none;
-            z-index: 1
+            z-index: 1;
         }
 
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 50% 0%, rgba(217,4,41,.12), transparent 60%);
+            background: radial-gradient(ellipse at 50% 0%, rgba(217, 4, 41, .12), transparent 60%);
             pointer-events: none;
-            z-index: 2
+            z-index: 2;
         }
 
         .hero-inner {
@@ -280,7 +352,7 @@
             margin-bottom: 10px;
             display: inline-flex;
             align-items: center;
-            gap: 8px
+            gap: 8px;
         }
 
         .hero-tag::before {
@@ -299,13 +371,13 @@
             color: #fff;
             margin-bottom: 14px;
             letter-spacing: -.03em;
-            text-shadow: 0 2px 20px rgba(0,0,0,.3)
+            text-shadow: 0 2px 20px rgba(0, 0, 0, .3);
         }
 
         .hero-title em {
             font-style: italic;
             font-weight: 500;
-            color: rgba(255,255,255,.85)
+            color: rgba(255, 255, 255, .85)
         }
 
         .hero-title .dot {
@@ -314,11 +386,11 @@
 
         .hero-desc {
             font-size: 13px;
-            color: rgba(255,255,255,.82);
+            color: rgba(255, 255, 255, .82);
             line-height: 1.65;
             margin-bottom: 24px;
-            text-shadow: 0 1px 8px rgba(0,0,0,.25);
-            max-width: 100%
+            max-width: 100%;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, .25);
         }
 
         .hero-stats {
@@ -333,10 +405,10 @@
             -webkit-backdrop-filter: blur(16px);
             padding: 14px 18px;
             border-radius: var(--radius-sm);
-            border: 1px solid rgba(255,255,255,.12);
+            border: 1px solid rgba(255, 255, 255, .12);
             min-width: 90px;
             text-align: center;
-            flex: 1
+            flex: 1;
         }
 
         .hero-stat-num {
@@ -345,7 +417,7 @@
             font-size: 24px;
             color: #fff;
             line-height: 1;
-            text-shadow: 0 1px 6px rgba(0,0,0,.2)
+            text-shadow: 0 1px 6px rgba(0, 0, 0, .2)
         }
 
         .hero-stat-lbl {
@@ -353,41 +425,8 @@
             font-weight: 700;
             letter-spacing: .12em;
             text-transform: uppercase;
-            color: rgba(255,255,255,.7);
+            color: rgba(255, 255, 255, .7);
             margin-top: 4px
-        }
-
-        .hero-scroll-hint {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            opacity: .7;
-            animation: heroBounce 2s ease-in-out infinite
-        }
-
-        .hero-scroll-hint span {
-            font-size: 8px;
-            font-weight: 700;
-            letter-spacing: .15em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,.8)
-        }
-
-        .hero-scroll-hint svg {
-            width: 18px;
-            height: 18px;
-            color: #fff
-        }
-
-        @keyframes heroBounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(6px); }
         }
 
         /* ── SECTIONS ── */
@@ -725,7 +764,6 @@
             color: var(--text);
             line-height: 1.6;
             margin: 16px 0;
-            padding-left: 16px;
             border-left: 3px solid var(--red);
             background: rgba(217, 4, 41, .03);
             padding: 12px 16px;
@@ -1123,12 +1161,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid rgba(255, 255, 255, .15);
-            margin-bottom: 12px;
-            transition: border-color .3s
-        }
-
-        .headshot-img:hover {
-            border-color: var(--red)
+            margin-bottom: 12px
         }
 
         .headshot-quote {
@@ -1278,16 +1311,12 @@
                 transform: none
             }
 
-            .hero-bg {
-                animation: none
+            #splash {
+                transition: none
             }
 
             .back-to-top {
                 transition: none
-            }
-
-            .hero-scroll-hint {
-                animation: none
             }
 
             html {
@@ -1322,9 +1351,27 @@
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" />
     </noscript>
+
+    <script>
+        // Preload logo and hide splash once everything is ready
+        (function () {
+            var logoImg = new Image();
+            logoImg.src = 'images/act-logo.png';
+        })();
+    </script>
 </head>
 
 <body>
+    <!-- ═══ SPLASH / LOGO PRELOAD ═══ -->
+    <div id="splash">
+        <img src="images/act-logo.png" alt="Project A.C.T." class="splash-logo" />
+        <div class="splash-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span class="dot">.</span>
+        </div>
+        <div class="splash-loader">
+            <div class="splash-loader-bar" id="splashLoaderBar"></div>
+        </div>
+    </div>
+
     <!-- ── SCROLL PROGRESS BAR ── -->
     <div id="progress-bar"></div>
 
@@ -1374,10 +1421,6 @@
                     <div class="hero-stat-lbl">Patients</div>
                 </div>
             </div>
-        </div>
-        <div class="hero-scroll-hint" aria-hidden="true">
-            <span>Scroll</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6" /></svg>
         </div>
     </section>
 
@@ -1737,116 +1780,85 @@
         (function () {
             'use strict';
 
+            // ── SPLASH - hide after delay ──
+            var splash = document.getElementById('splash');
+            var loaderBar = document.getElementById('splashLoaderBar');
+            if (splash && loaderBar) {
+                // Start loader animation
+                requestAnimationFrame(function () { loaderBar.style.width = '100%'; });
+                // Hide splash after 2.4s
+                setTimeout(function () {
+                    splash.classList.add('hidden');
+                    // Remove from DOM after transition
+                    setTimeout(function () { splash.style.display = 'none'; }, 1100);
+                }, 2400);
+            }
+
             // ── SCROLL PROGRESS BAR ──
-            const progressBar = document.getElementById('progress-bar');
-            const siteNav = document.getElementById('siteNav');
-            const backToTop = document.getElementById('backToTop');
+            var progressBar = document.getElementById('progress-bar');
+            var siteNav = document.getElementById('siteNav');
+            var backToTop = document.getElementById('backToTop');
 
             function updateScrollProgress() {
-                const scrollY = window.scrollY;
-                const docH = document.documentElement.scrollHeight - window.innerHeight;
-                const pct = docH > 0 ? (scrollY / docH) * 100 : 0;
+                var scrollY = window.scrollY;
+                var docH = document.documentElement.scrollHeight - window.innerHeight;
+                var pct = docH > 0 ? (scrollY / docH) * 100 : 0;
                 if (progressBar) progressBar.style.width = pct + '%';
                 if (siteNav) siteNav.classList.toggle('scrolled', scrollY > 40);
                 if (backToTop) backToTop.classList.toggle('visible', scrollY > 600);
             }
-
             window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
             // ── BACK TO TOP ──
             if (backToTop) {
-                backToTop.addEventListener('click', function () {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
+                backToTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
             }
 
             // ── NAV TOGGLE ──
-            const toggle = document.getElementById('navToggle');
-            const links = document.getElementById('navLinks');
+            var toggle = document.getElementById('navToggle');
+            var links = document.getElementById('navLinks');
             if (toggle && links) {
-                toggle.addEventListener('click', function () {
-                    toggle.classList.toggle('open');
-                    links.classList.toggle('open');
-                });
+                toggle.addEventListener('click', function () { toggle.classList.toggle('open'); links.classList.toggle('open'); });
                 links.querySelectorAll('a').forEach(function (a) {
-                    a.addEventListener('click', function () {
-                        toggle.classList.remove('open');
-                        links.classList.remove('open');
-                    });
+                    a.addEventListener('click', function () { toggle.classList.remove('open'); links.classList.remove('open'); });
                 });
             }
 
             // ── SCROLL REVEAL ──
-            const reveals = document.querySelectorAll('.reveal');
+            var reveals = document.querySelectorAll('.reveal');
             if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
-                const obs = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (e) {
-                        if (e.isIntersecting) {
-                            e.target.classList.add('visible');
-                            obs.unobserve(e.target);
-                        }
-                    });
+                var obs = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
                 }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
                 reveals.forEach(function (r) { obs.observe(r); });
-            } else {
-                reveals.forEach(function (r) { r.classList.add('visible'); });
-            }
+            } else { reveals.forEach(function (r) { r.classList.add('visible'); }); }
 
             // ── COUNTERS (smooth with requestAnimationFrame) ──
             function runCounter(el, delay) {
                 setTimeout(function () {
                     var target = parseFloat(el.getAttribute('data-target'));
                     if (isNaN(target)) return;
-                    var duration = 2200;
-                    var startTime = null;
-
+                    var duration = 2200, startTime = null;
                     function animate(now) {
                         if (!startTime) startTime = now;
-                        var elapsed = now - startTime;
-                        var progress = Math.min(elapsed / duration, 1);
-                        // Ease-out quart
+                        var elapsed = now - startTime, progress = Math.min(elapsed / duration, 1);
                         var eased = 1 - Math.pow(1 - progress, 4);
                         var current = eased * target;
-                        el.textContent = Number.isInteger(target)
-                            ? Math.round(current).toLocaleString()
-                            : current.toFixed(1);
-                        if (progress < 1) {
-                            requestAnimationFrame(animate);
-                        } else {
-                            el.textContent = target.toLocaleString();
-                        }
+                        el.textContent = Number.isInteger(target) ? Math.round(current).toLocaleString() : current.toFixed(1);
+                        if (progress < 1) { requestAnimationFrame(animate); } else { el.textContent = target.toLocaleString(); }
                     }
                     requestAnimationFrame(animate);
                 }, delay || 0);
             }
 
-            // Hero counters - start immediately with stagger
-            document.querySelectorAll('.hero-stat-num[data-target]').forEach(function (el, i) {
-                runCounter(el, 400 + i * 200);
-            });
-
-            // Outcome counters - via IntersectionObserver
+            document.querySelectorAll('.hero-stat-num[data-target]').forEach(function (el, i) { runCounter(el, 800 + i * 200); });
             var outcomeCounters = document.querySelectorAll('.counter[data-target]');
             if ('IntersectionObserver' in window) {
                 var cObs = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (e) {
-                        if (e.isIntersecting) {
-                            runCounter(e.target, 0);
-                            cObs.unobserve(e.target);
-                        }
-                    });
+                    entries.forEach(function (e) { if (e.isIntersecting) { runCounter(e.target, 0); cObs.unobserve(e.target); } });
                 }, { threshold: 0.5 });
                 outcomeCounters.forEach(function (c) { cObs.observe(c); });
-            } else {
-                outcomeCounters.forEach(function (c) { runCounter(c, 0); });
-            }
-
-            // ── REDUCED MOTION ──
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelectorAll('.hero-bg').forEach(function (el) {
-                    el.style.animation = 'none';
-                });
-            }
+            } else { outcomeCounters.forEach(function (c) { runCounter(c, 0); }); }
         })();
     </script>
 </body>
