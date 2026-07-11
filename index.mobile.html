@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Project A.C.T. — Action Changes Things</title>
+    <link rel="icon" type="image/png" href="images/act-logo.png" />
+
+    <!-- Critical CSS inlined for fastest paint -->
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+            overflow-x: hidden;
+            width: 100%;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto
+        }
+
+        :root {
+            --bg: #f0f2f5;
+            --card: #fff;
+            --text: #1a1a2e;
+            --muted: #6b6b8a;
+            --border: rgba(0, 0, 0, .06);
+            --red: #D90429;
+            --shadow: 0 8px 24px rgba(0, 0, 0, .08);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, .12);
+            --radius: 12px;
+            --radius-sm: 10px;
+        }
+
+        /* ── SCROLL PROGRESS BAR ── */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2.5px;
+            width: 0%;
+            background: var(--red);
+            z-index: 9999;
+            transition: width .08s linear;
+            box-shadow: 0 0 10px rgba(217, 4, 41, .4);
+            pointer-events: none
+        }
+
+        /* ── NAVIGATION ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+            padding: 0 16px;
+            background: rgba(255, 255, 255, .96);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow .3s ease
+        }
+
+        .nav.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .06)
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .nav-logo img {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px
+        }
+
+        .nav-logotype {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: -.02em;
+            color: var(--text)
+        }
+
+        .nav-logotype .dot {
+            color: var(--red)
+        }
+
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: background .2s
+        }
+
+        .nav-toggle:active {
+            background: rgba(0, 0, 0, .04)
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: transform .3s cubic-bezier(.2, .8, .2, 1), opacity .2s
+        }
+
+        .nav-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px)
+        }
+
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0
+        }
+
+        .nav-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px)
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 56px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            background: rgba(255, 255, 255, .98);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 16px;
+            gap: 0;
+            transform: translateY(-120%);
+            transition: transform .4s cubic-bezier(.2, .8, .2, 1);
+            border-bottom: 1px solid var(--border);
+            max-height: 70vh;
+            overflow: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .08)
+        }
+
+        .nav-links.open {
+            transform: translateY(0)
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 12px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+            border-radius: 8px;
+            transition: all .2s;
+            position: relative
+        }
+
+        .nav-links a:hover,
+        .nav-links a:active {
+            color: var(--text);
+            background: rgba(0, 0, 0, .03)
+        }
+
+        .nav-links a.active {
+            color: var(--text);
+            background: rgba(217, 4, 41, .06)
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 16px;
+            right: 16px;
+            height: 2px;
+            background: var(--red);
+            border-radius: 2px
+        }
+
+        .nav-cta {
+            display: block;
+            text-align: center;
+            margin-top: 8px;
+            padding: 10px 16px;
+            border: 1.5px solid var(--red);
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--red);
+            transition: all .3s
+        }
+
+        .nav-cta:active {
+            background: var(--red);
+            color: #fff
+        }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 120px 20px 48px;
+            background: #0a0f14 url('images/hero-bg-1.jpg') center/cover no-repeat;
+            isolation: isolate
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10,15,20,.25) 0%, rgba(10,15,20,.55) 60%, rgba(10,15,20,.85) 100%);
+            pointer-events: none;
+            z-index: 1
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(217,4,41,.12), transparent 60%);
+            pointer-events: none;
+            z-index: 2
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 3;
+            max-width: 28rem;
+            margin: 0 auto;
+            width: 100%
+        }
+
+        .hero-tag {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 20px;
+            height: 1.5px;
+            background: var(--red);
+            border-radius: 2px
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: clamp(36px, 9vw, 52px);
+            line-height: .95;
+            color: #fff;
+            margin-bottom: 14px;
+            letter-spacing: -.03em;
+            text-shadow: 0 2px 20px rgba(0,0,0,.3)
+        }
+
+        .hero-title em {
+            font-style: italic;
+            font-weight: 500;
+            color: rgba(255,255,255,.85)
+        }
+
+        .hero-title .dot {
+            color: var(--red)
+        }
+
+        .hero-desc {
+            font-size: 13px;
+            color: rgba(255,255,255,.82);
+            line-height: 1.65;
+            margin-bottom: 24px;
+            text-shadow: 0 1px 8px rgba(0,0,0,.25);
+            max-width: 100%
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .hero-stat {
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 14px 18px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255,255,255,.12);
+            min-width: 90px;
+            text-align: center;
+            flex: 1
+        }
+
+        .hero-stat-num {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 24px;
+            color: #fff;
+            line-height: 1;
+            text-shadow: 0 1px 6px rgba(0,0,0,.2)
+        }
+
+        .hero-stat-lbl {
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.7);
+            margin-top: 4px
+        }
+
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            opacity: .7;
+            animation: heroBounce 2s ease-in-out infinite
+        }
+
+        .hero-scroll-hint span {
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.8)
+        }
+
+        .hero-scroll-hint svg {
+            width: 18px;
+            height: 18px;
+            color: #fff
+        }
+
+        @keyframes heroBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(6px); }
+        }
+
+        /* ── SECTIONS ── */
+        .section {
+            padding: 48px 16px;
+            border-top: 1px solid var(--border)
+        }
+
+        .section-alt {
+            background: #fff
+        }
+
+        .section-header {
+            margin-bottom: 24px
+        }
+
+        .section-eyebrow {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            width: 16px;
+            height: 1.5px;
+            background: var(--red);
+            border-radius: 2px
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: clamp(24px, 6vw, 34px);
+            line-height: 1.15;
+            color: var(--text);
+            letter-spacing: -.01em
+        }
+
+        .section-title em {
+            font-style: italic;
+            font-weight: 500;
+            color: var(--red)
+        }
+
+        .section-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-top: 8px
+        }
+
+        /* ── PHILOSOPHY ── */
+        .philosophy-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-top: 16px;
+            box-shadow: var(--shadow)
+        }
+
+        .philosophy-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(15%) contrast(105%);
+            transition: transform .6s ease
+        }
+
+        .philosophy-img:hover img {
+            transform: scale(1.03)
+        }
+
+        .philosophy-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-top: 16px;
+            box-shadow: var(--shadow);
+            border-left: 3px solid var(--red)
+        }
+
+        .philosophy-card h4 {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 8px
+        }
+
+        .philosophy-card .val {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 8px
+        }
+
+        .philosophy-card p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6
+        }
+
+        /* ── BINS / LEGACY ── */
+        .bins-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 20px
+        }
+
+        .bin-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease
+        }
+
+        .bin-card:active {
+            transform: scale(.98);
+            box-shadow: var(--shadow-lg)
+        }
+
+        .bin-band {
+            height: 4px
+        }
+
+        .bin-black .bin-band {
+            background: linear-gradient(90deg, #444, #666)
+        }
+
+        .bin-green .bin-band {
+            background: linear-gradient(90deg, #16a34a, #22c55e)
+        }
+
+        .bin-blue .bin-band {
+            background: linear-gradient(90deg, #2563eb, #3b82f6)
+        }
+
+        .bin-content {
+            padding: 16px
+        }
+
+        .bin-cat {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            margin-bottom: 4px
+        }
+
+        .bin-black .bin-cat {
+            color: #666
+        }
+
+        .bin-green .bin-cat {
+            color: #16a34a
+        }
+
+        .bin-blue .bin-cat {
+            color: #2563eb
+        }
+
+        .bin-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 8px
+        }
+
+        .bin-desc {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 12px
+        }
+
+        .bin-items {
+            display: flex;
+            flex-direction: column;
+            gap: 6px
+        }
+
+        .bin-item {
+            display: flex;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--muted)
+        }
+
+        .bin-item-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            margin-top: 4px;
+            flex-shrink: 0
+        }
+
+        .bin-black .bin-item-dot {
+            background: #666
+        }
+
+        .bin-green .bin-item-dot {
+            background: #16a34a
+        }
+
+        .bin-blue .bin-item-dot {
+            background: #2563eb
+        }
+
+        /* ── INTERVENTIONS ── */
+        .int-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px
+        }
+
+        .int-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            transition: all .3s ease
+        }
+
+        .int-item.active {
+            border-color: var(--red);
+            box-shadow: 0 0 0 1px rgba(217, 4, 41, .15)
+        }
+
+        .int-head {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px
+        }
+
+        .int-num {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 20px;
+            color: var(--red);
+            flex-shrink: 0;
+            line-height: 1.2;
+            min-width: 28px
+        }
+
+        .int-content h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px
+        }
+
+        .int-content p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.5
+        }
+
+        /* ── PHASE 6 ── */
+        .phase6-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-top: 16px;
+            box-shadow: var(--shadow)
+        }
+
+        .phase6-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease
+        }
+
+        .phase6-img:hover img {
+            transform: scale(1.03)
+        }
+
+        .phase6-kpis {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px
+        }
+
+        .phase6-kpi {
+            background: rgba(255, 255, 255, .85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, .9);
+            border-radius: var(--radius-sm);
+            padding: 14px 18px;
+            flex: 1;
+            min-width: 100px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .04)
+        }
+
+        .phase6-kpi-num {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 24px;
+            color: var(--red);
+            line-height: 1
+        }
+
+        .phase6-kpi-lbl {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 4px
+        }
+
+        .phase6-quote {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.6;
+            margin: 16px 0;
+            padding-left: 16px;
+            border-left: 3px solid var(--red);
+            background: rgba(217, 4, 41, .03);
+            padding: 12px 16px;
+            border-radius: var(--radius-sm)
+        }
+
+        /* ── OUTCOMES ── */
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 20px
+        }
+
+        .outcome-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease
+        }
+
+        .outcome-card:active {
+            transform: scale(.98)
+        }
+
+        .outcome-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform .6s ease
+        }
+
+        .outcome-card:hover img {
+            transform: scale(1.03)
+        }
+
+        .outcome-content {
+            padding: 16px
+        }
+
+        .outcome-tag {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 8px
+        }
+
+        .outcome-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px
+        }
+
+        .outcome-sub {
+            font-size: 11px;
+            color: var(--muted);
+            line-height: 1.5
+        }
+
+        .outcome-stat {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: linear-gradient(135deg, #fafafa, #f5f5f5);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border)
+        }
+
+        .outcome-stat svg {
+            width: 24px;
+            height: 24px;
+            color: var(--red);
+            flex-shrink: 0
+        }
+
+        .outcome-stat-num {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 22px;
+            color: var(--red);
+            line-height: 1
+        }
+
+        .outcome-stat-lbl {
+            font-size: 11px;
+            color: var(--muted)
+        }
+
+        .outcome-quote {
+            padding: 16px;
+            background: linear-gradient(135deg, #fafafa, #f5f5f5);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--red)
+        }
+
+        .outcome-quote q {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.6;
+            display: block
+        }
+
+        .outcome-quote cite {
+            font-size: 10px;
+            color: var(--muted);
+            margin-top: 8px;
+            display: block
+        }
+
+        /* ── ARCHIVE ── */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 16px
+        }
+
+        .archive-item {
+            display: block;
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer
+        }
+
+        .archive-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform .5s ease
+        }
+
+        .archive-item:hover img {
+            transform: scale(1.05)
+        }
+
+        .archive-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, .8));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 16px;
+            color: #fff
+        }
+
+        .archive-num {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            opacity: .8
+        }
+
+        .archive-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 4px
+        }
+
+        .archive-desc {
+            font-size: 11px;
+            opacity: .9;
+            margin-top: 4px;
+            line-height: 1.4
+        }
+
+        .phase5-teaser {
+            margin-top: 24px;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff, #fafafa);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow)
+        }
+
+        .phase5-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 8px
+        }
+
+        .phase5-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 10px
+        }
+
+        .phase5-title em {
+            font-style: italic;
+            font-weight: 500;
+            color: var(--red)
+        }
+
+        .phase5-desc {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 12px
+        }
+
+        .phase5-stats {
+            display: flex;
+            gap: 24px;
+            margin-top: 12px
+        }
+
+        .phase5-stat {
+            text-align: center
+        }
+
+        .phase5-stat-num {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 24px;
+            color: var(--red);
+            line-height: 1
+        }
+
+        .phase5-stat-lbl {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 2px
+        }
+
+        /* ── CLOSING ── */
+        .closing {
+            margin-top: 24px;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+            border-radius: var(--radius);
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .closing::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(217, 4, 41, .08), transparent 50%);
+            pointer-events: none
+        }
+
+        .closing-q {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            opacity: .9;
+            position: relative
+        }
+
+        .closing-sub {
+            font-size: 12px;
+            opacity: .7;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            position: relative
+        }
+
+        .closing-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--red);
+            color: #fff;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .05em;
+            border-radius: 6px;
+            transition: all .3s;
+            position: relative
+        }
+
+        .closing-btn:active {
+            transform: scale(.96);
+            box-shadow: 0 0 20px rgba(217, 4, 41, .3)
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            padding: 48px 16px 24px;
+            background: linear-gradient(180deg, #1a1a2e, #0f0f1e);
+            color: #fff
+        }
+
+        .footer-top {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 32px
+        }
+
+        .footer-left .footer-eyebrow {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            opacity: .6;
+            margin-bottom: 8px
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px
+        }
+
+        .footer-logo img {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px
+        }
+
+        .footer-logo span {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 18px
+        }
+
+        .footer-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: clamp(24px, 6vw, 32px);
+            line-height: 1.1;
+            margin-bottom: 12px
+        }
+
+        .footer-title em {
+            font-style: italic;
+            font-weight: 500;
+            opacity: .8
+        }
+
+        .footer-title .dot {
+            color: var(--red)
+        }
+
+        .footer-mission {
+            font-size: 13px;
+            opacity: .7;
+            line-height: 1.7;
+            max-width: 90%
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .15), transparent);
+            margin: 16px 0
+        }
+
+        .footer-contact {
+            font-size: 12px;
+            opacity: .6;
+            line-height: 1.6
+        }
+
+        .footer-contact a {
+            color: var(--red);
+            text-decoration: underline
+        }
+
+        .footer-headshot {
+            text-align: center
+        }
+
+        .headshot-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, .15);
+            margin-bottom: 12px;
+            transition: border-color .3s
+        }
+
+        .headshot-img:hover {
+            border-color: var(--red)
+        }
+
+        .headshot-quote {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 13px;
+            opacity: .8;
+            margin-bottom: 8px;
+            line-height: 1.5
+        }
+
+        .headshot-name {
+            font-weight: 700;
+            font-size: 14px
+        }
+
+        .headshot-title {
+            font-size: 11px;
+            opacity: .6
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            text-align: center
+        }
+
+        .footer-copy {
+            font-size: 10px;
+            opacity: .5
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px
+        }
+
+        .footer-social a {
+            display: flex;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .08);
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: all .3s
+        }
+
+        .footer-social a:active {
+            background: var(--red);
+            transform: scale(.9)
+        }
+
+        /* ── BACK TO TOP ── */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 16px;
+            z-index: 50;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--red);
+            color: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(217, 4, 41, .3);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all .4s cubic-bezier(.2, .8, .2, 1);
+            pointer-events: none
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all
+        }
+
+        .back-to-top:active {
+            transform: scale(.9)
+        }
+
+        .back-to-top svg {
+            width: 20px;
+            height: 20px
+        }
+
+        /* ── REVEAL ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s cubic-bezier(.2, .8, .2, 1), transform .7s cubic-bezier(.2, .8, .2, 1)
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .reveal-delay-1 {
+            transition-delay: .1s
+        }
+
+        .reveal-delay-2 {
+            transition-delay: .2s
+        }
+
+        .reveal-delay-3 {
+            transition-delay: .3s
+        }
+
+        .reveal-delay-4 {
+            transition-delay: .4s
+        }
+
+        /* ── INLINE LINK ── */
+        .inline-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--red);
+            transition: gap .3s
+        }
+
+        .inline-link:active {
+            gap: 12px
+        }
+
+        /* ── REDUCED MOTION ── */
+        @media (prefers-reduced-motion:reduce) {
+            .reveal {
+                transition: none;
+                opacity: 1;
+                transform: none
+            }
+
+            .hero-bg {
+                animation: none
+            }
+
+            .back-to-top {
+                transition: none
+            }
+
+            .hero-scroll-hint {
+                animation: none
+            }
+
+            html {
+                scroll-behavior: auto
+            }
+
+            .bin-card:active {
+                transform: none
+            }
+
+            .outcome-card:active {
+                transform: none
+            }
+
+            .closing-btn:active {
+                transform: none
+            }
+
+            .footer-social a:active {
+                transform: none
+            }
+        }
+    </style>
+
+    <!-- Fonts - preload only what's needed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" />
+    </noscript>
+</head>
+
+<body>
+    <!-- ── SCROLL PROGRESS BAR ── -->
+    <div id="progress-bar"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="siteNav">
+        <a href="index.html" style="text-decoration:none;color:inherit">
+            <div class="nav-logo">
+                <img src="images/act-logo.png" alt="Project A.C.T." onerror="this.style.display='none'" />
+                <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                        class="dot">.</span></span>
+            </div>
+        </a>
+        <button class="nav-toggle" id="navToggle"
+            aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.mobile.html" class="active">Home</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="infrastructure.html">Infrastructure</a></li>
+            <li><a href="#interventions">Interventions</a></li>
+            <li><a href="#phase6">Phase 06</a></li>
+            <li><a href="#outcomes">Outcomes</a></li>
+            <li><a href="archive.html">Archive</a></li>
+            <li><a href="archive.html" class="nav-cta">Full Archive</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+        <div class="hero-inner">
+            <span class="hero-tag">Project A.C.T. · Kilifi County</span>
+            <h1 id="heroTitle" class="hero-title">Action<br /><em>Changes</em><br />Things<span class="dot">.</span>
+            </h1>
+            <p class="hero-desc">Project A.C.T. is an employee-led CSR initiative dedicated to building a resilient,
+                healthy, and clean Kilifi County. By neutralizing immediate threats to public health and groundwater, we
+                actively fulfill our core mandate: the preservation and protection of human life.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-target="5000">0</div>
+                    <div class="hero-stat-lbl">Trees Planted</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-target="2.35">0</div>
+                    <div class="hero-stat-lbl">Tonnes Waste</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-target="375">0</div>
+                    <div class="hero-stat-lbl">Patients</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6" /></svg>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="section section-alt" id="philosophy" aria-labelledby="philTitle">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Our Core Mandate</span>
+            <h2 id="philTitle" class="section-title">Health Begins<br /><em>Outside the Clinic.</em></h2>
+        </div>
+        <p class="section-desc reveal">Revital Healthcare is dedicated to the preservation of human life through
+            world-class medical manufacturing. True public health is inextricably linked to the ecosystems we inhabit.
+            Environmental degradation is the root cause of countless public health crises.</p>
+        <div class="philosophy-img reveal"><img src="images/philosophy-main.jpg"
+                alt="Kilifi coastline requiring protection" loading="lazy" /></div>
+        <div class="philosophy-card reveal">
+            <h4>The Environmental Equation</h4>
+            <div class="val">Nature <span
+                    style="color:var(--red);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">⇄
+                    Health</span></div>
+            <p>Every piece of plastic removed from our shores and every water source protected from contamination
+                translates directly to a reduction in local disease. By treating the environment, we treat the patient
+                before they ever reach the hospital.</p>
+        </div>
+    </section>
+
+    <!-- LEGACY / INFRASTRUCTURE -->
+    <section class="section" id="legacy" aria-labelledby="legTitle">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Zero-Capital Sustainability</span>
+            <h2 id="legTitle" class="section-title">Built to<br /><em>Outlast Us.</em></h2>
+        </div>
+        <p class="section-desc reveal">A cleanup treats a symptom; infrastructure cures the disease. We upcycled 55
+            heavy-duty metal drums from the Revital factory floor. Welded, sanitized, and wrapped in high-visibility
+            livery by our internal teams, these bins were installed at secure, monitored access points at zero cost to
+            the project budget.</p>
+        <div class="bins-grid">
+            <article class="bin-card bin-black reveal reveal-delay-1">
+                <div class="bin-band"></div>
+                <div class="bin-content">
+                    <div class="bin-cat">General / Residual</div>
+                    <h3 class="bin-title">Non-Recyclable Materials</h3>
+                    <p class="bin-desc">The residual stream. Accepts anything that cannot be cleanly separated — mixed
+                        materials, sanitary waste, contaminated packaging, non-recyclable synthetics. Contents proceed
+                        to licensed municipal incineration.</p>
+                    <div class="bin-items">
+                        <div class="bin-item"><span class="bin-item-dot"></span><span>Non-recyclable packaging &
+                                multilayer</span></div>
+                        <div class="bin-item"><span class="bin-item-dot"></span><span>Sanitary waste &
+                                bio-contaminated</span></div>
+                        <div class="bin-item"><span class="bin-item-dot"></span><span>Incineration disposal
+                                pathway</span></div>
+                    </div>
+                </div>
+            </article>
+            <article class="bin-card bin-green reveal reveal-delay-2">
+                <div class="bin-band"></div>
+                <div class="bin-content">
+                    <div class="bin-cat">Biodegradable</div>
+                    <h3 class="bin-title">Compostable Organics</h3>
+                    <p class="bin-desc">The green stream captures organic material that can re-enter the soil cycle. In
+                        a coastal fishing community, this includes fish scraps, seaweed, food waste, and natural fibre.
+                    </p>
+                    <div class="bin-items">
+                        <div class="bin-item"><span class="bin-item-dot"></span><span>Food waste, fish scraps &
+                                marine</span></div>
+                        <div class="bin-item"><span class="bin-item-dot"></span><span>Seaweed, natural fibre &
+                                plant</span></div>
+                        <div class="bin-item"><span class="bin-item-dot"></span><span>Composting or biogas
+                                pathway</span></div>
+                    </div>
+                </div>
+            </article>
+            <article class="bin-card bin-blue reveal reveal-delay-3">
+                <div class="bin-band"></div>
+                <div class="bin-content">
+                    <div class="bin-cat">Recyclables</div>
+                    <h3 class="bin-title">PET Plastics & Ghost Nets</h3>
+                    <p class="bin-desc">The economic engine of the system. This bin feeds directly into the Trash for
+                        Cash circular loop — every PET bottle, ghost net, and rigid plastic becomes raw revenue for the
+                        community's Beach Management Unit.</p>
+                    <div class="bin-items">
+                        <div class="bin-item"><span class="bin-item-dot"></span><span>PET bottles, rigid plastics &
+                                film</span></div>
+                        <div class="bin-item"><span class="bin-item-dot"></span><span>Ghost fishing nets & marine
+                                cordage</span></div>
+                        <div class="bin-item"><span class="bin-item-dot"></span><span>Sold to regional recyclers —
+                                BMU</span></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <p style="text-align:center;margin-top:16px"><a href="infrastructure.html" class="inline-link">View Full
+                Infrastructure →</a></p>
+    </section>
+
+    <!-- INTERVENTIONS -->
+    <section class="section section-alt" id="interventions" aria-labelledby="intTitle">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Project A.C.T. Phases</span>
+            <h2 id="intTitle" class="section-title">Targeted<br /><em>Interventions.</em></h2>
+        </div>
+        <p class="section-desc reveal">From coastal restoration to clinical care — our operational footprint spans four
+            distinct domains, each designed to address a critical community need.</p>
+        <div class="int-list">
+            <article class="int-item reveal active">
+                <div class="int-head"><span class="int-num">01</span>
+                    <div class="int-content">
+                        <h4>Communal Safety Net</h4>
+                        <p>Strengthened community resilience through targeted social welfare interventions, providing
+                            essential support to vulnerable groups and fostering a culture of shared responsibility.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="int-item reveal reveal-delay-1">
+                <div class="int-head"><span class="int-num">02</span>
+                    <div class="int-content">
+                        <h4>Environmental Action</h4>
+                        <p>Deployed coordinated strike teams to extract marine debris, ghost nets, and plastics from
+                            Kilifi's coastline — restoring ecosystems and installing permanent upcycled infrastructure.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="int-item reveal reveal-delay-2">
+                <div class="int-head"><span class="int-num">03</span>
+                    <div class="int-content">
+                        <h4>Bio‑hazard Intervention</h4>
+                        <p>Rapid-response mobilization to neutralize a severe sanitary waste crisis — extracting 2.35
+                            tonnes of bio-hazard and eliminating disease vectors at their source.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="int-item reveal reveal-delay-3">
+                <div class="int-head"><span class="int-num">04</span>
+                    <div class="int-content">
+                        <h4>Clinical Medical Intervention</h4>
+                        <p>Facilitated a high-volume free eye camp in partnership with Lions International — screening
+                            375 patients, dispensing 91 glasses, and funding 10 life-altering cataract surgeries.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- PHASE 6 -->
+    <section class="section" id="phase6" aria-labelledby="p6Title">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Phase 06 · World Environment Day</span>
+            <h2 id="p6Title" class="section-title">5,000 Trees.<br /><em>20 Bins.</em></h2>
+        </div>
+        <p class="section-desc reveal">On Friday, June 5, 2026, Project A.C.T. participated as a headline corporate
+            partner in the official Kilifi County World Environment Day celebrations, hosted at Pwani University. The
+            event brought together the County Government, NEMA, academia, and the private sector in a massive
+            multi-stakeholder coalition.</p>
+        <div class="phase6-img reveal"><img src="images/phase6-main.jpg" alt="World Environment Day at Pwani University"
+                loading="lazy" /></div>
+        <div class="phase6-quote reveal">"By planting 5,000 trees, we proved our willingness to do the hard, physical
+            work of conservation. By donating 20 Legacy Bins, we proved our commitment to circular, sustainable
+            infrastructure."</div>
+        <p class="section-desc reveal">The Kilifi County Director of Environment publicly commended Project A.C.T. for
+            its sustained, measurable impact — a milestone that cements Revital Healthcare's reputation as a premier
+            corporate sustainability partner.</p>
+        <div class="phase6-kpis">
+            <div class="phase6-kpi reveal reveal-delay-1">
+                <div class="phase6-kpi-num">5,000</div>
+                <div class="phase6-kpi-lbl">Trees Planted</div>
+            </div>
+            <div class="phase6-kpi reveal reveal-delay-2">
+                <div class="phase6-kpi-num">20</div>
+                <div class="phase6-kpi-lbl">Legacy Bins</div>
+            </div>
+            <div class="phase6-kpi reveal reveal-delay-3">
+                <div class="phase6-kpi-num" style="font-size:14px;font-family:inherit">Pwani University</div>
+                <div class="phase6-kpi-lbl">Kilifi County</div>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:16px"><a href="world-environment-day.html" class="inline-link">View Full
+                Phase 06 →</a></p>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="section section-alt" id="outcomes" aria-labelledby="outTitle">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Vipingo Kichinjioni · 26 March 2026</span>
+            <h2 id="outTitle" class="section-title">The Human<br /><em>Equation.</em></h2>
+        </div>
+        <p class="section-desc reveal">Rapid‑response mobilization targeting a severe bio‑hazard crisis. 18 volunteers,
+            4 sectors cleared, and a record‑breaking 2.35‑tonne extraction — all executed with extreme fiscal
+            discipline.</p>
+        <div class="outcomes-grid">
+            <article class="outcome-card reveal">
+                <img src="images/outcomes-hero.jpg" alt="Community impact at Vipingo" loading="lazy" />
+                <div class="outcome-content">
+                    <span class="outcome-tag">Phase 03 · Strike Force</span>
+                    <p class="outcome-text">2.35 tonnes of bio‑hazard extracted from drainage channels and dense brush.
+                    </p>
+                    <p class="outcome-sub">470 kg raw fecal matter neutralized · 7,800 soiled diapers removed · 4
+                        immediate community threats mitigated.</p>
+                </div>
+            </article>
+            <article class="outcome-card outcome-stat reveal reveal-delay-1">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <div>
+                    <div class="outcome-stat-num"><span class="counter" data-target="2.35">0</span>T</div>
+                    <div class="outcome-stat-lbl">Total Bio‑Hazard Extracted</div>
+                </div>
+            </article>
+            <article class="outcome-card outcome-stat reveal reveal-delay-2">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                    <div class="outcome-stat-num"><span class="counter" data-target="470">0</span>kg</div>
+                    <div class="outcome-stat-lbl">Fecal Matter Neutralized</div>
+                </div>
+            </article>
+            <article class="outcome-card outcome-quote reveal reveal-delay-3">
+                <q>Transitioning from general environmental stewardship to targeted, data‑driven public health risk
+                    mitigation. This operation solidified the trust between Revital Healthcare and the Department of
+                    Public Health.</q>
+                <cite>Project A.C.T. Strategic Mandate | Vipingo Intervention Report</cite>
+            </article>
+        </div>
+    </section>
+
+    <!-- ARCHIVE -->
+    <section class="section" id="archive" aria-labelledby="arcTitle">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Project A.C.T. Digital Archive</span>
+            <h2 id="arcTitle" class="section-title">A Movement,<br /><em>Not an Event.</em></h2>
+        </div>
+        <div class="archive-grid">
+            <a href="index.html" class="archive-item reveal reveal-delay-1"><img src="images/gallery-1.jpg"
+                    alt="The Coalition" loading="lazy" />
+                <div class="archive-overlay"><span class="archive-num">Vol. I</span><span class="archive-title">The
+                        Coalition</span><span class="archive-desc">78 active participants from Revital Healthcare, KWS,
+                        and local CBOs united for a singular mission.</span></div>
+            </a>
+            <a href="copacabana.html" class="archive-item reveal reveal-delay-2"><img src="images/gallery-2.jpg"
+                    alt="Strike Teams" loading="lazy" />
+                <div class="archive-overlay"><span class="archive-num">Vol. II</span><span class="archive-title">Strike
+                        Teams</span><span class="archive-desc">Six high-density strike teams cleared 300m of shoreline
+                        in a highly coordinated 4-hour operation.</span></div>
+            </a>
+            <a href="eye-camp.html" class="archive-item reveal reveal-delay-3"><img src="images/gallery-3.jpg"
+                    alt="Eye Camp" loading="lazy" />
+                <div class="archive-overlay"><span class="archive-num">Vol. III</span><span class="archive-title">Eye
+                        Camp</span><span class="archive-desc">375+ patients screened, 91 glasses dispensed, and 10
+                        life-changing cataract surgeries funded at Kikambala.</span></div>
+            </a>
+            <a href="infrastructure.html" class="archive-item reveal reveal-delay-4"><img src="images/gallery-4.jpg"
+                    alt="Legacy Infrastructure" loading="lazy" />
+                <div class="archive-overlay"><span class="archive-num">Vol. IV</span><span class="archive-title">Legacy
+                        Infrastructure</span><span class="archive-desc">15 permanent bins upcycled from the factory
+                        floor were installed to outlast the operation.</span></div>
+            </a>
+        </div>
+        <div class="phase5-teaser reveal">
+            <div class="phase5-label">— Phase 05 · Eye Care Camp · Kikambala</div>
+            <h3 class="phase5-title">Free Sight.<br /><em>Permanent Vision.</em></h3>
+            <p class="phase5-desc">Project A.C.T. Phase 05 delivered a free eye care camp at Kikambala, partnering with
+                licensed optometrists to screen, diagnose, and treat community members with zero cost to participants.
+                Hundreds received spectacles, early-stage cataract intervention referrals, and preventative care
+                guidance in a single weekend operation.</p>
+            <a href="eye-camp.html" class="inline-link">View Phase 05 →</a>
+            <div class="phase5-stats">
+                <div class="phase5-stat">
+                    <div class="phase5-stat-num">375+</div>
+                    <div class="phase5-stat-lbl">Patients Seen</div>
+                </div>
+                <div class="phase5-stat">
+                    <div class="phase5-stat-num">91</div>
+                    <div class="phase5-stat-lbl">Glasses Dispensed</div>
+                </div>
+                <div class="phase5-stat">
+                    <div class="phase5-stat-num">10</div>
+                    <div class="phase5-stat-lbl">Surgeries Funded</div>
+                </div>
+            </div>
+        </div>
+        <div class="closing reveal">
+            <p class="closing-q">"By breaking bread with the residents and the KWS, Revital built a reservoir of
+                goodwill that transcends standard corporate PR."</p>
+            <p class="closing-sub">Phase 3 awaits. With 100+ volunteers, a full kilometre of coastline could be cleared
+                in a single operation. The benchmark has been set — and Project A.C.T. has every intention of surpassing
+                it.</p>
+            <a href="vipingo.html" class="closing-btn">View Phase 03 — Vipingo →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="footer-left">
+                <div class="footer-eyebrow">Project A.C.T. — Digital Archive</div>
+                <div class="footer-logo"><img src="images/act-logo.png" alt=""
+                        onerror="this.style.display='none'" /><span>A.C.T.</span></div>
+                <h1 class="footer-title">Action<br /><em>Changes</em><br />Things<span class="dot">.</span></h1>
+                <p class="footer-mission">Project A.C.T. is an employee-led Corporate Social Responsibility initiative.
+                    The interventions documented herein demonstrate our unwavering commitment to environmental ROI —
+                    proving that precision budgeting and grassroots connection can actively preserve and protect human
+                    life.</p>
+                <div class="footer-divider"></div>
+                <p class="footer-contact">Revital Healthcare (EPZ) Ltd.<br />Kilifi County, Kenya · <a
+                        href="https://revitalhcare.com/" target="_blank">www.revitalhealthcare.com</a></p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-headshot">
+                    <img src="images/director-headshot.jpg" alt="Roneek Vora – Head, Project A.C.T."
+                        class="headshot-img" onerror="this.style.display='none'" />
+                    <p class="headshot-quote">"We don't just clean beaches — we build systems that keep them clean."</p>
+                    <p class="headshot-name">Roneek Vora</p>
+                    <p class="headshot-title">Head, Project A.C.T.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">© 2025-2026 Revital Healthcare (EPZ) Ltd. · Project <span>A.C.T.</span> · All Rights
+                Reserved</p>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true"
+                    target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg></a>
+                <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" aria-label="Instagram"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg></a>
+                <a href="https://revitalhcare.com/" target="_blank" aria-label="Website"><svg viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                    </svg></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <!-- MINIMAL JS - INLINED FOR SPEED -->
+    <script>
+        (function () {
+            'use strict';
+
+            // ── SCROLL PROGRESS BAR ──
+            const progressBar = document.getElementById('progress-bar');
+            const siteNav = document.getElementById('siteNav');
+            const backToTop = document.getElementById('backToTop');
+
+            function updateScrollProgress() {
+                const scrollY = window.scrollY;
+                const docH = document.documentElement.scrollHeight - window.innerHeight;
+                const pct = docH > 0 ? (scrollY / docH) * 100 : 0;
+                if (progressBar) progressBar.style.width = pct + '%';
+                if (siteNav) siteNav.classList.toggle('scrolled', scrollY > 40);
+                if (backToTop) backToTop.classList.toggle('visible', scrollY > 600);
+            }
+
+            window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+            // ── BACK TO TOP ──
+            if (backToTop) {
+                backToTop.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // ── NAV TOGGLE ──
+            const toggle = document.getElementById('navToggle');
+            const links = document.getElementById('navLinks');
+            if (toggle && links) {
+                toggle.addEventListener('click', function () {
+                    toggle.classList.toggle('open');
+                    links.classList.toggle('open');
+                });
+                links.querySelectorAll('a').forEach(function (a) {
+                    a.addEventListener('click', function () {
+                        toggle.classList.remove('open');
+                        links.classList.remove('open');
+                    });
+                });
+            }
+
+            // ── SCROLL REVEAL ──
+            const reveals = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+                const obs = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) {
+                            e.target.classList.add('visible');
+                            obs.unobserve(e.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+                reveals.forEach(function (r) { obs.observe(r); });
+            } else {
+                reveals.forEach(function (r) { r.classList.add('visible'); });
+            }
+
+            // ── COUNTERS (smooth with requestAnimationFrame) ──
+            function runCounter(el, delay) {
+                setTimeout(function () {
+                    var target = parseFloat(el.getAttribute('data-target'));
+                    if (isNaN(target)) return;
+                    var duration = 2200;
+                    var startTime = null;
+
+                    function animate(now) {
+                        if (!startTime) startTime = now;
+                        var elapsed = now - startTime;
+                        var progress = Math.min(elapsed / duration, 1);
+                        // Ease-out quart
+                        var eased = 1 - Math.pow(1 - progress, 4);
+                        var current = eased * target;
+                        el.textContent = Number.isInteger(target)
+                            ? Math.round(current).toLocaleString()
+                            : current.toFixed(1);
+                        if (progress < 1) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            el.textContent = target.toLocaleString();
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }, delay || 0);
+            }
+
+            // Hero counters - start immediately with stagger
+            document.querySelectorAll('.hero-stat-num[data-target]').forEach(function (el, i) {
+                runCounter(el, 400 + i * 200);
+            });
+
+            // Outcome counters - via IntersectionObserver
+            var outcomeCounters = document.querySelectorAll('.counter[data-target]');
+            if ('IntersectionObserver' in window) {
+                var cObs = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) {
+                            runCounter(e.target, 0);
+                            cObs.unobserve(e.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                outcomeCounters.forEach(function (c) { cObs.observe(c); });
+            } else {
+                outcomeCounters.forEach(function (c) { runCounter(c, 0); });
+            }
+
+            // ── REDUCED MOTION ──
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelectorAll('.hero-bg').forEach(function (el) {
+                    el.style.animation = 'none';
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
