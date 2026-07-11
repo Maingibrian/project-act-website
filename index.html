@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>Project A.C.T. — Action Changes Things</title>
     <link rel="icon" type="image/png" href="images/act-logo.png" />
+    <script>
+        // Redirect mobile users to the mobile-optimized version
+        if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|webOS/i.test(navigator.userAgent) && !window.location.href.includes('index.mobile.html')) {
+            window.location.replace('index.mobile.html');
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style"
