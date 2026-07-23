@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>Project A.C.T. — Action Changes Things</title>
     <link rel="icon" type="image/png" href="images/act-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- ═══ CRITICAL CSS (above‑the‑fold, inlined) ═══ -->
     <style>
         *,
         *::before,
@@ -68,15 +71,15 @@
             align-items: center;
             justify-content: center;
             gap: 16px;
-            transition: opacity 1s ease, visibility 1s ease;
+            transition: opacity .6s ease, visibility .6s ease;
             opacity: 1;
-            visibility: visible;
+            visibility: visible
         }
 
         #splash.hidden {
             opacity: 0;
             visibility: hidden;
-            pointer-events: none;
+            pointer-events: none
         }
 
         .splash-logo {
@@ -84,19 +87,19 @@
             height: 72px;
             border-radius: 16px;
             object-fit: contain;
-            animation: splashPulse 1.4s ease-in-out infinite alternate;
+            animation: splashPulse 1.4s ease-in-out infinite alternate
         }
 
         .splash-logotype {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: Georgia, serif;
             font-weight: 900;
             font-size: 28px;
             letter-spacing: -.03em;
-            color: #fff;
+            color: #fff
         }
 
         .splash-logotype .dot {
-            color: var(--red);
+            color: var(--red)
         }
 
         .splash-loader {
@@ -105,7 +108,7 @@
             background: rgba(255, 255, 255, .1);
             border-radius: 2px;
             overflow: hidden;
-            margin-top: 8px;
+            margin-top: 8px
         }
 
         .splash-loader-bar {
@@ -113,18 +116,18 @@
             width: 0%;
             background: var(--red);
             border-radius: 2px;
-            transition: width 2.2s ease;
+            transition: width 1.2s ease
         }
 
         @keyframes splashPulse {
             0% {
                 transform: scale(1);
-                opacity: .85;
+                opacity: .85
             }
 
             100% {
                 transform: scale(1.05);
-                opacity: 1;
+                opacity: 1
             }
         }
 
@@ -157,13 +160,12 @@
             background: rgba(10, 15, 20, .65);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(255, 255, 255, .06);
-            transition: background .3s ease, box-shadow .3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, .06)
         }
 
         .nav.scrolled {
             background: rgba(10, 15, 20, .92);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, .3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .3)
         }
 
         .nav-logo {
@@ -179,7 +181,7 @@
         }
 
         .nav-logotype {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: Georgia, serif;
             font-weight: 900;
             font-size: 16px;
             letter-spacing: -.02em;
@@ -202,12 +204,7 @@
             min-height: 44px;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
-            transition: background .2s;
-        }
-
-        .nav-toggle:active {
-            background: rgba(255, 255, 255, .08)
+            border-radius: 8px
         }
 
         .nav-toggle span {
@@ -247,7 +244,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, .06);
             max-height: 70vh;
             overflow: auto;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .3)
         }
 
         .nav-links.open {
@@ -260,12 +257,9 @@
             font-size: 13px;
             font-weight: 600;
             color: rgba(255, 255, 255, .6);
-            border-radius: 8px;
-            transition: all .2s;
-            position: relative
+            border-radius: 8px
         }
 
-        .nav-links a:hover,
         .nav-links a:active {
             color: #fff;
             background: rgba(255, 255, 255, .06)
@@ -297,7 +291,7 @@
             font-size: 12px;
             font-weight: 700;
             color: var(--red);
-            transition: all .3s
+            -webkit-tap-highlight-color: transparent
         }
 
         .nav-cta:active {
@@ -313,26 +307,37 @@
             flex-direction: column;
             justify-content: flex-end;
             padding: 120px 20px 40px;
-            background: var(--hero-dark) url('images/hero-bg-1.jpg') center/cover no-repeat;
-            isolation: isolate;
+            background: var(--hero-dark);
+            isolation: isolate
         }
 
-        .hero::before {
-            content: '';
+        .hero-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(10, 15, 20, .25) 0%, rgba(10, 15, 20, .55) 60%, rgba(10, 15, 20, .85) 100%);
-            pointer-events: none;
-            z-index: 1;
+            z-index: 0
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
         }
 
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
+            background: linear-gradient(180deg, rgba(10, 15, 20, .25) 0%, rgba(10, 15, 20, .55) 60%, rgba(10, 15, 20, .85) 100%);
+            pointer-events: none;
+            z-index: 1
+        }
+
+        .hero-flare {
+            position: absolute;
+            inset: 0;
             background: radial-gradient(ellipse at 50% 0%, rgba(217, 4, 41, .12), transparent 60%);
             pointer-events: none;
-            z-index: 2;
+            z-index: 2
         }
 
         .hero-inner {
@@ -341,6 +346,15 @@
             max-width: 28rem;
             margin: 0 auto;
             width: 100%
+        }
+
+        .hero-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: contain;
+            margin-bottom: 12px;
+            display: block
         }
 
         .hero-tag {
@@ -352,7 +366,7 @@
             margin-bottom: 10px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 8px
         }
 
         .hero-tag::before {
@@ -364,14 +378,14 @@
         }
 
         .hero-title {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: Georgia, serif;
             font-weight: 900;
             font-size: clamp(36px, 9vw, 52px);
             line-height: .95;
             color: #fff;
             margin-bottom: 14px;
             letter-spacing: -.03em;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, .3);
+            text-shadow: 0 2px 20px rgba(0, 0, 0, .3)
         }
 
         .hero-title em {
@@ -390,7 +404,7 @@
             line-height: 1.65;
             margin-bottom: 24px;
             max-width: 100%;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, .25);
+            text-shadow: 0 1px 8px rgba(0, 0, 0, .25)
         }
 
         .hero-stats {
@@ -408,11 +422,11 @@
             border: 1px solid rgba(255, 255, 255, .12);
             min-width: 90px;
             text-align: center;
-            flex: 1;
+            flex: 1
         }
 
         .hero-stat-num {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: Georgia, serif;
             font-weight: 900;
             font-size: 24px;
             color: #fff;
@@ -429,7 +443,7 @@
             margin-top: 4px
         }
 
-        /* ── SECTIONS ── */
+        /* ── SECTIONS (core layout only) ── */
         .section {
             padding: 48px 16px;
             border-top: 1px solid var(--border)
@@ -464,7 +478,7 @@
         }
 
         .section-title {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: Georgia, serif;
             font-weight: 900;
             font-size: clamp(24px, 6vw, 34px);
             line-height: 1.15;
@@ -485,865 +499,25 @@
             margin-top: 8px
         }
 
-        /* ── PHILOSOPHY ── */
-        .philosophy-img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            border-radius: var(--radius);
-            overflow: hidden;
-            margin-top: 16px;
-            box-shadow: var(--shadow)
-        }
-
-        .philosophy-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(15%) contrast(105%);
-            transition: transform .6s ease
-        }
-
-        .philosophy-img:hover img {
-            transform: scale(1.03)
-        }
-
-        .philosophy-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 20px;
-            margin-top: 16px;
-            box-shadow: var(--shadow);
-            border-left: 3px solid var(--red)
-        }
-
-        .philosophy-card h4 {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--red);
-            margin-bottom: 8px
-        }
-
-        .philosophy-card .val {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--text);
-            margin-bottom: 8px
-        }
-
-        .philosophy-card p {
-            font-size: 12px;
-            color: var(--muted);
-            line-height: 1.6
-        }
-
-        /* ── BINS / LEGACY ── */
-        .bins-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            margin-top: 20px
-        }
-
-        .bin-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            transition: transform .3s ease, box-shadow .3s ease
-        }
-
-        .bin-card:active {
-            transform: scale(.98);
-            box-shadow: var(--shadow-lg)
-        }
-
-        .bin-band {
-            height: 4px
-        }
-
-        .bin-black .bin-band {
-            background: linear-gradient(90deg, #444, #666)
-        }
-
-        .bin-green .bin-band {
-            background: linear-gradient(90deg, #16a34a, #22c55e)
-        }
-
-        .bin-blue .bin-band {
-            background: linear-gradient(90deg, #2563eb, #3b82f6)
-        }
-
-        .bin-content {
-            padding: 16px
-        }
-
-        .bin-cat {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: .15em;
-            text-transform: uppercase;
-            margin-bottom: 4px
-        }
-
-        .bin-black .bin-cat {
-            color: #666
-        }
-
-        .bin-green .bin-cat {
-            color: #16a34a
-        }
-
-        .bin-blue .bin-cat {
-            color: #2563eb
-        }
-
-        .bin-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            font-size: 16px;
-            color: var(--text);
-            margin-bottom: 8px
-        }
-
-        .bin-desc {
-            font-size: 12px;
-            color: var(--muted);
-            line-height: 1.6;
-            margin-bottom: 12px
-        }
-
-        .bin-items {
-            display: flex;
-            flex-direction: column;
-            gap: 6px
-        }
-
-        .bin-item {
-            display: flex;
-            gap: 8px;
-            font-size: 11px;
-            color: var(--muted)
-        }
-
-        .bin-item-dot {
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            margin-top: 4px;
-            flex-shrink: 0
-        }
-
-        .bin-black .bin-item-dot {
-            background: #666
-        }
-
-        .bin-green .bin-item-dot {
-            background: #16a34a
-        }
-
-        .bin-blue .bin-item-dot {
-            background: #2563eb
-        }
-
-        /* ── INTERVENTIONS ── */
-        .int-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 16px
-        }
-
-        .int-item {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 16px;
-            transition: all .3s ease
-        }
-
-        .int-item.active {
-            border-color: var(--red);
-            box-shadow: 0 0 0 1px rgba(217, 4, 41, .15)
-        }
-
-        .int-head {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px
-        }
-
-        .int-num {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 900;
-            font-size: 20px;
-            color: var(--red);
-            flex-shrink: 0;
-            line-height: 1.2;
-            min-width: 28px
-        }
-
-        .int-content h4 {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 4px
-        }
-
-        .int-content p {
-            font-size: 12px;
-            color: var(--muted);
-            line-height: 1.5
-        }
-
-        /* ── PHASE 6 ── */
-        .phase6-img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            border-radius: var(--radius);
-            overflow: hidden;
-            margin-top: 16px;
-            box-shadow: var(--shadow)
-        }
-
-        .phase6-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .6s ease
-        }
-
-        .phase6-img:hover img {
-            transform: scale(1.03)
-        }
-
-        .phase6-kpis {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 20px
-        }
-
-        .phase6-kpi {
-            background: rgba(255, 255, 255, .85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, .9);
-            border-radius: var(--radius-sm);
-            padding: 14px 18px;
-            flex: 1;
-            min-width: 100px;
-            text-align: center;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, .04)
-        }
-
-        .phase6-kpi-num {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 900;
-            font-size: 24px;
-            color: var(--red);
-            line-height: 1
-        }
-
-        .phase6-kpi-lbl {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-top: 4px
-        }
-
-        .phase6-quote {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-style: italic;
-            font-size: 14px;
-            color: var(--text);
-            line-height: 1.6;
-            margin: 16px 0;
-            border-left: 3px solid var(--red);
-            background: rgba(217, 4, 41, .03);
-            padding: 12px 16px;
-            border-radius: var(--radius-sm)
-        }
-
-        /* ── OUTCOMES ── */
-        .outcomes-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            margin-top: 20px
-        }
-
-        .outcome-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            transition: transform .3s ease, box-shadow .3s ease
-        }
-
-        .outcome-card:active {
-            transform: scale(.98)
-        }
-
-        .outcome-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform .6s ease
-        }
-
-        .outcome-card:hover img {
-            transform: scale(1.03)
-        }
-
-        .outcome-content {
-            padding: 16px
-        }
-
-        .outcome-tag {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--red);
-            margin-bottom: 8px
-        }
-
-        .outcome-text {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 6px
-        }
-
-        .outcome-sub {
-            font-size: 11px;
-            color: var(--muted);
-            line-height: 1.5
-        }
-
-        .outcome-stat {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px;
-            background: linear-gradient(135deg, #fafafa, #f5f5f5);
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border)
-        }
-
-        .outcome-stat svg {
-            width: 24px;
-            height: 24px;
-            color: var(--red);
-            flex-shrink: 0
-        }
-
-        .outcome-stat-num {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 900;
-            font-size: 22px;
-            color: var(--red);
-            line-height: 1
-        }
-
-        .outcome-stat-lbl {
-            font-size: 11px;
-            color: var(--muted)
-        }
-
-        .outcome-quote {
-            padding: 16px;
-            background: linear-gradient(135deg, #fafafa, #f5f5f5);
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--red)
-        }
-
-        .outcome-quote q {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-style: italic;
-            font-size: 13px;
-            color: var(--text);
-            line-height: 1.6;
-            display: block
-        }
-
-        .outcome-quote cite {
-            font-size: 10px;
-            color: var(--muted);
-            margin-top: 8px;
-            display: block
-        }
-
-        /* ── ARCHIVE ── */
-        .archive-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-top: 16px
-        }
-
-        .archive-item {
-            display: block;
-            border-radius: var(--radius);
-            overflow: hidden;
-            position: relative;
-            cursor: pointer
-        }
-
-        .archive-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            transition: transform .5s ease
-        }
-
-        .archive-item:hover img {
-            transform: scale(1.05)
-        }
-
-        .archive-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, .8));
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 16px;
-            color: #fff
-        }
-
-        .archive-num {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            opacity: .8
-        }
-
-        .archive-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            font-size: 18px;
-            margin-top: 4px
-        }
-
-        .archive-desc {
-            font-size: 11px;
-            opacity: .9;
-            margin-top: 4px;
-            line-height: 1.4
-        }
-
-        .phase5-teaser {
-            margin-top: 24px;
-            padding: 20px;
-            background: linear-gradient(135deg, #fff, #fafafa);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow)
-        }
-
-        .phase5-label {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 8px
-        }
-
-        .phase5-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 900;
-            font-size: 20px;
-            line-height: 1.2;
-            color: var(--text);
-            margin-bottom: 10px
-        }
-
-        .phase5-title em {
-            font-style: italic;
-            font-weight: 500;
-            color: var(--red)
-        }
-
-        .phase5-desc {
-            font-size: 12px;
-            color: var(--muted);
-            line-height: 1.6;
-            margin-bottom: 12px
-        }
-
-        .phase5-stats {
-            display: flex;
-            gap: 24px;
-            margin-top: 12px
-        }
-
-        .phase5-stat {
-            text-align: center
-        }
-
-        .phase5-stat-num {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 900;
-            font-size: 24px;
-            color: var(--red);
-            line-height: 1
-        }
-
-        .phase5-stat-lbl {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-top: 2px
-        }
-
-        /* ── CLOSING ── */
-        .closing {
-            margin-top: 24px;
-            padding: 24px 20px;
-            background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
-            border-radius: var(--radius);
-            color: #fff;
-            text-align: center;
-            position: relative;
-            overflow: hidden
-        }
-
-        .closing::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 20%, rgba(217, 4, 41, .08), transparent 50%);
-            pointer-events: none
-        }
-
-        .closing-q {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-style: italic;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 12px;
-            opacity: .9;
-            position: relative
-        }
-
-        .closing-sub {
-            font-size: 12px;
-            opacity: .7;
-            margin-bottom: 16px;
-            line-height: 1.5;
-            position: relative
-        }
-
-        .closing-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: var(--red);
-            color: #fff;
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: .05em;
-            border-radius: 6px;
-            transition: all .3s;
-            position: relative
-        }
-
-        .closing-btn:active {
-            transform: scale(.96);
-            box-shadow: 0 0 20px rgba(217, 4, 41, .3)
-        }
-
-        /* ── FOOTER ── */
-        .footer {
-            padding: 48px 16px 24px;
-            background: linear-gradient(180deg, #1a1a2e, #0f0f1e);
-            color: #fff
-        }
-
-        .footer-top {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            margin-bottom: 32px
-        }
-
-        .footer-left .footer-eyebrow {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: .15em;
-            text-transform: uppercase;
-            opacity: .6;
-            margin-bottom: 8px
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px
-        }
-
-        .footer-logo img {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px
-        }
-
-        .footer-logo span {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 900;
-            font-size: 18px
-        }
-
-        .footer-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 900;
-            font-size: clamp(24px, 6vw, 32px);
-            line-height: 1.1;
-            margin-bottom: 12px
-        }
-
-        .footer-title em {
-            font-style: italic;
-            font-weight: 500;
-            opacity: .8
-        }
-
-        .footer-title .dot {
-            color: var(--red)
-        }
-
-        .footer-mission {
-            font-size: 13px;
-            opacity: .7;
-            line-height: 1.7;
-            max-width: 90%
-        }
-
-        .footer-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .15), transparent);
-            margin: 16px 0
-        }
-
-        .footer-contact {
-            font-size: 12px;
-            opacity: .6;
-            line-height: 1.6
-        }
-
-        .footer-contact a {
-            color: var(--red);
-            text-decoration: underline
-        }
-
-        .footer-headshot {
-            text-align: center
-        }
-
-        .headshot-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, .15);
-            margin-bottom: 12px
-        }
-
-        .headshot-quote {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-style: italic;
-            font-size: 13px;
-            opacity: .8;
-            margin-bottom: 8px;
-            line-height: 1.5
-        }
-
-        .headshot-name {
-            font-weight: 700;
-            font-size: 14px
-        }
-
-        .headshot-title {
-            font-size: 11px;
-            opacity: .6
-        }
-
-        .footer-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, .08);
-            text-align: center
-        }
-
-        .footer-copy {
-            font-size: 10px;
-            opacity: .5
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 16px
-        }
-
-        .footer-social a {
-            display: flex;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, .08);
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            transition: all .3s
-        }
-
-        .footer-social a:active {
-            background: var(--red);
-            transform: scale(.9)
-        }
-
-        /* ── BACK TO TOP ── */
-        .back-to-top {
-            position: fixed;
-            bottom: 24px;
-            right: 16px;
-            z-index: 50;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--red);
-            color: #fff;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(217, 4, 41, .3);
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all .4s cubic-bezier(.2, .8, .2, 1);
-            pointer-events: none
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: all
-        }
-
-        .back-to-top:active {
-            transform: scale(.9)
-        }
-
-        .back-to-top svg {
-            width: 20px;
-            height: 20px
-        }
-
-        /* ── REVEAL ANIMATIONS ── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity .7s cubic-bezier(.2, .8, .2, 1), transform .7s cubic-bezier(.2, .8, .2, 1)
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0)
-        }
-
-        .reveal-delay-1 {
-            transition-delay: .1s
-        }
-
-        .reveal-delay-2 {
-            transition-delay: .2s
-        }
-
-        .reveal-delay-3 {
-            transition-delay: .3s
-        }
-
-        .reveal-delay-4 {
-            transition-delay: .4s
-        }
-
-        /* ── INLINE LINK ── */
-        .inline-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--red);
-            transition: gap .3s
-        }
-
-        .inline-link:active {
-            gap: 12px
-        }
-
         /* ── REDUCED MOTION ── */
         @media (prefers-reduced-motion:reduce) {
-            .reveal {
-                transition: none;
-                opacity: 1;
-                transform: none
-            }
-
             #splash {
-                transition: none
-            }
-
-            .back-to-top {
                 transition: none
             }
 
             html {
                 scroll-behavior: auto
             }
-
-            .bin-card:active {
-                transform: none
-            }
-
-            .outcome-card:active {
-                transform: none
-            }
-
-            .closing-btn:active {
-                transform: none
-            }
-
-            .footer-social a:active {
-                transform: none
-            }
         }
     </style>
 
-    <!-- Fonts - preload only what's needed -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- ═══ DEFERRED STYLES (loaded async, non-blocking) ═══ -->
+    <link rel="preload" href="css/index.mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" href="css/index.mobile.css" />
+    </noscript>
+
+    <!-- ═══ FONTS – preload Playfair Display only (used sparingly) ═══ -->
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap"
         onload="this.onload=null;this.rel='stylesheet'" />
@@ -1353,18 +527,23 @@
     </noscript>
 
     <script>
-        // Preload logo and hide splash once everything is ready
         (function () {
-            var logoImg = new Image();
-            logoImg.src = 'images/act-logo.png';
+            // Preload logo image
+            var img = new Image();
+            img.src = 'images/act-logo.png';
+            // Faster splash: hide after 1.4s instead of 2.4s
+            setTimeout(function () {
+                var s = document.getElementById('splash');
+                if (s) s.classList.add('hidden');
+            }, 1400);
         })();
     </script>
 </head>
 
 <body>
-    <!-- ═══ SPLASH / LOGO PRELOAD ═══ -->
+    <!-- ═══ SPLASH ═══ -->
     <div id="splash">
-        <img src="images/act-logo.png" alt="Project A.C.T." class="splash-logo" />
+        <img src="images/act-logo.png" alt="Project A.C.T." class="splash-logo" width="72" height="72" />
         <div class="splash-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span class="dot">.</span>
         </div>
         <div class="splash-loader">
@@ -1379,7 +558,7 @@
     <nav class="nav" id="siteNav">
         <a href="index.html" style="text-decoration:none;color:inherit">
             <div class="nav-logo">
-                <img src="images/act-logo.png" alt="Project A.C.T." onerror="this.style.display='none'" />
+                <img src="images/act-logo.png" alt="Project A.C.T." width="28" height="28" />
                 <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
                         class="dot">.</span></span>
             </div>
@@ -1400,7 +579,13 @@
 
     <!-- HERO -->
     <section class="hero" id="hero" aria-labelledby="heroTitle">
+        <picture class="hero-bg">
+            <source srcset="Images/hero-bg-mobile.webp" type="image/webp" />
+            <img src="Images/hero-bg-mobile.jpg" alt="" width="640" height="1140" fetchpriority="high" />
+        </picture>
+        <div class="hero-flare"></div>
         <div class="hero-inner">
+            <img src="Images/act-logo.png" alt="Project A.C.T." class="hero-logo" width="40" height="40" />
             <span class="hero-tag">Project A.C.T. · Kilifi County</span>
             <h1 id="heroTitle" class="hero-title">Action<br /><em>Changes</em><br />Things<span class="dot">.</span>
             </h1>
@@ -1433,8 +618,13 @@
         <p class="section-desc reveal">Revital Healthcare is dedicated to the preservation of human life through
             world-class medical manufacturing. True public health is inextricably linked to the ecosystems we inhabit.
             Environmental degradation is the root cause of countless public health crises.</p>
-        <div class="philosophy-img reveal"><img src="images/philosophy-main.jpg"
-                alt="Kilifi coastline requiring protection" loading="lazy" /></div>
+        <div class="philosophy-img reveal">
+            <picture>
+                <source srcset="images/philosophy-main.webp" type="image/webp" />
+                <img src="images/philosophy-main.jpg" alt="Kilifi coastline requiring protection" loading="lazy"
+                    width="640" height="480" />
+            </picture>
+        </div>
         <div class="philosophy-card reveal">
             <h4>The Environmental Equation</h4>
             <div class="val">Nature <span
@@ -1575,8 +765,13 @@
             partner in the official Kilifi County World Environment Day celebrations, hosted at Pwani University. The
             event brought together the County Government, NEMA, academia, and the private sector in a massive
             multi-stakeholder coalition.</p>
-        <div class="phase6-img reveal"><img src="images/phase6-main.jpg" alt="World Environment Day at Pwani University"
-                loading="lazy" /></div>
+        <div class="phase6-img reveal">
+            <picture>
+                <source srcset="images/phase6-main.webp" type="image/webp" />
+                <img src="images/phase6-main.jpg" alt="World Environment Day at Pwani University" loading="lazy"
+                    width="640" height="480" />
+            </picture>
+        </div>
         <div class="phase6-quote reveal">"By planting 5,000 trees, we proved our willingness to do the hard, physical
             work of conservation. By donating 20 Legacy Bins, we proved our commitment to circular, sustainable
             infrastructure."</div>
@@ -1612,7 +807,11 @@
             discipline.</p>
         <div class="outcomes-grid">
             <article class="outcome-card reveal">
-                <img src="images/outcomes-hero.jpg" alt="Community impact at Vipingo" loading="lazy" />
+                <picture>
+                    <source srcset="images/outcomes-hero.webp" type="image/webp" />
+                    <img src="images/outcomes-hero.jpg" alt="Community impact at Vipingo" loading="lazy" width="640"
+                        height="360" />
+                </picture>
                 <div class="outcome-content">
                     <span class="outcome-tag">Phase 03 · Strike Force</span>
                     <p class="outcome-text">2.35 tonnes of bio‑hazard extracted from drainage channels and dense brush.
@@ -1622,7 +821,7 @@
                 </div>
             </article>
             <article class="outcome-card outcome-stat reveal reveal-delay-1">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
@@ -1632,7 +831,7 @@
                 </div>
             </article>
             <article class="outcome-card outcome-stat reveal reveal-delay-2">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -1657,26 +856,39 @@
             <h2 id="arcTitle" class="section-title">A Movement,<br /><em>Not an Event.</em></h2>
         </div>
         <div class="archive-grid">
-            <a href="index.html" class="archive-item reveal reveal-delay-1"><img src="images/gallery-1.jpg"
-                    alt="The Coalition" loading="lazy" />
+            <a href="index.html" class="archive-item reveal reveal-delay-1">
+                <picture>
+                    <source srcset="images/gallery-1.webp" type="image/webp" />
+                    <img src="images/gallery-1.jpg" alt="The Coalition" loading="lazy" width="640" height="360" />
+                </picture>
                 <div class="archive-overlay"><span class="archive-num">Vol. I</span><span class="archive-title">The
                         Coalition</span><span class="archive-desc">78 active participants from Revital Healthcare, KWS,
                         and local CBOs united for a singular mission.</span></div>
             </a>
-            <a href="copacabana.html" class="archive-item reveal reveal-delay-2"><img src="images/gallery-2.jpg"
-                    alt="Strike Teams" loading="lazy" />
+            <a href="copacabana.html" class="archive-item reveal reveal-delay-2">
+                <picture>
+                    <source srcset="images/gallery-2.webp" type="image/webp" />
+                    <img src="images/gallery-2.jpg" alt="Strike Teams" loading="lazy" width="640" height="360" />
+                </picture>
                 <div class="archive-overlay"><span class="archive-num">Vol. II</span><span class="archive-title">Strike
                         Teams</span><span class="archive-desc">Six high-density strike teams cleared 300m of shoreline
                         in a highly coordinated 4-hour operation.</span></div>
             </a>
-            <a href="eye-camp.html" class="archive-item reveal reveal-delay-3"><img src="images/gallery-3.jpg"
-                    alt="Eye Camp" loading="lazy" />
+            <a href="eye-camp.html" class="archive-item reveal reveal-delay-3">
+                <picture>
+                    <source srcset="images/gallery-3.webp" type="image/webp" />
+                    <img src="images/gallery-3.jpg" alt="Eye Camp" loading="lazy" width="640" height="360" />
+                </picture>
                 <div class="archive-overlay"><span class="archive-num">Vol. III</span><span class="archive-title">Eye
                         Camp</span><span class="archive-desc">375+ patients screened, 91 glasses dispensed, and 10
                         life-changing cataract surgeries funded at Kikambala.</span></div>
             </a>
-            <a href="infrastructure.html" class="archive-item reveal reveal-delay-4"><img src="images/gallery-4.jpg"
-                    alt="Legacy Infrastructure" loading="lazy" />
+            <a href="infrastructure.html" class="archive-item reveal reveal-delay-4">
+                <picture>
+                    <source srcset="images/gallery-4.webp" type="image/webp" />
+                    <img src="images/gallery-4.jpg" alt="Legacy Infrastructure" loading="lazy" width="640"
+                        height="360" />
+                </picture>
                 <div class="archive-overlay"><span class="archive-num">Vol. IV</span><span class="archive-title">Legacy
                         Infrastructure</span><span class="archive-desc">15 permanent bins upcycled from the factory
                         floor were installed to outlast the operation.</span></div>
@@ -1688,7 +900,8 @@
             <p class="phase5-desc">Project A.C.T. Phase 05 delivered a free eye care camp at Kikambala, partnering with
                 licensed optometrists to screen, diagnose, and treat community members with zero cost to participants.
                 Hundreds received spectacles, early-stage cataract intervention referrals, and preventative care
-                guidance in a single weekend operation.</p>
+                guidance
+                in a single weekend operation.</p>
             <a href="eye-camp.html" class="inline-link">View Phase 05 →</a>
             <div class="phase5-stats">
                 <div class="phase5-stat">
@@ -1720,8 +933,8 @@
         <div class="footer-top">
             <div class="footer-left">
                 <div class="footer-eyebrow">Project A.C.T. — Digital Archive</div>
-                <div class="footer-logo"><img src="images/act-logo.png" alt=""
-                        onerror="this.style.display='none'" /><span>A.C.T.</span></div>
+                <div class="footer-logo"><img src="images/act-logo.png" alt="" width="28" height="28"
+                        loading="lazy" /><span>A.C.T.</span></div>
                 <h1 class="footer-title">Action<br /><em>Changes</em><br />Things<span class="dot">.</span></h1>
                 <p class="footer-mission">Project A.C.T. is an employee-led Corporate Social Responsibility initiative.
                     The interventions documented herein demonstrate our unwavering commitment to environmental ROI —
@@ -1734,7 +947,7 @@
             <div class="footer-right">
                 <div class="footer-headshot">
                     <img src="images/director-headshot.jpg" alt="Roneek Vora – Head, Project A.C.T."
-                        class="headshot-img" onerror="this.style.display='none'" />
+                        class="headshot-img" width="100" height="100" loading="lazy" />
                     <p class="headshot-quote">"We don't just clean beaches — we build systems that keep them clean."</p>
                     <p class="headshot-name">Roneek Vora</p>
                     <p class="headshot-title">Head, Project A.C.T.</p>
@@ -1746,19 +959,20 @@
                 Reserved</p>
             <div class="footer-social">
                 <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true"
-                    target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor">
+                    target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20"
+                        height="20">
                         <path
                             d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
                         <circle cx="4" cy="4" r="2" />
                     </svg></a>
                 <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" aria-label="Instagram"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
                         <rect x="2" y="2" width="20" height="20" rx="5" />
                         <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                     </svg></a>
                 <a href="https://revitalhcare.com/" target="_blank" aria-label="Website"><svg viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2">
+                        fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
                         <circle cx="12" cy="12" r="10" />
                         <line x1="2" y1="12" x2="22" y2="12" />
                         <path
@@ -1770,36 +984,28 @@
 
     <!-- BACK TO TOP -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
             <path d="M18 15l-6-6-6 6" />
         </svg>
     </button>
 
-    <!-- MINIMAL JS - INLINED FOR SPEED -->
+    <!-- ═══ MINIMAL JS – INLINED, NO EXTERNAL DEPENDENCIES ═══ -->
     <script>
         (function () {
             'use strict';
 
-            // ── SPLASH - hide after delay ──
-            var splash = document.getElementById('splash');
+            // ── SPLASH LOADER BAR ──
             var loaderBar = document.getElementById('splashLoaderBar');
-            if (splash && loaderBar) {
-                // Start loader animation
+            if (loaderBar) {
                 requestAnimationFrame(function () { loaderBar.style.width = '100%'; });
-                // Hide splash after 2.4s
-                setTimeout(function () {
-                    splash.classList.add('hidden');
-                    // Remove from DOM after transition
-                    setTimeout(function () { splash.style.display = 'none'; }, 1100);
-                }, 2400);
             }
 
-            // ── SCROLL PROGRESS BAR ──
+            // ── SCROLL PROGRESS, NAV SHADOW, BACK-TO-TOP ──
             var progressBar = document.getElementById('progress-bar');
             var siteNav = document.getElementById('siteNav');
             var backToTop = document.getElementById('backToTop');
 
-            function updateScrollProgress() {
+            function onScroll() {
                 var scrollY = window.scrollY;
                 var docH = document.documentElement.scrollHeight - window.innerHeight;
                 var pct = docH > 0 ? (scrollY / docH) * 100 : 0;
@@ -1807,20 +1013,28 @@
                 if (siteNav) siteNav.classList.toggle('scrolled', scrollY > 40);
                 if (backToTop) backToTop.classList.toggle('visible', scrollY > 600);
             }
-            window.addEventListener('scroll', updateScrollProgress, { passive: true });
+            window.addEventListener('scroll', onScroll, { passive: true });
 
             // ── BACK TO TOP ──
             if (backToTop) {
-                backToTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+                backToTop.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
             }
 
             // ── NAV TOGGLE ──
             var toggle = document.getElementById('navToggle');
             var links = document.getElementById('navLinks');
             if (toggle && links) {
-                toggle.addEventListener('click', function () { toggle.classList.toggle('open'); links.classList.toggle('open'); });
+                toggle.addEventListener('click', function () {
+                    toggle.classList.toggle('open');
+                    links.classList.toggle('open');
+                });
                 links.querySelectorAll('a').forEach(function (a) {
-                    a.addEventListener('click', function () { toggle.classList.remove('open'); links.classList.remove('open'); });
+                    a.addEventListener('click', function () {
+                        toggle.classList.remove('open');
+                        links.classList.remove('open');
+                    });
                 });
             }
 
@@ -1828,37 +1042,68 @@
             var reveals = document.querySelectorAll('.reveal');
             if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
                 var obs = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) {
+                            e.target.classList.add('visible');
+                            obs.unobserve(e.target);
+                        }
+                    });
                 }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
                 reveals.forEach(function (r) { obs.observe(r); });
-            } else { reveals.forEach(function (r) { r.classList.add('visible'); }); }
+            } else {
+                reveals.forEach(function (r) { r.classList.add('visible'); });
+            }
 
-            // ── COUNTERS (smooth with requestAnimationFrame) ──
+            // ── COUNTERS ──
             function runCounter(el, delay) {
                 setTimeout(function () {
                     var target = parseFloat(el.getAttribute('data-target'));
                     if (isNaN(target)) return;
-                    var duration = 2200, startTime = null;
+                    var duration = 2200,
+                        startTime = null;
+
                     function animate(now) {
                         if (!startTime) startTime = now;
-                        var elapsed = now - startTime, progress = Math.min(elapsed / duration, 1);
+                        var elapsed = now - startTime,
+                            progress = Math.min(elapsed / duration, 1);
                         var eased = 1 - Math.pow(1 - progress, 4);
                         var current = eased * target;
                         el.textContent = Number.isInteger(target) ? Math.round(current).toLocaleString() : current.toFixed(1);
-                        if (progress < 1) { requestAnimationFrame(animate); } else { el.textContent = target.toLocaleString(); }
+                        if (progress < 1) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            el.textContent = target.toLocaleString();
+                        }
                     }
                     requestAnimationFrame(animate);
                 }, delay || 0);
             }
 
-            document.querySelectorAll('.hero-stat-num[data-target]').forEach(function (el, i) { runCounter(el, 800 + i * 200); });
+            document.querySelectorAll('.hero-stat-num[data-target]').forEach(function (el, i) {
+                runCounter(el, 800 + i * 200);
+            });
             var outcomeCounters = document.querySelectorAll('.counter[data-target]');
             if ('IntersectionObserver' in window) {
                 var cObs = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (e) { if (e.isIntersecting) { runCounter(e.target, 0); cObs.unobserve(e.target); } });
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) {
+                            runCounter(e.target, 0);
+                            cObs.unobserve(e.target);
+                        }
+                    });
                 }, { threshold: 0.5 });
                 outcomeCounters.forEach(function (c) { cObs.observe(c); });
-            } else { outcomeCounters.forEach(function (c) { runCounter(c, 0); }); }
+            } else {
+                outcomeCounters.forEach(function (c) { runCounter(c, 0); });
+            }
+
+            // ── SPLASH REMOVAL AFTER TRANSITION ──
+            var splash = document.getElementById('splash');
+            if (splash) {
+                setTimeout(function () {
+                    splash.style.display = 'none';
+                }, 2000);
+            }
         })();
     </script>
 </body>
