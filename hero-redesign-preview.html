@@ -1,0 +1,1124 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACT · Hero Redesign Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,500;1,600;1,700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,500;1,600;1,700&display=swap"></noscript>
+  <style>
+    :root {
+      --red: #d7263d;
+      --ink: #1a1a1a;
+      --paper: #fafafa;
+      --muted: #6b6b6b;
+      --logo-red: #f00000;
+      --logo-cyan: #00c0f0;
+      --logo-lime: #c0f060;
+      --stroke: rgba(255, 255, 255, 0.14);
+      --focus: #d7263d;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 48px;
+      --space-8: 64px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    /* -- Pre-load ACT intro overlay -- */
+    #intro {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity .8s ease, visibility .8s ease;
+      pointer-events: none
+    }
+
+    #intro.is-hidden {
+      opacity: 0;
+      visibility: hidden
+    }
+
+    #intro.is-gone {
+      display: none
+    }
+
+    .intro-logo {
+      width: clamp(90px, 14vw, 160px);
+      height: auto;
+      margin-bottom: var(--space-5);
+      opacity: 0;
+      transform: scale(0.7);
+      animation: introLogoIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+      filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.5))
+    }
+
+    .intro-logotype {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      letter-spacing: 0.05em;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(1rem);
+      animation: introFadeUp 0.9s ease 0.55s both
+    }
+
+    .intro-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+      letter-spacing: 0.02em;
+      text-transform: none;
+      color: rgba(255, 255, 255, 0.82);
+      margin-top: var(--space-4);
+      opacity: 0;
+      transform: translateY(1rem);
+      animation: introFadeUp 0.9s ease 0.8s both
+    }
+
+    .intro-text .dot {
+      color: var(--red)
+    }
+
+    @keyframes introLogoIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.7)
+      }
+
+      60% {
+        opacity: 1;
+        transform: scale(1.02)
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    @keyframes introFadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* -- Hero -- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(215, 38, 61, 0.12), transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(0, 0, 0, 0.35), transparent 50%),
+        linear-gradient(160deg, #0c0c0e 0%, #070708 45%, #0a0a0c 100%);
+      overflow: hidden;
+      isolation: isolate
+    }
+
+    .hero__video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.42;
+      filter: saturate(0.85) contrast(1.05);
+      z-index: 0;
+      pointer-events: none
+    }
+
+    .hero__grade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 7, 8, 0.55) 0%, transparent 38%, transparent 62%, rgba(7, 7, 8, 0.8) 100%);
+      z-index: 1;
+      pointer-events: none
+    }
+
+    .hero__vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 45%, rgba(0, 0, 0, 0.55) 100%)
+    }
+
+    .hero__bloom {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(215, 38, 61, 0.08), transparent 70%);
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0;
+      animation: bloomPulse 14s ease-in-out infinite
+    }
+
+    @keyframes bloomPulse {
+
+      0%,
+      100% {
+        opacity: 0.35
+      }
+
+      50% {
+        opacity: 0.65
+      }
+    }
+
+    .hero__grain {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: grainShift 8s steps(10) infinite
+    }
+
+    @keyframes grainShift {
+      0% {
+        transform: translate(0, 0)
+      }
+
+      10% {
+        transform: translate(-2%, 1%)
+      }
+
+      20% {
+        transform: translate(1%, -1%)
+      }
+
+      30% {
+        transform: translate(-1%, 2%)
+      }
+
+      40% {
+        transform: translate(2%, -2%)
+      }
+
+      50% {
+        transform: translate(-2%, 1%)
+      }
+
+      60% {
+        transform: translate(1%, 1%)
+      }
+
+      70% {
+        transform: translate(-1%, -2%)
+      }
+
+      80% {
+        transform: translate(2%, 2%)
+      }
+
+      90% {
+        transform: translate(-2%, -1%)
+      }
+
+      100% {
+        transform: translate(0, 0)
+      }
+    }
+
+    .hero__split {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 1400px;
+      padding: var(--space-2) var(--space-6);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center
+    }
+
+    /* Left column */
+    .hero__half--left {
+      position: relative;
+      align-items: flex-start;
+      justify-content: flex-start;
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column
+    }
+
+    .hero__eyebrow {
+      font-family: Inter, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.7rem, 1.4vw, 0.85rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      opacity: 0;
+      margin-top: calc(-1 * var(--space-3))
+    }
+
+    /* Stage holds the big title and the later rotating topic, overlapping */
+    .hero__stage {
+      position: relative;
+      min-height: clamp(240px, 36vh, 400px);
+      width: 100%;
+      margin-top: var(--space-2);
+      padding-top: var(--space-3)
+    }
+
+    /* Big title: Action / Changes / Things. (Playfair-led, bold + italic middle) */
+    .hero__title {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.94;
+      letter-spacing: -0.03em;
+      color: #fff;
+      opacity: 0
+    }
+
+    .hero__title .word {
+      display: inline-flex;
+      align-items: baseline
+    }
+
+    .hero__title em {
+      font-style: italic;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.82)
+    }
+
+    .hero__title .rest {
+      transition: opacity .9s ease
+    }
+
+    .hero__title .dot {
+      color: var(--red);
+      transition: opacity .9s ease
+    }
+
+    /* Integrate the ACT logo palette into the stacked title */
+    .hero__title .word:nth-child(1) {
+      color: var(--logo-red)
+    }
+
+    .hero__title .word:nth-child(2) {
+      color: var(--logo-cyan)
+    }
+
+    .hero__title .word:nth-child(2) em {
+      color: inherit
+    }
+
+    .hero__title .word:nth-child(3) {
+      color: var(--logo-lime)
+    }
+
+    /* Rotating topic that replaces the title · big, bold + partly italic like the title */
+    .hero__newtopic {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: baseline;
+      gap: 0 0.28em;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      color: #fff;
+      opacity: 0;
+      transition: opacity .45s ease, transform .45s ease
+    }
+
+    .hero__newtopic em {
+      font-style: italic;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.82)
+    }
+
+    /* Rotating subtext */
+    .hero__rotator {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+      opacity: 0;
+      text-align: left
+    }
+
+    .hero__rotator-label {
+      font-family: Inter, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.65rem, 1.2vw, 0.78rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--red)
+    }
+
+    .hero__rotator-sub {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.05rem, 2.1vw, 1.5rem);
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.82);
+      min-height: 2.9em;
+      transition: opacity .45s ease, transform .45s ease
+    }
+
+    /* Horizontal A.C.T. corner mark (original letters get moved in here - positioned top-right, same line as nav) */
+    .hero__actmark {
+      position: absolute;
+      top: var(--space-5);
+      left: var(--space-6);
+      right: auto;
+      z-index: 9;
+      display: inline-flex;
+      align-items: baseline;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(1.3rem, 1.3vw, 1.3rem);
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.75);
+      text-shadow: 0 6px 22px rgba(0, 0, 0, 0.5);
+      text-transform: uppercase;
+      gap: 0;
+      pointer-events: none
+    }
+
+    .hero__actmark .initial {
+      font-style: normal;
+      font-weight: 900;
+      color: #fff
+    }
+
+    .hero__actmark .initial:nth-of-type(1) {
+      color: var(--logo-red)
+    }
+
+    .hero__actmark .initial:nth-of-type(2) {
+      color: var(--logo-cyan)
+    }
+
+    .hero__actmark .initial:nth-of-type(3) {
+      color: var(--logo-lime)
+    }
+
+    .hero__actmark .dot {
+      color: var(--red);
+      opacity: 0;
+      transition: opacity .5s ease
+    }
+
+    .hero__actmark.dots-in .dot {
+      opacity: 1
+    }
+
+    /* Top-right navigation */
+    .hero__nav {
+      position: absolute;
+      top: var(--space-5);
+      right: var(--space-6);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      opacity: 0;
+      transition: opacity .9s ease;
+      margin-right: 1em;
+      /* leaves space for the A.C.T. mark on the right */
+    }
+
+    body.ready .hero__nav {
+      opacity: 1;
+      animation: fadeIn 1s ease 0.6s both
+    }
+
+    .hero__nav-link {
+      font-family: Inter, system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.65rem, 0.8vw, 0.85rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      transition: color .35s ease;
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer
+    }
+
+    .hero__nav-link:hover {
+      color: rgba(255, 255, 255, 0.95)
+    }
+
+    .hero__nav-link:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 4px;
+      border-radius: 4px
+    }
+
+    .hero__nav-dropdown {
+      position: relative;
+      display: inline-flex
+    }
+
+    .hero__nav-menu {
+      position: absolute;
+      top: calc(100% + var(--space-3));
+      right: 0;
+      background: rgba(20, 20, 22, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--stroke);
+      border-radius: 8px;
+      padding: var(--space-2) 0;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity .3s ease, transform .3s ease, visibility .3s ease;
+      z-index: 10
+    }
+
+    .hero__nav-dropdown.is-open .hero__nav-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0)
+    }
+
+    .hero__nav-menu-item {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: var(--space-2) var(--space-4);
+      font-family: Inter, system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.55rem, 0.7vw, 0.75rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      background: none;
+      border: 0;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+      text-decoration: none;
+      white-space: nowrap
+    }
+
+    .hero__nav-menu-item .phase-badge {
+      display: inline-block;
+      margin-right: 6px;
+      font-size: 0.8em;
+      opacity: 0.7;
+      min-width: 1.6em
+    }
+
+    .hero__nav-menu-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff
+    }
+
+    .hero__nav-menu-item:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: -2px;
+      border-radius: 4px
+    }
+
+    /* Right: logo anchor */
+    .hero__half--right {
+      align-items: flex-end;
+      justify-content: center;
+      position: relative
+    }
+
+    .hero__logo {
+      position: absolute;
+      right: var(--space-6);
+      bottom: var(--space-6);
+      width: clamp(110px, 15vw, 190px);
+      height: auto;
+      filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.5));
+      opacity: 0;
+      z-index: 8
+    }
+
+    .hero__logo img {
+      width: 100%;
+      height: auto;
+      display: block
+    }
+
+    /* Scroll cue */
+    .hero__scroll {
+      position: absolute;
+      left: var(--space-6);
+      bottom: var(--space-5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: clamp(0.6rem, 1.1vw, 0.74rem);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 500;
+      opacity: 0;
+      z-index: 8;
+      cursor: pointer;
+      background: none;
+      border: 0;
+      padding: 0;
+      font: inherit;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: color .35s ease
+    }
+
+    .hero__scroll:hover {
+      color: rgba(255, 255, 255, 0.95)
+    }
+
+    .hero__scroll:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 6px;
+      border-radius: 6px
+    }
+
+    .hero__scroll .mouse {
+      position: relative;
+      width: 26px;
+      height: 42px;
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+      border-radius: 14px;
+      display: flex;
+      justify-content: center;
+      padding-top: 7px;
+      background: rgba(255, 255, 255, 0.02);
+      transition: border-color .35s ease
+    }
+
+    .hero__scroll:hover .mouse {
+      border-color: rgba(255, 255, 255, 0.9)
+    }
+
+    .hero__scroll .mouse::after {
+      content: '';
+      width: 3px;
+      height: 8px;
+      border-radius: 3px;
+      background: var(--red);
+      animation: scrollCue 2s ease-in-out infinite
+    }
+
+    @keyframes scrollCue {
+      0% {
+        transform: translateY(-3px);
+        opacity: 0
+      }
+
+      35% {
+        opacity: 1
+      }
+
+      70% {
+        opacity: 1
+      }
+
+      100% {
+        transform: translateY(13px);
+        opacity: 0
+      }
+    }
+
+    /* -- Reveal (gated by body.ready) -- */
+    .hero__eyebrow,
+    .hero__title,
+    .hero__rotator,
+    .hero__logo,
+    .hero__scroll {
+      opacity: 0
+    }
+
+    body.ready .hero__eyebrow {
+      animation: fadeRise .9s ease 0.2s both
+    }
+
+    body.ready .hero__title {
+      opacity: 1;
+      animation: fadeRise .9s ease 0.35s backwards
+    }
+
+    body.ready .hero__rotator {
+      animation: fadeRise .9s ease 0.55s both
+    }
+
+    body.ready .hero__logo {
+      animation: logoSettle 2.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both
+    }
+
+    body.ready .hero__scroll {
+      animation: fadeIn 1s ease 1.1s both
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fadeRise {
+      from {
+        opacity: 0;
+        transform: translateY(1.2rem)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes logoSettle {
+      0% {
+        opacity: 0;
+        transform: translateX(95vw) scale(3.4)
+      }
+
+      18% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1)
+      }
+    }
+
+    /* -- Collapse sequence -- */
+    /* 1) non-initial letters + trailing dot fade, leaving the real A C T */
+    body.collapsed .hero__title .rest,
+    body.collapsed .hero__title .dot {
+      opacity: 0
+    }
+
+    /* 2) the ORIGINAL A C T are moved (via JS/FLIP) into the horizontal A.C.T. corner mark */
+    body.collapsed .hero__title {
+      pointer-events: none
+    }
+
+    /* 3) new rotating topic appears where the title was */
+    body.collapsed .hero__newtopic {
+      opacity: 1;
+      animation: fadeRise .9s ease 1.7s backwards
+    }
+
+    /* is-out toggles for the synced rotation (placed last so they win) */
+    .hero__newtopic.is-out {
+      opacity: 0;
+      transform: translateY(10px)
+    }
+
+    .hero__rotator-sub.is-out {
+      opacity: 0;
+      transform: translateY(10px)
+    }
+
+    @media (max-width:900px) {
+      .hero__split {
+        grid-template-columns: 1fr;
+        padding: var(--space-2) var(--space-5);
+        gap: var(--space-7);
+        text-align: center
+      }
+
+      .hero__half--left {
+        align-items: center;
+        min-height: auto;
+        padding-top: var(--space-7);
+        text-align: center
+      }
+
+      .hero__stage {
+        min-height: clamp(240px, 36vh, 400px);
+        padding-top: var(--space-3)
+      }
+
+      .hero__title {
+        align-items: center;
+        text-align: center
+      }
+
+      .hero__newtopic {
+        justify-content: center;
+        text-align: center
+      }
+
+      .hero__rotator {
+        align-items: center;
+        text-align: center
+      }
+
+      .hero__rotator-sub {
+        min-height: 3.6em
+      }
+
+      .hero__half--right {
+        align-items: center
+      }
+
+      .hero__logo {
+        position: static;
+        margin-top: var(--space-8);
+        width: clamp(100px, 22vw, 150px)
+      }
+
+      .hero__scroll {
+        position: static;
+        align-items: center;
+        margin-top: var(--space-4)
+      }
+
+      .hero__nav {
+        margin-right: 0;
+        gap: var(--space-3);
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .hero__video {
+        opacity: 0.25
+      }
+
+      .hero__bloom {
+        animation: none;
+        opacity: 0.35
+      }
+
+      .hero__grain {
+        animation: none
+      }
+
+      .hero__scroll .mouse::after {
+        animation: none;
+        transform: none;
+        opacity: 0.9
+      }
+
+      #intro {
+        display: none
+      }
+
+      .hero__eyebrow,
+      .hero__title,
+      .hero__rotator,
+      .hero__logo,
+      .hero__scroll {
+        opacity: 1;
+        animation: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Pre-load ACT intro overlay -->
+  <div id="intro" aria-hidden="true">
+    <img class="intro-logo" src="images/act-logo.png" alt="" onerror="this.style.display='none'">
+    <div class="intro-logotype">A.C.T.</div>
+    <div class="intro-text">Action <span class="dot">&middot;</span> Changes <span class="dot">&middot;</span>
+      Things<span class="dot">.</span></div>
+  </div>
+
+  <section class="hero" aria-label="ACT hero">
+    <video class="hero__video" autoplay muted loop playsinline preload="metadata"
+      poster="Images/hero-bg-5.jpg">
+      <source src="Images/Video-720p.mp4" type="video/mp4">
+    </video>
+    <div class="hero__grade"></div>
+    <div class="hero__vignette"></div>
+    <div class="hero__bloom"></div>
+    <div class="hero__grain"></div>
+
+    <nav class="hero__nav" aria-label="Primary">
+      <button class="hero__nav-link" type="button">Philosophy</button>
+      <button class="hero__nav-link" type="button">Infrastructure</button>
+      <div class="hero__nav-dropdown">
+        <button class="hero__nav-link" type="button" aria-expanded="false" aria-haspopup="true">Chapters</button>
+        <div class="hero__nav-menu" role="menu">
+          <a href="archive.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">📁</span>Full
+            Archive</a>
+          <a href="world-environment-day.html" class="hero__nav-menu-item" role="menuitem"><span
+              class="phase-badge">06</span>World Env Day</a>
+          <a href="eye-camp.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">05</span>Eye
+            Camp</a>
+          <a href="vipingo.html" class="hero__nav-menu-item" role="menuitem"><span
+              class="phase-badge">04</span>Vipingo</a>
+          <a href="kuruitu.html" class="hero__nav-menu-item" role="menuitem"><span
+              class="phase-badge">03</span>Kuruitu</a>
+          <a href="copacabana.html" class="hero__nav-menu-item" role="menuitem"><span
+              class="phase-badge">02</span>Copacabana</a>
+          <a href="green-olive.html" class="hero__nav-menu-item" role="menuitem"><span
+              class="phase-badge">01</span>Green Olive</a>
+        </div>
+      </div>
+      <button class="hero__nav-link" type="button">Contact Us</button>
+      <button class="hero__nav-link" type="button">Donate</button>
+    </nav>
+
+    <div class="hero__split">
+      <div class="hero__half hero__half--left">
+        <div class="hero__eyebrow">Project A.C.T. · Digital Archive</div>
+
+        <div class="hero__stage">
+          <h1 class="hero__title" id="heroTitle">
+            <span class="word"><span class="initial">A</span><span class="rest">ction</span></span>
+            <span class="word"><em><span class="initial">C</span><span class="rest">hanges</span></em></span>
+            <span class="word"><span class="initial">T</span><span class="rest">hings</span><span
+                class="dot">.</span></span>
+          </h1>
+          <div class="hero__newtopic" id="newTopic"><span>Our</span> <em>Mandate</em></div>
+        </div>
+
+        <div class="hero__rotator" aria-label="Focus areas">
+          <span class="hero__rotator-label">Project A.C.T.</span>
+          <span class="hero__rotator-sub" id="rotatorSub">Action Changes Things &mdash; Revital Healthcare&rsquo;s
+            employee-led movement turning environmental care into public health.</span>
+        </div>
+      </div>
+
+      <div class="hero__half hero__half--right"></div>
+    </div>
+
+    <div class="hero__logo" aria-hidden="true">
+      <img src="images/act-logo.png" alt=""
+        onerror="this.style.display='none';this.parentElement.innerHTML='<svg viewBox=\'0 0 120 40\' fill=\'white\'><text x=\'60\' y=\'28\' text-anchor=\'middle\' font-family=\'Playfair Display,Georgia,serif\' font-weight=\'700\' font-size=\'28\' letter-spacing=\'-0.02em\'>ACT</text></svg>'">
+    </div>
+    <button class="hero__scroll" type="button" aria-label="Scroll to explore">
+      <span>Scroll</span>
+      <span class="mouse" aria-hidden="true"></span>
+    </button>
+  </section>
+
+  <script>
+    (function () {
+      var intro = document.getElementById('intro');
+      var heroVideo = document.querySelector('.hero__video');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var hero = document.querySelector('.hero');
+      var title = document.getElementById('heroTitle');
+      var topicEl = document.getElementById('newTopic');
+      var subEl = document.getElementById('rotatorSub');
+
+      var topics = [
+        ['Our', 'Mandate'],
+        ['Coastal', 'Restoration'],
+        ['Community', 'Health'],
+        ['Legacy', 'Infrastructure'],
+        ['People', 'Powered'],
+        ['Public', 'Health']
+      ];
+      var subs = [
+        'Action Changes Things · Revital Healthcare·s employee-led movement turning environmental care into public health.',
+        'Restoring Kilifi·s coastline: strike teams clearing plastics, ghost nets, and marine debris from the shore.',
+        'Free eye camps in partnership with Lions International · screenings, glasses, and funded cataract surgeries.',
+        'Upcycled factory drums welded into permanent, three-stream Legacy Bins at zero capital cost.',
+        'A coalition of volunteers, county government, and academia · a movement, not a one-off event.',
+        'Health begins outside the clinic: treating the environment to protect the community at its source.'
+      ];
+
+      function setTopic(pair) {
+        topicEl.innerHTML = '<span>' + pair[0] + '</span> <em>' + pair[1] + '</em>';
+      }
+
+      // FLIP: take the ORIGINAL A C T, lay them out horizontally as A.C.T. in the top-right,
+      // and animate them (full motion + shrink) from their vertical positions to the mark.
+      function collapseToActMark() {
+        var inits = [].slice.call(title.querySelectorAll('.initial'));
+        var first = inits.map(function (el) { return el.getBoundingClientRect(); });
+
+        var mark = document.createElement('div');
+        mark.className = 'hero__actmark';
+        mark.setAttribute('aria-hidden', 'true');
+        inits.forEach(function (el) {
+          mark.appendChild(el);                 // move the ORIGINAL letter node
+          var d = document.createElement('span');
+          d.className = 'dot'; d.textContent = '.';
+          mark.appendChild(d);                  // red dot after each letter -> A.C.T.
+        });
+        hero.appendChild(mark);
+
+        var last = inits.map(function (el) { return el.getBoundingClientRect(); });
+        inits.forEach(function (el, i) {
+          var dx = first[i].left - last[i].left;
+          var dy = first[i].top - last[i].top;
+          var s = first[i].height / last[i].height;   // scale from big title glyph to small mark glyph
+          el.style.transformOrigin = 'top left';
+          el.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')';
+        });
+        void mark.offsetWidth;                  // force reflow so the inverse transform is applied first
+        inits.forEach(function (el) {
+          el.style.transition = 'transform 1.6s cubic-bezier(0.16,1,0.3,1)';
+          el.style.transform = 'translate(0,0) scale(1)';
+        });
+        window.setTimeout(function () { mark.classList.add('dots-in'); }, 1150); // dots appear once settled
+      }
+
+      function startRotation() {
+        if (reduce) return;
+        var i = 0;
+        window.setInterval(function () {
+          i = (i + 1) % subs.length;
+          topicEl.classList.add('is-out');
+          subEl.classList.add('is-out');
+          window.setTimeout(function () {
+            setTopic(topics[i]);
+            subEl.textContent = subs[i];
+            topicEl.classList.remove('is-out');
+            subEl.classList.remove('is-out');
+          }, 450);
+        }, 4200);
+      }
+
+      function runSequence() {
+        document.body.classList.add('ready');
+        if (reduce) return;
+        window.setTimeout(function () {
+          document.body.classList.add('collapsed');       // rest letters + dot fade
+          window.setTimeout(collapseToActMark, 950);      // original A C T fly + reflow into horizontal A.C.T.
+          window.setTimeout(startRotation, 3200);         // new topic is in; begin synced rotation
+        }, 5200);
+      }
+
+      if (reduce || !intro) {
+        if (intro) intro.classList.add('is-gone');
+        runSequence();
+      } else {
+        window.setTimeout(function () {
+          intro.classList.add('is-hidden');
+          runSequence();
+          window.setTimeout(function () { intro.classList.add('is-gone'); }, 800);
+        }, 2200);
+      }
+
+      if (heroVideo) {
+        heroVideo.play().catch(function () {
+          var resume = function () {
+            heroVideo.play();
+            document.removeEventListener('click', resume);
+            document.removeEventListener('touchstart', resume);
+          };
+          document.addEventListener('click', resume, { once: true });
+          document.addEventListener('touchstart', resume, { once: true });
+        });
+      }
+      if (reduce && heroVideo) heroVideo.removeAttribute('autoplay');
+
+      // Scroll cue: clicking smoothly scrolls past the hero
+      var scrollCue = document.querySelector('.hero__scroll');
+      if (scrollCue) {
+        scrollCue.addEventListener('click', function () {
+          var y = (hero && hero.offsetHeight) ? hero.offsetHeight : window.innerHeight;
+          window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+        });
+      }
+
+      // Chapters dropdown toggle
+      var dropdowns = document.querySelectorAll('.hero__nav-dropdown');
+      dropdowns.forEach(function (dd) {
+        var btn = dd.querySelector('.hero__nav-link');
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = dd.classList.contains('is-open');
+          dropdowns.forEach(function (other) { other.classList.remove('is-open'); other.querySelector('.hero__nav-link').setAttribute('aria-expanded', 'false'); });
+          if (!isOpen) {
+            dd.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+      document.addEventListener('click', function () {
+        dropdowns.forEach(function (dd) {
+          dd.classList.remove('is-open');
+          dd.querySelector('.hero__nav-link').setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

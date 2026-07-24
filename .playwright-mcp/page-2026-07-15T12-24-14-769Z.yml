@@ -1,0 +1,146 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - link "Project A.C.T. A.C.T. Action Changes Things" [ref=f1e3] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f1e4]:
+        - generic [ref=f1e5]:
+          - img "Project A.C.T." [ref=f1e7]
+          - generic [ref=f1e8]: A.C.T.
+        - generic [ref=f1e10]: Action Changes Things
+    - list [ref=f1e11]:
+      - listitem [ref=f1e12]:
+        - link "Home" [ref=f1e13] [cursor=pointer]:
+          - /url: index.html
+      - listitem [ref=f1e14]:
+        - link "Projects Archive" [ref=f1e15] [cursor=pointer]:
+          - /url: archive.html
+      - listitem [ref=f1e16]:
+        - link "Donate" [ref=f1e17] [cursor=pointer]:
+          - /url: donate.html
+      - listitem [ref=f1e18]:
+        - link "Contact" [ref=f1e19] [cursor=pointer]:
+          - /url: contact.html
+  - banner [ref=f1e20]:
+    - generic: DONATE
+    - generic [ref=f1e21]: Project A.C.T. — How You Can Help
+    - heading [level=1] [ref=f1e22]:
+      - text: Donate to
+      - emphasis [ref=f1e23]: Use.
+    - paragraph [ref=f1e24]: Project A.C.T. puts real community work on the ground — and every contribution is used where it matters most. If you would like to help further the cause, we would be glad to hear from you.
+  - generic [ref=f1e25]:
+    - generic [ref=f1e26]:
+      - generic [ref=f1e27]: How support takes shape
+      - heading [level=2] [ref=f1e28]:
+        - text: From intentionto the
+        - emphasis [ref=f1e29]: ground.
+    - generic [ref=f1e30]:
+      - generic [ref=f1e31]:
+        - generic [ref=f1e32]: "01"
+        - heading "You reach out" [level=3] [ref=f1e33]
+        - paragraph [ref=f1e34]: Tell us you would like to stand with the cause. There is no obligation — only an open door.
+      - generic [ref=f1e35]:
+        - generic [ref=f1e36]: "02"
+        - heading "We connect" [level=3] [ref=f1e37]
+        - paragraph [ref=f1e38]: We match your support to a real A.C.T. intervention already underway on the ground.
+      - generic [ref=f1e39]:
+        - generic [ref=f1e40]: "03"
+        - heading "We share" [level=3] [ref=f1e41]
+        - paragraph [ref=f1e42]: "You receive the story: the photos, the figures, and the faces your support reached."
+  - generic [ref=f1e44]:
+    - generic [ref=f1e45]:
+      - generic [ref=f1e46]: The work your support makes possible
+      - heading [level=2] [ref=f1e47]:
+        - text: The Impact
+        - emphasis [ref=f1e48]: Ledger.
+      - paragraph [ref=f1e49]: A transparent look at what A.C.T. does on the ground. Every line is a real intervention from our field work — the kind of change your support helps carry forward.
+    - generic [ref=f1e50]:
+      - generic [ref=f1e51]:
+        - generic [ref=f1e58]:
+          - text: Eye Screening & Medication
+          - generic [ref=f1e59]: Phase 05 · Eye Camp
+        - generic [ref=f1e60]: People screened, treated, and sent home with the medication they need.
+      - generic [ref=f1e62]:
+        - generic [ref=f1e68]:
+          - text: Tree Planting
+          - generic [ref=f1e69]: Phase 06 · World Environment Day
+        - generic [ref=f1e70]: Mangroves and indigenous trees set in the ground, counted and cared for.
+      - generic [ref=f1e72]:
+        - generic [ref=f1e79]:
+          - text: Legacy Bins
+          - generic [ref=f1e80]: Phase 06 · Infrastructure
+        - generic [ref=f1e81]: Upcycled 200L drum bins, branded and placed where a community needs them.
+      - generic [ref=f1e83]:
+        - generic [ref=f1e90]:
+          - text: Beach Cleanups
+          - generic [ref=f1e91]: Phase 02 · 03 · Copacabana & Kuruitu
+        - generic [ref=f1e92]: Shorelines cleared of debris, with what we gather put back to use.
+      - generic [ref=f1e94]:
+        - generic [ref=f1e101]:
+          - text: Olive Livelihoods
+          - generic [ref=f1e102]: Phase 01 · Green Olive
+        - generic [ref=f1e103]: Saplings and a season of care for local smallholder families.
+      - generic [ref=f1e105]:
+        - generic [ref=f1e112]:
+          - text: Crew Safety
+          - generic [ref=f1e113]: Phase 04 · Vipingo
+        - generic [ref=f1e114]: OHS and PPE kits that keep our cleanup crews safe on the ground.
+  - generic [ref=f1e116]:
+    - generic [ref=f1e117]:
+      - generic [ref=f1e118]: The change so far
+      - heading [level=2] [ref=f1e119]:
+        - text: Already
+        - emphasis [ref=f1e120]: at work.
+      - paragraph [ref=f1e121]: A measure of what community support has already made possible.
+    - generic [ref=f1e122]:
+      - generic [ref=f1e123]:
+        - generic [ref=f1e124]: "20"
+        - generic [ref=f1e125]: Legacy Bins Placed
+      - generic [ref=f1e126]:
+        - generic [ref=f1e127]: 5,000
+        - generic [ref=f1e128]: Trees Planted
+      - generic [ref=f1e129]:
+        - generic [ref=f1e130]: 1,200
+        - generic [ref=f1e131]: People Screened
+  - generic [ref=f1e133]:
+    - generic [ref=f1e134]: Get in touch
+    - heading [level=2] [ref=f1e135]:
+      - text: Willing to help further the
+      - emphasis [ref=f1e136]: cause?
+    - paragraph [ref=f1e137]: Whether you would like to contribute, partner, or lend your time — we would be glad to tell you how. Reach us directly, and we will take it from there.
+    - generic [ref=f1e138]:
+      - link "Email info@rhcare-epz.com" [ref=f1e139] [cursor=pointer]:
+        - /url: mailto:info@rhcare-epz.com
+        - generic [ref=f1e140]: Email
+        - generic [ref=f1e141]: info@rhcare-epz.com
+      - link "Phone +254 (0) 00 000 0000" [ref=f1e142] [cursor=pointer]:
+        - /url: tel:+254000000000
+        - generic [ref=f1e143]: Phone
+        - generic [ref=f1e144]: +254 (0) 00 000 0000
+    - paragraph [ref=f1e145]: Shared with those willing to inquire about how they can help, or donate.
+  - contentinfo [ref=f1e146]:
+    - generic: ACT
+    - generic [ref=f1e147]:
+      - generic [ref=f1e148]:
+        - generic [ref=f1e149]: Project A.C.T. — Donate to Use
+        - generic [ref=f1e150]:
+          - img "Project A.C.T." [ref=f1e152]
+          - generic [ref=f1e153]: A.C.T.
+        - heading [level=1] [ref=f1e154]:
+          - text: Action
+          - emphasis [ref=f1e155]: Changes
+          - text: Things.
+        - paragraph [ref=f1e156]: Project A.C.T. is an employee-led Corporate Social Responsibility initiative. The interventions documented herein demonstrate our unwavering commitment to environmental ROI—proving that precision budgeting and grassroots connection can actively preserve and protect human life.
+        - generic [ref=f1e158]:
+          - text: Revital Healthcare (EPZ) Ltd.Kilifi County, Kenya ·
+          - link "www.revitalhealthcare.com" [ref=f1e159] [cursor=pointer]:
+            - /url: https://www.revitalhealthcare.com
+      - img "Project A.C.T. Logo" [ref=f1e162]
+    - generic [ref=f1e164]:
+      - generic [ref=f1e165]: © 2025-2026 Revital Healthcare (EPZ) Ltd. · Project A.C.T. · All Rights Reserved
+      - generic [ref=f1e166]:
+        - link "LinkedIn" [ref=f1e167] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true
+        - link "Instagram" [ref=f1e171] [cursor=pointer]:
+          - /url: https://www.instagram.com/project_a.c.t_/
+        - link "Website" [ref=f1e175] [cursor=pointer]:
+          - /url: https://revitalhcare.com/

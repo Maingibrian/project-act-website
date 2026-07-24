@@ -23,7 +23,9 @@
     </noscript>
 
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/nav.css" />
     <script src="js/main.js" defer></script>
+    <script src="js/nav.js" defer></script>
 </head>
 
 <body>
@@ -64,132 +66,88 @@
         <div class="tracker-dot" data-section="footer"></div>
     </div>
 
-    <!-- ── NAVIGATION ── -->
-    <nav class="site-nav" id="siteNav">
-        <div class="nav-progress-indicator" id="navProgressIndicator"></div>
-
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-            <div class="nav-logo">
-                <div class="logo-placeholder">
-                    <div class="logo-icon">
-                        <img src="images/act-logo.png" alt="Project A.C.T."
-                            onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
-                    </div>
-                    <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
-                            class="dot">.</span></span>
-                </div>
-                <span class="nav-pipe"></span>
-                <span class="nav-sub">Action Changes Things</span>
-            </div>
-        </a>
-
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#philosophy">Philosophy</a></li>
-            <li><a href="infrastructure.html">Infrastructure</a></li>
-            <li><a href="#interventions">Interventions</a></li>
-            <li><a href="#phase6">Phase 06</a></li>
-            <li><a href="#outcomes">Outcomes</a></li>
-            <li class="dropdown">
-                <a href="#">Projects ▾</a>
-                <div class="dropdown-menu">
-                    <a href="archive.html"><span class="phase-badge">📁</span>Full Archive</a>
-                    <a href="world-environment-day.html"><span class="phase-badge">06</span>World Env Day</a>
-                    <a href="eye-camp.html"><span class="phase-badge">05</span>Eye Camp</a>
-                    <a href="vipingo.html"><span class="phase-badge">04</span>Vipingo</a>
-                    <a href="kuruitu.html"><span class="phase-badge">03</span>Kuruitu</a>
-                    <a href="copacabana.html"><span class="phase-badge">02</span>Copacabana</a>
-                    <a href="green-olive.html"><span class="phase-badge">01</span>Green Olive</a>
-                </div>
-            </li>
-            <li><a href="archive.html" class="nav-cta">Archive</a></li>
-        </ul>
-
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-
     <!-- ═══════════════════════════════════════════
-    HERO — IMPROVED BACKGROUND
-    ═══════════════════════════════════════════ -->
-    <section class="hero-section" id="hero">
+         HERO REDESIGN — from hero-redesign-preview
+         ═══════════════════════════════════════════ -->
+    <section class="hero" aria-label="ACT hero">
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="Images/hero-bg-5.jpg">
+            <source src="Images/Video%201.mp4" type="video/mp4">
+        </video>
+        <div class="hero__grade"></div>
+        <div class="hero__vignette"></div>
+        <div class="hero__bloom"></div>
+        <div class="hero__grain"></div>
 
-        <!-- Single, reliable background image with better rendering -->
-        <div class="hero-bg-fixed" role="img" aria-label="Coastal landscape in Kilifi County"></div>
-
-        <!-- Clean glass-morph overlay -->
-        <div class="hero-overlay-clean"></div>
-
-        <!-- Subtle noise -->
-        <div class="hero-noise"></div>
-
-        <!-- Ghost text -->
-        <div class="ghost-text"><span>A</span><span>C</span><span>T</span></div>
-        <div class="red-glow"></div>
-
-        <div class="hero-shell">
-            <div class="liquid-shimmer"></div>
-            <div class="hero-inner">
-                <div class="hero-col-text">
-                    <div class="hero-header-bar">
-                        <span class="hero-header-label">Project A.C.T. Public Health</span>
-                        <span class="hero-header-label">Kilifi County</span>
-                    </div>
-                    <div class="hero-text-main">
-                        <div class="hero-logotype">Action<br /><em>Changes</em><br />Things<span class="dot">.</span>
-                        </div>
-                        <div class="hero-narrative">
-                            Project A.C.T. is an employee-led Corporate Social Responsibility initiative dedicated to
-                            building a resilient, healthy, and clean Kilifi County. By neutralizing immediate threats to
-                            public health and groundwater, we actively fulfill our core corporate mandate: the
-                            preservation and protection of human life.
-                        </div>
-                        <div class="hero-kpi-strip">
-                            <div class="hero-kpi-cell">
-                                <div class="hero-kpi-num" data-target="5000">0</div>
-                                <div class="hero-kpi-lbl">Trees Planted</div>
-                            </div>
-                            <div class="hero-kpi-cell">
-                                <div class="hero-kpi-num" data-target="2.35">0</div>
-                                <div class="hero-kpi-lbl">Tonnes of Waste</div>
-                            </div>
-                            <div class="hero-kpi-cell">
-                                <div class="hero-kpi-num" data-target="375">0</div>
-                                <div class="hero-kpi-lbl">Patients Screened</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-company">
-                        <div class="hero-company-name">Revital Healthcare (EPZ) Ltd.</div>
-                        <div class="hero-company-details">Kilifi County, Kenya &nbsp;·&nbsp; Archive Ref: ACT-PH6</div>
-                    </div>
-                </div>
-
-                <div class="hero-col-visual">
-                    <div class="conveyor-stage" id="conveyorStage">
-                        <div class="capsule-echo"></div>
-
-                        <div class="conveyor-clip" id="conveyorClip">
-                            <div class="pill pill-a" id="pillA">
-                                <img id="imgA" src="images/hero-bg-1.jpg" alt="Scene 1" loading="lazy" />
-                            </div>
-                            <div class="pill pill-b" id="pillB">
-                                <img id="imgB" src="images/hero-bg-2.jpg" alt="Scene 2" loading="lazy" />
-                            </div>
-                        </div>
-
-                        <div class="capsule-overlay"></div>
-
-                        <div class="vol-badge">
-                            <span class="vb-italic">Fin.</span>
-                            <span class="vb-num">06</span>
-                            <span class="vb-lbl">Archive<br />Record</span>
-                        </div>
-                    </div>
+        <nav class="hero__nav" aria-label="Primary">
+            <a href="index.html" class="hero__nav-brand">
+                <img src="images/act-logo.png" alt="ACT" class="hero__nav-brand-img"
+                    onerror="this.style.display='none'" />
+                <span class="hero__nav-brand-text">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                        class="dot">.</span></span>
+            </a>
+            <a href="#philosophy" class="hero__nav-link">Philosophy</a>
+            <a href="infrastructure.html" class="hero__nav-link">Infrastructure</a>
+            <div class="hero__nav-dropdown">
+                <button class="hero__nav-link" type="button" aria-expanded="false"
+                    aria-haspopup="true">Chapters</button>
+                <div class="hero__nav-menu" role="menu">
+                    <a href="archive.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">📁</span>Full
+                        Archive</a>
+                    <a href="world-environment-day.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">06</span>World Env Day</a>
+                    <a href="eye-camp.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">05</span>Eye
+                        Camp</a>
+                    <a href="vipingo.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">04</span>Vipingo</a>
+                    <a href="kuruitu.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">03</span>Kuruitu</a>
+                    <a href="copacabana.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">02</span>Copacabana</a>
+                    <a href="green-olive.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">01</span>Green Olive</a>
                 </div>
             </div>
+            <a href="donate.html" class="hero__nav-link">Donate</a>
+            <a href="contact.html" class="hero__nav-link">Contact</a>
+        </nav>
+
+        <div class="hero__split">
+            <div class="hero__half hero__half--left">
+                <div class="hero__eyebrow">Project A.C.T. &middot; Digital Archive</div>
+
+                <div class="hero__stage">
+                    <h1 class="hero__title" id="heroTitle">
+                        <span class="word"><span class="initial">A</span><span class="rest">ction</span></span>
+                        <span class="word"><em><span class="initial">C</span><span
+                                    class="rest">hanges</span></em></span>
+                        <span class="word"><span class="initial">T</span><span class="rest">hings</span><span
+                                class="dot">.</span></span>
+                    </h1>
+                    <div class="hero__newtopic" id="newTopic"><span>Our</span> <em style="color:#16a34a">Mandate</em>
+                    </div>
+                </div>
+
+                <div class="hero__rotator" aria-label="Focus areas">
+                    <span class="hero__rotator-label">Project A.C.T.</span>
+                    <span class="hero__rotator-sub" id="rotatorSub">Action Changes Things &mdash; Revital
+                        Healthcare&rsquo;s
+                        employee-led movement turning environmental care into public health.</span>
+                </div>
+            </div>
+
+            <div class="hero__half hero__half--right"></div>
         </div>
+
+        <div class="hero__logo" aria-hidden="true">
+            <img src="images/act-logo.png" alt=""
+                onerror="this.style.display='none';this.parentElement.innerHTML='<svg viewBox=\'0 0 120 40\' fill=\'white\'><text x=\'60\' y=\'28\' text-anchor=\'middle\' font-family=\'Playfair Display,Georgia,serif\' font-weight=\'700\' font-size=\'28\' letter-spacing=\'-0.02em\'>ACT</text></svg>'">
+        </div>
+        <button class="hero__scroll" type="button" aria-label="Scroll to explore">
+            <span>Scroll</span>
+            <span class="mouse" aria-hidden="true"></span>
+        </button>
     </section>
 
     <!-- ── TICKER ── -->
@@ -245,7 +203,9 @@
 
             <div class="philosophy-visuals reveal">
                 <div class="img-main">
-                    <img src="images/philosophy-main.jpg" alt="Vast Coastline requiring protection" loading="lazy" />
+                    <img src="images/philosophy-main.jpg" alt="Vast Coastline requiring protection" loading="lazy"
+                        srcset="images/philosophy-main.jpg 1024w, images/philosophy-main.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
                 </div>
                 <div class="glass-card">
                     <div class="glass-eyebrow">The Environmental Equation</div>
@@ -314,10 +274,10 @@
                             Contents proceed to licensed municipal incineration.</div>
                         <div class="bin-items">
                             <div class="bin-item">
-                                <div class="bin-item-dot"></div><span>Non-recyclable packaging &amp; multilayer</span>
+                                <div class="bin-item-dot"></div><span>Non-recyclable packaging & multilayer</span>
                             </div>
                             <div class="bin-item">
-                                <div class="bin-item-dot"></div><span>Sanitary waste &amp; bio-contaminated</span>
+                                <div class="bin-item-dot"></div><span>Sanitary waste & bio-contaminated</span>
                             </div>
                             <div class="bin-item">
                                 <div class="bin-item-dot"></div><span>Incineration disposal pathway</span>
@@ -344,10 +304,10 @@
                             food waste, and natural fibre.</div>
                         <div class="bin-items">
                             <div class="bin-item">
-                                <div class="bin-item-dot"></div><span>Food waste, fish scraps &amp; marine</span>
+                                <div class="bin-item-dot"></div><span>Food waste, fish scraps & marine</span>
                             </div>
                             <div class="bin-item">
-                                <div class="bin-item-dot"></div><span>Seaweed, natural fibre &amp; plant</span>
+                                <div class="bin-item-dot"></div><span>Seaweed, natural fibre & plant</span>
                             </div>
                             <div class="bin-item">
                                 <div class="bin-item-dot"></div><span>Composting or biogas pathway</span>
@@ -368,16 +328,16 @@
                     </div>
                     <div class="bin-content">
                         <div class="bin-category">Dry Recyclables</div>
-                        <div class="bin-title">PET Plastics<br />&amp; Ghost Nets</div>
+                        <div class="bin-title">PET Plastics<br />& Ghost Nets</div>
                         <div class="bin-desc">The economic engine of the system. This bin feeds directly into the Trash
                             for Cash circular loop — every PET bottle, ghost net, and rigid plastic deposited here
                             becomes raw revenue for the community's Beach Management Unit.</div>
                         <div class="bin-items">
                             <div class="bin-item">
-                                <div class="bin-item-dot"></div><span>PET bottles, rigid plastics &amp; film</span>
+                                <div class="bin-item-dot"></div><span>PET bottles, rigid plastics & film</span>
                             </div>
                             <div class="bin-item">
-                                <div class="bin-item-dot"></div><span>Ghost fishing nets &amp; marine cordage</span>
+                                <div class="bin-item-dot"></div><span>Ghost fishing nets & marine cordage</span>
                             </div>
                             <div class="bin-item">
                                 <div class="bin-item-dot"></div><span>Sold to regional recyclers — BMU</span>
@@ -417,13 +377,19 @@
                     distinct domains, each designed to address a critical community need.</p>
                 <div class="int-media-capsule">
                     <img src="images/intervention-1.jpg" class="int-media-img active" id="img-1"
-                        alt="Communal Safety Net" loading="lazy" />
+                        alt="Communal Safety Net" loading="lazy"
+                        srcset="images/intervention-1.jpg 1024w, images/intervention-1.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
                     <img src="images/intervention-2.jpg" class="int-media-img" id="img-2" alt="Environmental Action"
-                        loading="lazy" />
+                        loading="lazy" srcset="images/intervention-2.jpg 1024w, images/intervention-2.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
                     <img src="images/intervention-3.jpg" class="int-media-img" id="img-3" alt="Bio-hazard Intervention"
-                        loading="lazy" />
+                        loading="lazy" srcset="images/intervention-3.jpg 1024w, images/intervention-3.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
                     <img src="images/intervention-4.jpg" class="int-media-img" id="img-4"
-                        alt="Clinical Medical Intervention" loading="lazy" />
+                        alt="Clinical Medical Intervention" loading="lazy"
+                        srcset="images/intervention-4.jpg 1024w, images/intervention-4.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
                 </div>
             </div>
             <div class="int-list">
@@ -467,6 +433,61 @@
         </div>
     </section>
 
+    <!-- ── INTERVENTIONS IMAGE SWAP + NAVIGATION ── -->
+    <script>
+        (function () {
+            var items = document.querySelectorAll('.int-item');
+            var images = document.querySelectorAll('.int-media-img');
+
+            function activateItem(targetId) {
+                images.forEach(function (img) { img.classList.remove('active'); });
+                items.forEach(function (item) { item.classList.remove('active-item'); });
+                var targetImg = document.getElementById(targetId);
+                if (targetImg) targetImg.classList.add('active');
+                var targetItem = document.querySelector('.int-item[data-target="' + targetId + '"]');
+                if (targetItem) targetItem.classList.add('active-item');
+            }
+
+            // Page mappings for each intervention
+            var pageLinks = {
+                'img-1': 'green-olive.html',
+                'img-2': 'copacabana.html',
+                'img-3': 'vipingo.html',
+                'img-4': 'eye-camp.html'
+            };
+
+            items.forEach(function (item) {
+                // On hover (desktop) — swap the image immediately
+                item.addEventListener('mouseenter', function () {
+                    var target = this.getAttribute('data-target');
+                    if (target) activateItem(target);
+                });
+
+                // On click — swap image then navigate to the relevant page
+                item.addEventListener('click', function () {
+                    var target = this.getAttribute('data-target');
+                    if (target) {
+                        activateItem(target);
+                        var href = pageLinks[target];
+                        if (href) {
+                            // Brief delay so the user sees the image change
+                            setTimeout(function () { window.location.href = href; }, 300);
+                        }
+                    }
+                });
+
+                // Make keyboard accessible
+                item.setAttribute('tabindex', '0');
+                item.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        })();
+    </script>
+
     <!-- ── PHASE 6 ── -->
     <section class="section-phase6" id="phase6">
         <div class="phase6-grid">
@@ -505,7 +526,9 @@
             </div>
             <div class="phase6-visuals reveal reveal-delay-1">
                 <div class="phase6-img-main"><img src="images/phase6-main.jpg"
-                        alt="World Environment Day at Pwani University" loading="lazy" /></div>
+                        alt="World Environment Day at Pwani University" loading="lazy"
+                        srcset="images/phase6-main.jpg 1024w, images/phase6-main.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" /></div>
                 <div class="phase6-glass">
                     <div class="phase6-glass-eyebrow">Operational Reach</div>
                     <div class="phase6-glass-val">5,000<span> Trees</span></div>
@@ -529,7 +552,9 @@
         </div>
         <div class="bento-grid">
             <div class="bento-card card-hero reveal reveal-delay-1">
-                <img src="images/outcomes-hero.jpg" alt="Community Impact" class="card-hero-img" loading="lazy" />
+                <img src="images/outcomes-hero.jpg" alt="Community Impact" class="card-hero-img" loading="lazy"
+                    srcset="images/outcomes-hero.jpg 1024w, images/outcomes-hero.webp 1024w"
+                    sizes="(max-width: 768px) 100vw, 50vw" />
                 <div class="hero-content">
                     <div class="hero-tag">Phase 03 · Strike Force</div>
                     <div class="hero-text">2.35 tonnes of bio‑hazard extracted from drainage channels and dense brush.
@@ -561,7 +586,7 @@
                 </div>
             </div>
             <div class="bento-card card-wide reveal reveal-delay-1">
-                <div class="quote-mark">“</div>
+                <div class="quote-mark">"</div>
                 <div>
                     <div class="quote-text">Transitioning from general environmental stewardship to targeted,
                         data‑driven public health risk mitigation. This operation solidified the trust between Revital
@@ -582,8 +607,10 @@
             </div>
             <div class="gallery-accordion reveal reveal-delay-1">
                 <div class="gallery-item">
-                    <a href="index.html">
-                        <img src="images/gallery-1.jpg" alt="Volunteer portrait" class="gallery-img" loading="lazy" />
+                    <a href="copacabana.html">
+                        <img src="images/gallery-1.jpg" alt="Volunteer portrait" class="gallery-img" loading="lazy"
+                            srcset="images/gallery-1.jpg 1024w, images/gallery-1.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 25vw" />
                         <div class="gallery-overlay"></div>
                         <div class="gallery-float-title">The Coalition</div>
                         <div class="gallery-content">
@@ -596,7 +623,9 @@
                 </div>
                 <div class="gallery-item">
                     <a href="copacabana.html">
-                        <img src="images/gallery-2.jpg" alt="Beach Sweep" class="gallery-img" loading="lazy" />
+                        <img src="images/gallery-2.jpg" alt="Beach Sweep" class="gallery-img" loading="lazy"
+                            srcset="images/gallery-2.jpg 1024w, images/gallery-2.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 25vw" />
                         <div class="gallery-overlay"></div>
                         <div class="gallery-float-title">Strike Teams</div>
                         <div class="gallery-content">
@@ -609,7 +638,9 @@
                 </div>
                 <div class="gallery-item">
                     <a href="eye-camp.html">
-                        <img src="images/gallery-3.jpg" alt="Eye Camp" class="gallery-img" loading="lazy" />
+                        <img src="images/gallery-3.jpg" alt="Eye Camp" class="gallery-img" loading="lazy"
+                            srcset="images/gallery-3.jpg 1024w, images/gallery-3.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 25vw" />
                         <div class="gallery-overlay"></div>
                         <div class="gallery-float-title">Eye Camp</div>
                         <div class="gallery-content">
@@ -622,7 +653,9 @@
                 </div>
                 <div class="gallery-item">
                     <a href="infrastructure.html">
-                        <img src="images/gallery-4.jpg" alt="Legacy Installation" class="gallery-img" loading="lazy" />
+                        <img src="images/gallery-4.jpg" alt="Legacy Installation" class="gallery-img" loading="lazy"
+                            srcset="images/gallery-4.jpg 1024w, images/gallery-4.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 25vw" />
                         <div class="gallery-overlay"></div>
                         <div class="gallery-float-title">Legacy Infrastructure</div>
                         <div class="gallery-content">
@@ -661,8 +694,8 @@
                 </div>
             </div>
             <div class="closing-block reveal reveal-delay-2">
-                <div class="closing-quote">“By breaking bread with the residents and the KWS, Revital built a reservoir
-                    of goodwill that transcends standard corporate PR.”</div>
+                <div class="closing-quote">"By breaking bread with the residents and the KWS, Revital built a reservoir
+                    of goodwill that transcends standard corporate PR."</div>
                 <div class="closing-sub">Phase 3 awaits. With 100+ volunteers, a full kilometre of coastline could be
                     cleared in a single operation. The benchmark has been set — and Project A.C.T. has every intention
                     of surpassing it.</div>
@@ -682,7 +715,8 @@
                 <div class="footer-eyebrow">Project A.C.T. — Digital Archive</div>
                 <div class="footer-logo-wrap">
                     <div class="footer-logo-icon">
-                        <img src="images/act-logo.png" alt="Project A.C.T." onerror="this.style.display='none';" />
+                        <img src="images/act-logo.png" alt="Project A.C.T." onerror="this.style.display='none';"
+                            loading="lazy" />
                     </div>
                     <span
                         style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--text-primary);">A.C.T.</span>
@@ -702,8 +736,9 @@
             <div class="footer-right reveal reveal-delay-1">
                 <div class="footer-headshot">
                     <div class="headshot-image">
-                        <img src="images/director-headshot.jpg" alt="Roneek Vora – Head, Project A.C.T."
-                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>RONEEK VORA<br>HEADSHOT</div>'" />
+                        <img src="images/director-headshot.png" alt="Roneek Vora – Head, Project A.C.T."
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>RONEEK VORA<br>HEADSHOT</div>'"
+                            loading="lazy" />
                     </div>
                     <div class="headshot-quote">"We don't just clean beaches – we build systems that keep them clean."
                     </div>
@@ -745,98 +780,130 @@
         </div>
     </footer>
 
-    <!-- ── PAGE-SPECIFIC SCRIPTS ── -->
+    <!-- ── HERO REDESIGN INLINE SCRIPT ── -->
     <script>
-        // ── CONVEYOR PILL ANIMATION ──
-        const pillA = document.getElementById('pillA');
-        const pillB = document.getElementById('pillB');
-        const imgA = document.getElementById('imgA');
-        const imgB = document.getElementById('imgB');
+        (function () {
+            var heroVideo = document.querySelector('.hero__video');
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        const srcs = [
-            'images/hero-bg-1.jpg',
-            'images/hero-bg-2.jpg',
-            'images/hero-bg-3.jpg',
-            'images/hero-bg-4.jpg',
-            'images/hero-bg-5.jpg'
-        ];
+            var hero = document.querySelector('.hero');
+            var title = document.getElementById('heroTitle');
+            var topicEl = document.getElementById('newTopic');
+            var subEl = document.getElementById('rotatorSub');
 
-        let activeIsA = true;
-        let currentIdx = 0;
-        let animating = false;
+            var topics = [
+                ['Our', 'Mandate'],
+                ['Coastal', 'Restoration'],
+                ['Community', 'Health'],
+                ['Legacy', 'Infrastructure'],
+                ['People', 'Powered'],
+                ['Public', 'Health']
+            ];
+            var topicColors = [
+                '#16a34a',
+                '#ef4444',
+                '#2563eb',
+                '#16a34a',
+                '#ef4444',
+                '#2563eb'
+            ];
+            var subs = [
+                'Action Changes Things · Revital Healthcare·s employee-led movement turning environmental care into public health.',
+                'Restoring Kilifi·s coastline: strike teams clearing plastics, ghost nets, and marine debris from the shore.',
+                'Free eye camps in partnership with Lions International · screenings, glasses, and funded cataract surgeries.',
+                'Upcycled factory drums welded into permanent, three-stream Legacy Bins at zero capital cost.',
+                'A coalition of volunteers, county government, and academia · a movement, not a one-off event.',
+                'Health begins outside the clinic: treating the environment to protect the community at its source.'
+            ];
 
-        function getActive() { return activeIsA ? pillA : pillB; }
-        function getWaiting() { return activeIsA ? pillB : pillA; }
-        function getWaitingImg() { return activeIsA ? imgB : imgA; }
+            function setTopic(pair, color) {
+                topicEl.innerHTML = '<span>' + pair[0] + '</span> <em style="color:' + color + '">' + pair[1] + '</em>';
+            }
 
-        function preload(imgEl, src) {
-            return new Promise(resolve => {
-                const tmp = new Image();
-                tmp.onload = tmp.onerror = () => { imgEl.src = src; resolve(); };
-                tmp.src = src;
-            });
-        }
+            // FLIP: take the ORIGINAL A C T, lay them out horizontally as A.C.T. in the top-right,
+            // and animate them (full motion + shrink) from their vertical positions to the mark.
+            function collapseToActMark() {
+                var inits = [].slice.call(title.querySelectorAll('.initial'));
+                var first = inits.map(function (el) { return el.getBoundingClientRect(); });
 
-        async function rotate() {
-            if (animating) return;
-            animating = true;
-            const nextIdx = (currentIdx + 1) % srcs.length;
-            const nextNextIdx = (nextIdx + 1) % srcs.length;
-            await preload(getWaitingImg(), srcs[nextIdx]);
+                var mark = document.createElement('div');
+                mark.className = 'hero__actmark';
+                mark.setAttribute('aria-hidden', 'true');
+                inits.forEach(function (el) {
+                    mark.appendChild(el);
+                    var d = document.createElement('span');
+                    d.className = 'dot'; d.textContent = '.';
+                    mark.appendChild(d);
+                });
+                hero.appendChild(mark);
 
-            const exiting = getActive();
-            const entering = getWaiting();
+                var last = inits.map(function (el) { return el.getBoundingClientRect(); });
+                inits.forEach(function (el, i) {
+                    var dx = first[i].left - last[i].left;
+                    var dy = first[i].top - last[i].top;
+                    var s = first[i].height / last[i].height;
+                    el.style.transformOrigin = 'top left';
+                    el.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')';
+                });
+                void mark.offsetWidth;
+                inits.forEach(function (el) {
+                    el.style.transition = 'transform 1.6s cubic-bezier(0.16,1,0.3,1)';
+                    el.style.transform = 'translate(0,0) scale(1)';
+                });
+                window.setTimeout(function () { mark.classList.add('dots-in'); }, 1150);
+            }
 
-            exiting.classList.add('exit');
-            entering.classList.add('enter');
+            function startRotation() {
+                if (reduce) return;
+                var i = 0;
+                window.setInterval(function () {
+                    i = (i + 1) % subs.length;
+                    topicEl.classList.add('is-out');
+                    subEl.classList.add('is-out');
+                    window.setTimeout(function () {
+                        setTopic(topics[i], topicColors[i]);
+                        subEl.textContent = subs[i];
+                        topicEl.classList.remove('is-out');
+                        subEl.classList.remove('is-out');
+                    }, 450);
+                }, 4200);
+            }
 
-            setTimeout(async () => {
-                activeIsA = !activeIsA;
-                currentIdx = nextIdx;
-                const heroBg = document.querySelector('.hero-bg-fixed');
-                if (heroBg) heroBg.style.backgroundImage = `url('${srcs[currentIdx]}')`;
-                await preload(getWaitingImg(), srcs[nextNextIdx]);
-                animating = false;
-            }, 1100);
-        }
+            function runSequence() {
+                document.body.classList.add('ready');
+                if (reduce) return;
+                window.setTimeout(function () {
+                    document.body.classList.add('collapsed');
+                    window.setTimeout(collapseToActMark, 950);
+                    window.setTimeout(startRotation, 3200);
+                }, 5200);
+            }
 
-        // Initialize conveyor
-        pillB.style.transition = 'none';
-        pillB.style.transform = 'rotateX(-90deg)';
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                pillB.style.transition = '';
-                pillB.style.transform = '';
-            });
-        });
-        (function () { const tmp = new Image(); tmp.src = srcs[2 % srcs.length]; })();
-        setInterval(rotate, 8000);
+            // Run hero animation sequence (no pre-load overlay; that's handled by main.js via #page-intro)
+            window.setTimeout(runSequence, 2200);
 
-        // ── MOUSE PARALLAX ──
-        const stage = document.getElementById('conveyorStage');
-        const hero = document.getElementById('hero');
-        if (stage && hero) {
-            hero.addEventListener('mousemove', e => {
-                const r = hero.getBoundingClientRect();
-                const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
-                const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
-                stage.style.transform = `perspective(1000px) rotateY(${dx * 5}deg) rotateX(${-dy * 3}deg) translateZ(6px)`;
-                stage.style.transition = 'transform 0.08s ease';
-            });
-            hero.addEventListener('mouseleave', () => {
-                stage.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) translateZ(0)';
-                stage.style.transition = 'transform 0.6s cubic-bezier(0.2,0.8,0.2,1)';
-            });
-        }
+            if (heroVideo) {
+                heroVideo.play().catch(function () {
+                    var resume = function () {
+                        heroVideo.play();
+                        document.removeEventListener('click', resume);
+                        document.removeEventListener('touchstart', resume);
+                    };
+                    document.addEventListener('click', resume, { once: true });
+                    document.addEventListener('touchstart', resume, { once: true });
+                });
+            }
+            if (reduce && heroVideo) heroVideo.removeAttribute('autoplay');
 
-        // ── REDUCED MOTION ──
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.querySelectorAll('.ghost-text span').forEach(s => s.style.animation = 'none');
-            document.querySelectorAll('.pill-a.exit, .pill-b.enter').forEach(el => {
-                el.style.transition = 'transform 0.01s';
-            });
-            document.querySelector('.ticker-track').style.animation = 'none';
-        }
+            // Scroll cue: clicking smoothly scrolls past the hero
+            var scrollCue = document.querySelector('.hero__scroll');
+            if (scrollCue) {
+                scrollCue.addEventListener('click', function () {
+                    var y = (hero && hero.offsetHeight) ? hero.offsetHeight : window.innerHeight;
+                    window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+                });
+            }
+        })();
     </script>
 
 </body>

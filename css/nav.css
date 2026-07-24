@@ -1,0 +1,256 @@
+/* ═════════════════════════════════════════════════════════════════════
+   PROJECT A.C.T. — SHARED NAVIGATION BAR STYLES (nav.css)
+   Glassmorphism floating pill header & dropdown navigation
+   ═════════════════════════════════════════════════════════════════════ */
+
+:root {
+    --nav-space-2: 8px;
+    --nav-space-3: 12px;
+    --nav-space-4: 16px;
+    --nav-space-5: 24px;
+    --nav-stroke: rgba(255, 255, 255, 0.12);
+    --nav-focus: #16a34a;
+    --nav-active: #16a34a;
+}
+
+/* Base Nav Container */
+.hero__nav {
+    position: absolute;
+    top: var(--nav-space-5);
+    right: 32px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: var(--nav-space-4);
+    opacity: 1;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glassmorphism Pill (Stuck or Subpage Header) */
+.hero__nav.is-stuck {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    margin-right: 0;
+    background: rgba(10, 10, 14, 0.82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+    padding: 6px 24px;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Brand Link inside Pill */
+.hero__nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-right: 6px;
+    padding-right: 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    transition: opacity 0.3s ease;
+}
+
+.hero__nav-brand:hover {
+    opacity: 0.85;
+}
+
+.hero__nav-brand-img {
+    height: 20px;
+    width: auto;
+    display: block;
+}
+
+.hero__nav-brand-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+}
+
+.hero__nav-brand-text .dot {
+    color: #d90429;
+}
+
+/* Navigation Links */
+.hero__nav-link {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.65rem, 0.8vw, 0.82rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.3s ease, background 0.3s ease;
+    background: none;
+    border: 0;
+    padding: 4px 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.hero__nav.is-stuck .hero__nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(0.6rem, 0.75vw, 0.8rem);
+}
+
+.hero__nav-link:hover,
+.hero__nav.is-stuck .hero__nav-link:hover {
+    color: #ffffff;
+}
+
+.hero__nav-link.active,
+.hero__nav.is-stuck .hero__nav-link.active {
+    color: #ffffff;
+    font-weight: 600;
+    position: relative;
+}
+
+.hero__nav-link.active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 6px;
+    right: 6px;
+    height: 2px;
+    background: var(--nav-active);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(22, 163, 74, 0.6);
+}
+
+.hero__nav-link:focus-visible {
+    outline: 2px solid var(--nav-focus);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* Dropdown Menu */
+.hero__nav-dropdown {
+    position: relative;
+    display: inline-flex;
+}
+
+.hero__nav-menu {
+    position: absolute;
+    top: calc(100% + var(--nav-space-3));
+    right: 0;
+    background: rgba(12, 12, 16, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: var(--nav-space-2) 0;
+    min-width: 190px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 10000;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.hero__nav.is-stuck .hero__nav-menu {
+    background: rgba(10, 10, 14, 0.94);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.hero__nav-dropdown.is-open .hero__nav-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hero__nav-menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: var(--nav-space-2) var(--nav-space-4);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.6rem, 0.7vw, 0.75rem);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.hero__nav-menu-item .phase-badge {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 0.8em;
+    opacity: 0.75;
+    min-width: 1.6em;
+    font-weight: 700;
+    color: #16a34a;
+}
+
+.hero__nav-menu-item:hover,
+.hero__nav-menu-item.active {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.hero__nav-menu-item.active .phase-badge {
+    opacity: 1;
+}
+
+.hero__nav-menu-item:focus-visible {
+    outline: 2px solid var(--nav-focus);
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 860px) {
+    .hero__nav.is-stuck {
+        top: 10px;
+        padding: 5px 14px;
+        gap: 8px;
+        max-width: calc(100vw - 20px);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .hero__nav-brand {
+        padding-right: 8px;
+        margin-right: 2px;
+        gap: 4px;
+    }
+
+    .hero__nav-brand-text {
+        font-size: 0.75rem;
+    }
+
+    .hero__nav-brand-img {
+        height: 16px;
+    }
+
+    .hero__nav-link,
+    .hero__nav.is-stuck .hero__nav-link {
+        font-size: 0.62rem;
+        padding: 4px 4px;
+    }
+
+    .hero__nav-menu {
+        min-width: 170px;
+        right: -10px;
+    }
+}

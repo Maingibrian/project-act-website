@@ -1,0 +1,22 @@
+- region "Project A.C.T. introduction" [ref=e2]:
+  - generic [ref=e3]:
+    - text: A
+    - generic [ref=e4]: .
+    - text: C
+    - generic [ref=e5]: .
+    - text: T
+    - generic [ref=e6]: .
+    - generic [ref=e7]: Action Changes Things
+  - generic [ref=e10]:
+    - generic [ref=e11]: Project A.C.T. — Digital Archive
+    - heading [level=1] [ref=e12]:
+      - text: Action
+      - emphasis [ref=e13]: Changes
+      - text: Things.
+    - paragraph [ref=e14]: An employee-led Corporate Social Responsibility initiative by Revital Healthcare — restoring ecosystems, one measurable intervention at a time.
+    - generic [ref=e15]:
+      - button "Watch the Reel" [ref=e16] [cursor=pointer]
+      - link "Explore the Movement" [ref=e19] [cursor=pointer]:
+        - /url: "#philosophy"
+  - img "Project A.C.T." [ref=e21]
+  - generic [ref=e22]: Scroll

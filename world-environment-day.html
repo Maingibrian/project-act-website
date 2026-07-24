@@ -6,35 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Environment Day — Project A.C.T.</title>
     <link rel="icon" type="image/png" href="images/act-logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap"
-        rel="stylesheet" />
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" />
+    </noscript>
     <link rel="stylesheet" href="css/world-environment-day.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <script src="js/nav.js" defer></script>
 </head>
 
 <body>
-    <nav class="site-nav" id="siteNav">
-        <div class="nav-progress" id="navProgress"></div>
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-            <div class="nav-logo">
-                <div class="logo-placeholder">
-                    <div class="logo-icon">
-                        <img src="images/act-logo.png" alt="Project A.C.T."
-                            onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
-                    </div>
-                    <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
-                            class="dot">.</span></span>
-                </div>
-                <span class="nav-pipe"></span>
-                <span class="nav-sub">Action Changes Things</span>
-            </div>
+    <nav class="hero__nav is-stuck" aria-label="Primary">
+        <a href="index.html" class="hero__nav-brand">
+            <img src="images/act-logo.png" alt="ACT" class="hero__nav-brand-img" onerror="this.style.display='none'" />
+            <span class="hero__nav-brand-text">A<span class="dot">.</span>C<span class="dot">.</span>T<span class="dot">.</span></span>
         </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+        <a href="index.html#philosophy" class="hero__nav-link">Philosophy</a>
+        <a href="infrastructure-wip.html" class="hero__nav-link">Infrastructure</a>
+        <div class="hero__nav-dropdown">
+            <button class="hero__nav-link active" type="button" aria-expanded="false" aria-haspopup="true">Chapters</button>
+            <div class="hero__nav-menu" role="menu">
+                <a href="archive.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">📁</span>Full Archive</a>
+                <a href="world-environment-day.html" class="hero__nav-menu-item active" role="menuitem"><span class="phase-badge">06</span>World Env Day</a>
+                <a href="eye-camp.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">05</span>Eye Camp</a>
+                <a href="vipingo.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">04</span>Vipingo</a>
+                <a href="kuruitu.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">03</span>Kuruitu</a>
+                <a href="copacabana.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">02</span>Copacabana</a>
+                <a href="green-olive.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">01</span>Green Olive</a>
+            </div>
+        </div>
+        <a href="donate.html" class="hero__nav-link">Donate</a>
+        <a href="contact.html" class="hero__nav-link">Contact</a>
     </nav>
 
 
@@ -42,9 +49,9 @@
     <header class="hero" id="hero">
         <div class="hero-bg-container">
             <img src="images/wed-hero-bg.jpg" class="hero-bg-slide active" alt="Environment Day celebration" id="bgA"
-                loading="eager" />
+                loading="eager" srcset="images/wed-hero-bg.jpg 1024w, images/wed-hero-bg.webp 1024w" sizes="100vw" />
             <img src="images/wed-trees.jpg" class="hero-bg-slide" alt="Tree planting activity" id="bgB"
-                loading="eager" />
+                loading="eager" srcset="images/wed-trees.jpg 1024w, images/wed-trees.webp 1024w" sizes="100vw" />
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-left">
@@ -69,9 +76,9 @@
             <div class="capsule-container">
                 <div class="capsule-echo"></div>
                 <div class="capsule-wrap">
-                    <img src="images/wed-hero-bg.jpg" alt="Environment Day" id="pillA" class="pill-slide" />
+                    <img src="images/wed-hero-bg.jpg" alt="Environment Day" id="pillA" class="pill-slide" srcset="images/wed-hero-bg.jpg 1024w, images/wed-hero-bg.webp 1024w" sizes="(max-width: 768px) 100vw, 50vw" />
                     <img src="images/wed-trees.jpg" alt="Tree Planting" id="pillB" class="pill-slide"
-                        style="position:absolute; inset:0; opacity:0;" />
+                        style="position:absolute; inset:0; opacity:0;" srcset="images/wed-trees.jpg 1024w, images/wed-trees.webp 1024w" sizes="(max-width: 768px) 100vw, 50vw" />
                     <div class="capsule-overlay"></div>
                 </div>
                 <div class="phase-medallion">
@@ -272,7 +279,7 @@
                 <div class="footer-headshot">
                     <div class="headshot-image">
                         <img src="images/act-logo.png" alt="Project A.C.T. Committee"
-                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" />
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" loading="lazy" />
                     </div>
                     <div class="headshot-quote">"Corporate environmental stewardship scales through measurable action.
                         5,000 trees planted and 20 Legacy Bins donated demonstrate institutional commitment to

@@ -1,0 +1,107 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Project A.C.T. A.C.T. Action Changes Things" [ref=e3] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img "Project A.C.T." [ref=e7]
+          - generic [ref=e8]: A.C.T.
+        - generic [ref=e10]: Action Changes Things
+    - list [ref=e11]:
+      - listitem [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: index.html
+      - listitem [ref=e14]:
+        - link "Projects Archive" [ref=e15] [cursor=pointer]:
+          - /url: archive.html
+      - listitem [ref=e16]:
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: contact.html
+  - banner [ref=e18]:
+    - generic: CONTACT
+    - generic [ref=e19]: Project A.C.T. — Get In Touch
+    - heading [level=1] [ref=e20]:
+      - text: Let's Build
+      - emphasis [ref=e21]: Impact.
+    - paragraph [ref=e22]: Whether you represent a community organization, a government body, an academic institution, or a like-minded corporate partner — we want to hear from you. Collaboration is how Action Changes Things.
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Reach The Coalition
+      - heading [level=2] [ref=e27]:
+        - text: Direct
+        - emphasis [ref=e28]: Lines.
+      - paragraph [ref=e29]: Project A.C.T. is an employee-led CSR initiative of Revital Healthcare (EPZ) Ltd. Use the channels below or send a message and our team will respond.
+      - generic [ref=e30]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: Headquarters
+          - generic [ref=e38]: Revital Healthcare (EPZ) Ltd.Kilifi County, Kenya
+        - generic [ref=e44]:
+          - generic [ref=e45]: Email
+          - link "act@revitalhealthcare.com" [ref=e47] [cursor=pointer]:
+            - /url: mailto:act@revitalhealthcare.com
+        - generic [ref=e52]:
+          - generic [ref=e53]: Phone
+          - link "+254 (0) 00 000 0000" [ref=e55] [cursor=pointer]:
+            - /url: tel:+254000000000
+        - generic [ref=e61]:
+          - generic [ref=e62]: Website
+          - link "www.revitalhealthcare.com" [ref=e64] [cursor=pointer]:
+            - /url: https://revitalhcare.com/
+      - generic [ref=e65]:
+        - link "LinkedIn" [ref=e66] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true
+        - link "Instagram" [ref=e70] [cursor=pointer]:
+          - /url: https://www.instagram.com/project_a.c.t_/
+        - link "Website" [ref=e74] [cursor=pointer]:
+          - /url: https://revitalhcare.com/
+    - generic [ref=e78]:
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - generic [ref=e81]: Full Name *
+          - textbox "Full Name *" [ref=e82]: Jane Mwangi
+        - generic [ref=e84]:
+          - generic [ref=e85]: Email *
+          - textbox "Email *" [ref=e86]: jane@example.com
+        - generic [ref=e88]:
+          - generic [ref=e89]: Organization (optional)
+          - textbox "Organization (optional)" [ref=e90]
+        - generic [ref=e91]:
+          - generic [ref=e92]: Subject *
+          - textbox "Subject *" [ref=e93]: Partnership enquiry
+        - generic [ref=e95]:
+          - generic [ref=e96]: Message *
+          - textbox "Message *" [ref=e97]: We would like to collaborate on a coastal cleanup.
+        - button "Send Message →" [active] [ref=e99] [cursor=pointer]:
+          - text: Send Message
+          - generic [ref=e100]: →
+      - generic [ref=e135]:
+        - heading "Message Received." [level=3] [ref=e139]
+        - paragraph [ref=e140]: Thank you for reaching out to Project A.C.T. Our team will be in touch shortly.
+        - button "Send Another Message" [ref=e141] [cursor=pointer]
+  - contentinfo [ref=e101]:
+    - generic: ACT
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - generic [ref=e104]: Project A.C.T. — Digital Archive
+        - generic [ref=e105]:
+          - img "Project A.C.T." [ref=e107]
+          - generic [ref=e108]: A.C.T.
+        - heading [level=1] [ref=e109]:
+          - text: Action
+          - emphasis [ref=e110]: Changes
+          - text: Things.
+        - paragraph [ref=e111]: Project A.C.T. is an employee-led Corporate Social Responsibility initiative. The interventions documented herein demonstrate our unwavering commitment to environmental ROI—proving that precision budgeting and grassroots connection can actively preserve and protect human life.
+        - generic [ref=e113]:
+          - text: Revital Healthcare (EPZ) Ltd.Kilifi County, Kenya ·
+          - link "www.revitalhealthcare.com" [ref=e114] [cursor=pointer]:
+            - /url: https://www.revitalhealthcare.com
+      - img "Project A.C.T. Logo" [ref=e117]
+    - generic [ref=e119]:
+      - generic [ref=e120]: © 2025-2026 Revital Healthcare (EPZ) Ltd. · Project A.C.T. · All Rights Reserved
+      - generic [ref=e121]:
+        - link "LinkedIn" [ref=e122] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true
+        - link "Instagram" [ref=e126] [cursor=pointer]:
+          - /url: https://www.instagram.com/project_a.c.t_/
+        - link "Website" [ref=e130] [cursor=pointer]:
+          - /url: https://revitalhcare.com/

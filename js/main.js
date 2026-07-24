@@ -1,7 +1,7 @@
 /**
- * Project A.C.T. — Shared JavaScript Utilities
- * Consolidated shared code across all pages
- */
+* Project A.C.T. — Shared JavaScript Utilities
+* Consolidated shared code across all pages
+*/
 
 // ── REVEAL ANIMATION ──
 function initReveal() {
@@ -59,38 +59,20 @@ function initOutcomeCounters() {
     outcomeCounters.forEach(el => outcomeObserver.observe(el));
 }
 
-// ── NAVIGATION TOGGLE ──
+// ── NAVIGATION TOGGLE (legacy - no longer needed with redesign hero nav) ──
 function initNavToggle() {
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (!navToggle || !navLinks) return;
-
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('open');
-        navLinks.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('open');
-            navLinks.classList.remove('open');
-        });
-    });
+    // Kept for backwards compatibility; the redesign uses inline hero nav
 }
 
-// ── NAVIGATION PROGRESS BAR ──
+// ── SCROLL PROGRESS BAR ──
 function initNavProgress() {
-    const nav = document.getElementById('siteNav');
-    const navIndicator = document.getElementById('navProgressIndicator');
     const progressBar = document.getElementById('progress-bar');
-    if (!nav || !progressBar) return;
+    if (!progressBar) return;
 
     window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 40);
         const docH = document.documentElement.scrollHeight - window.innerHeight;
         const pct = docH > 0 ? (window.scrollY / docH) * 100 : 0;
         progressBar.style.width = pct + '%';
-        if (navIndicator) navIndicator.style.width = pct + '%';
     }, { passive: true });
 }
 
@@ -158,6 +140,90 @@ function initSlider() {
     window.addEventListener('touchmove', (e) => {
         if (dragging) updateSlider(e.touches[0].clientX);
     });
+}
+
+// ── STICKY NAV WITH FLIP ANIMATION ──
+function initStickyNav() {
+    var nav = document.querySelector('.hero__nav');
+    if (!nav) return;
+
+    var isStuck = false;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var STICKY_THRESHOLD = 60;
+
+    function checkSticky() {
+        var shouldStick = window.scrollY >= STICKY_THRESHOLD;
+        if (shouldStick && !isStuck) {
+            isStuck = true;
+            flipStick(nav, reduce);
+        } else if (!shouldStick && isStuck) {
+            isStuck = false;
+            flipUnstick(nav, reduce);
+        }
+    }
+
+    window.addEventListener('scroll', checkSticky, { passive: true });
+    checkSticky();
+}
+
+function flipStick(nav, reduce) {
+    // Capture "first" rect (before class change)
+    var first = nav.getBoundingClientRect();
+
+    // Apply the stuck class (sets CSS transform: translateX(-50%))
+    nav.classList.add('is-stuck');
+
+    if (reduce) return; // skip animation for reduced motion
+
+    // Capture "last" rect (after class change)
+    var last = nav.getBoundingClientRect();
+
+    // Calculate translate deltas only — the scale/shrink into the pill
+    // shape is handled by the CSS transition on background/padding
+    var dx = first.left - last.left;
+    var dy = first.top - last.top;
+
+    // Invert: lock visual position to where it was before class change
+    nav.style.transition = 'none';
+    nav.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+    void nav.offsetWidth;
+
+    // Animate from inverted position to the CSS transform (translateX(-50%))
+    nav.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    nav.style.transform = '';
+
+    // Clean up inline transition after animation completes
+    setTimeout(function () {
+        nav.style.transition = '';
+    }, 700);
+}
+
+function flipUnstick(nav, reduce) {
+    // Capture "first" rect (while still stuck with CSS translateX(-50%))
+    var first = nav.getBoundingClientRect();
+
+    // Remove stuck class — nav snaps to original absolute position
+    nav.classList.remove('is-stuck');
+
+    if (reduce) return; // skip animation for reduced motion
+
+    // Capture "last" rect (now in original position, no transform)
+    var last = nav.getBoundingClientRect();
+
+    // Invert: hold visual position where it was before class removal
+    var dx = first.left - last.left;
+    var dy = first.top - last.top;
+    nav.style.transition = 'none';
+    nav.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+    void nav.offsetWidth;
+
+    // Animate back to original (no transform at all)
+    nav.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    nav.style.transform = '';
+
+    setTimeout(function () {
+        nav.style.transition = '';
+    }, 700);
 }
 
 // ── REDUCED MOTION HANDLING ──
@@ -247,6 +313,7 @@ function initPageIntro() {
         initNavToggle();
         initNavProgress();
         initSectionTracker();
+        initStickyNav();
         initSlider();
         handleReducedMotion();
     }, tl.complete);

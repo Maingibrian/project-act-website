@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Project A.C.T. — Action Changes Things</title>
+    <link rel="icon" type="image/png" href="images/act-logo.png" />
+    <!-- Mobile redirect removed - site is now fully responsive -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" />
+    </noscript>
+
+    <link rel="stylesheet" href="css/index-final.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <script src="js/main.js" defer></script>
+    <script src="js/nav.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         DRAMATIC INTRO OVERLAY
+         ═══════════════════════════════════════════ -->
+    <div id="page-intro">
+        <div class="intro-bg"></div>
+        <div class="intro-content">
+            <div class="intro-brand-block">
+                <div class="intro-logo-wrap">
+                    <img src="images/act-logo.png" alt="Project A.C.T." class="intro-logo" id="introLogo" />
+                </div>
+                <span class="intro-logotype">A.C.T.</span>
+            </div>
+            <div class="intro-text-line" id="introTextLine">
+                <span class="intro-word" data-delay="0">Action</span>
+                <em class="intro-word intro-word-em" data-delay="0.12">Changes</em>
+                <span class="intro-word" data-delay="0.24">Things<span class="intro-dot">.</span></span>
+            </div>
+        </div>
+        <div class="intro-flare" id="introFlare"></div>
+    </div>
+
+    <!-- ── PROGRESS BAR ── -->
+    <div id="progress-bar"></div>
+
+    <!-- ── SECTION TRACKER ── -->
+    <div id="section-tracker">
+        <div class="tracker-dot" data-section="hero"></div>
+        <div class="tracker-dot" data-section="philosophy"></div>
+        <div class="tracker-dot" data-section="legacy"></div>
+        <div class="tracker-dot" data-section="footer"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         HERO REDESIGN — from hero-redesign-preview
+         ═══════════════════════════════════════════ -->
+    <section class="hero" aria-label="ACT hero">
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="Images/hero-bg-5.jpg">
+            <source src="Images/Video-720p.mp4" type="video/mp4">
+        </video>
+        <div class="hero__grade"></div>
+        <div class="hero__vignette"></div>
+        <div class="hero__bloom"></div>
+        <div class="hero__grain"></div>
+
+        <nav class="hero__nav" aria-label="Primary">
+            <a href="index.html" class="hero__nav-brand">
+                <img src="images/act-logo.png" alt="ACT" class="hero__nav-brand-img"
+                    onerror="this.style.display='none'" />
+                <span class="hero__nav-brand-text">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                        class="dot">.</span></span>
+            </a>
+            <a href="#philosophy" class="hero__nav-link">Philosophy</a>
+            <a href="infrastructure.html" class="hero__nav-link">Infrastructure</a>
+            <div class="hero__nav-dropdown">
+                <button class="hero__nav-link" type="button" aria-expanded="false"
+                    aria-haspopup="true">Chapters</button>
+                <div class="hero__nav-menu" role="menu">
+                    <a href="archive.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">📁</span>Full
+                        Archive</a>
+                    <a href="world-environment-day.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">06</span>World Env Day</a>
+                    <a href="eye-camp.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">05</span>Eye
+                        Camp</a>
+                    <a href="vipingo.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">04</span>Vipingo</a>
+                    <a href="kuruitu.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">03</span>Kuruitu</a>
+                    <a href="copacabana.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">02</span>Copacabana</a>
+                    <a href="green-olive.html" class="hero__nav-menu-item" role="menuitem"><span
+                            class="phase-badge">01</span>Green Olive</a>
+                </div>
+            </div>
+            <a href="donate.html" class="hero__nav-link">Donate</a>
+            <a href="contact.html" class="hero__nav-link">Contact</a>
+        </nav>
+
+        <div class="hero__split">
+            <div class="hero__half hero__half--left">
+                <div class="hero__eyebrow">Project A.C.T. &middot; Digital Archive</div>
+
+                <div class="hero__stage">
+                    <h1 class="hero__title" id="heroTitle">
+                        <span class="word"><span class="initial">A</span><span class="rest">ction</span></span>
+                        <span class="word"><em><span class="initial">C</span><span
+                                    class="rest">hanges</span></em></span>
+                        <span class="word"><span class="initial">T</span><span class="rest">hings</span><span
+                                class="dot">.</span></span>
+                    </h1>
+                    <div class="hero__newtopic" id="newTopic"><span>Our</span> <em style="color:#16a34a">Mandate</em>
+                    </div>
+                </div>
+
+                <div class="hero__rotator" aria-label="Focus areas">
+                    <span class="hero__rotator-label">Project A.C.T.</span>
+                    <span class="hero__rotator-sub" id="rotatorSub">Action Changes Things &mdash; Revital
+                        Healthcare&rsquo;s
+                        employee-led movement turning environmental care into public health.</span>
+                </div>
+            </div>
+
+            <div class="hero__half hero__half--right"></div>
+        </div>
+
+        <div class="hero__logo" aria-hidden="true">
+            <img src="images/act-logo.png" alt=""
+                onerror="this.style.display='none';this.parentElement.innerHTML='<svg viewBox=\'0 0 120 40\' fill=\'white\'><text x=\'60\' y=\'28\' text-anchor=\'middle\' font-family=\'Playfair Display,Georgia,serif\' font-weight=\'700\' font-size=\'28\' letter-spacing=\'-0.02em\'>ACT</text></svg>'">
+        </div>
+        <button class="hero__scroll" type="button" aria-label="Scroll to explore">
+            <span>Scroll</span>
+            <span class="mouse" aria-hidden="true"></span>
+        </button>
+    </section>
+
+    <!-- ── TICKER ── -->
+    <div class="ticker-band">
+        <div class="ticker-track" id="tickerTrack">
+            <div class="ticker-item">Project A.C.T. <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Action Changes Things <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Kilifi County, Kenya <span class="ticker-dot"></span></div>
+            <div class="ticker-item">5,000 Trees Planted <span class="ticker-dot"></span></div>
+            <div class="ticker-item">55 Legacy Bins Deployed <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Phase 06 · World Environment Day <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Revital Healthcare (EPZ) Ltd. <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Pwani University <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Project A.C.T. <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Action Changes Things <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Kilifi County, Kenya <span class="ticker-dot"></span></div>
+            <div class="ticker-item">5,000 Trees Planted <span class="ticker-dot"></span></div>
+            <div class="ticker-item">55 Legacy Bins Deployed <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Phase 06 · World Environment Day <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Revital Healthcare (EPZ) Ltd. <span class="ticker-dot"></span></div>
+            <div class="ticker-item">Pwani University <span class="ticker-dot"></span></div>
+        </div>
+    </div>
+
+    <!-- ── PHILOSOPHY ── -->
+    <section class="section-philosophy" id="philosophy">
+        <div class="philosophy-grid">
+            <div class="philosophy-text reveal">
+                <div class="philosophy-eyebrow">Our Core Mandate</div>
+                <h2 class="philosophy-title">Health Begins<br /><em>Outside the Clinic.</em></h2>
+                <p class="philosophy-desc">Revital Healthcare is dedicated to the preservation of human life through
+                    world-class medical manufacturing. However, true public health is not confined to clinical walls—it
+                    is inextricably linked to the ecosystems we inhabit.</p>
+                <p class="philosophy-desc">This is why the vast majority of Project A.C.T.'s CSR operations directly
+                    target the environment. Environmental degradation is the root cause of countless public health
+                    crises. Whether we are clearing hazardous waste from the shores of Copacabana or restoring marine
+                    ecosystems at Kuruitu Beach, we are actively mitigating disease vectors at their source.</p>
+                <div class="philosophy-micro-kpi">
+                    <div class="micro-kpi-block">
+                        <div class="micro-num">01</div>
+                        <div class="micro-lbl">Core Mission</div>
+                    </div>
+                    <div class="micro-kpi-block">
+                        <div class="micro-num">100%</div>
+                        <div class="micro-lbl">Preventative Focus</div>
+                    </div>
+                    <div class="micro-kpi-block">
+                        <div class="micro-num">360°</div>
+                        <div class="micro-lbl">Community Health</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="philosophy-visuals reveal">
+                <div class="img-main">
+                    <img src="images/philosophy-main.jpg" alt="Vast Coastline requiring protection" loading="lazy"
+                        srcset="images/philosophy-main.jpg 1024w, images/philosophy-main.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
+                </div>
+                <div class="glass-card">
+                    <div class="glass-eyebrow">The Environmental Equation</div>
+                    <div class="glass-val">Nature <span>⇄ Health</span></div>
+                    <div class="glass-desc">Every piece of plastic removed from our shores and every water source
+                        protected from contamination translates directly to a reduction in local disease. By treating
+                        the environment, we treat the patient before they ever reach the hospital.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── LEGACY ── -->
+    <section class="section-legacy" id="legacy">
+        <div class="legacy-grid">
+            <div class="legacy-text">
+                <div class="legacy-eyebrow reveal">Zero-Capital Sustainability</div>
+                <h2 class="legacy-title reveal reveal-delay-1">Built to<br /><em>Outlast Us.</em></h2>
+                <p class="legacy-desc reveal reveal-delay-1">A cleanup treats a symptom; infrastructure cures the
+                    disease. To transition from a one-off corporate event to permanent community behavioral change,
+                    Revital Healthcare implemented a zero-capital sustainability model.</p>
+                <p class="legacy-desc reveal reveal-delay-2">We upcycled 55 heavy-duty metal drums directly from the
+                    Revital factory floor. Welded, sanitized, and wrapped in high-visibility livery by our internal
+                    teams, these bins were installed at secure, monitored access points at zero cost to the project
+                    budget.</p>
+                <div class="legacy-highlight reveal reveal-delay-2">
+                    <p>By implementing a strict, three-color segregation system, we empower residents to actively
+                        maintain the shoreline while feeding directly into the community's 'Trash for Cash' recycling
+                        economy.</p>
+                </div>
+                <div class="legacy-kpi-strip reveal reveal-delay-3">
+                    <div class="legacy-kpi-cell">
+                        <div class="legacy-kpi-num">55</div>
+                        <div class="legacy-kpi-lbl">Drums Upcycled</div>
+                    </div>
+                    <div class="legacy-kpi-cell">
+                        <div class="legacy-kpi-num">KES 0</div>
+                        <div class="legacy-kpi-lbl">Capital Expenditure</div>
+                    </div>
+                    <div class="legacy-kpi-cell">
+                        <div class="legacy-kpi-num">3</div>
+                        <div class="legacy-kpi-lbl">Waste Streams</div>
+                    </div>
+                </div>
+                <div style="margin-top:16px;">
+                    <a href="infrastructure.html" class="inline-link">View Full Infrastructure <span>→</span></a>
+                </div>
+            </div>
+            <div class="bins-showcase">
+                <div class="bin-pillar bin-black reveal reveal-delay-1">
+                    <div class="bin-band"></div>
+                    <div class="drum-wrap">
+                        <div class="drum">
+                            <div class="drum-rib"></div>
+                            <div class="drum-rib"></div>
+                            <div class="drum-rib"></div>
+                            <div class="drum-fill"></div>
+                        </div>
+                        <div class="bin-chip">General</div>
+                    </div>
+                    <div class="bin-content">
+                        <div class="bin-category">Residual Waste</div>
+                        <div class="bin-title">Non-Recyclable<br />Materials</div>
+                        <div class="bin-desc">The residual stream. Accepts anything that cannot be cleanly separated —
+                            mixed materials, sanitary waste, contaminated packaging, and non-recyclable synthetics.
+                            Contents proceed to licensed municipal incineration.</div>
+                        <div class="bin-items">
+                            <div class="bin-item">
+                                <div class="bin-item-dot"></div><span>Non-recyclable packaging & multilayer</span>
+                            </div>
+                            <div class="bin-item">
+                                <div class="bin-item-dot"></div><span>Sanitary waste & bio-contaminated</span>
+                            </div>
+                            <div class="bin-item">
+                                <div class="bin-item-dot"></div><span>Incineration disposal pathway</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bin-pillar bin-green reveal reveal-delay-2">
+                    <div class="bin-band"></div>
+                    <div class="drum-wrap">
+                        <div class="drum">
+                            <div class="drum-rib"></div>
+                            <div class="drum-rib"></div>
+                            <div class="drum-rib"></div>
+                            <div class="drum-fill"></div>
+                        </div>
+                        <div class="bin-chip">Biodegradable</div>
+                    </div>
+                    <div class="bin-content">
+                        <div class="bin-category">Organic Waste</div>
+                        <div class="bin-title">Compostable<br />Organics</div>
+                        <div class="bin-desc">The green stream captures organic material that, properly managed, can
+                            re-enter the soil cycle. In a coastal fishing community, this includes fish scraps, seaweed,
+                            food waste, and natural fibre.</div>
+                        <div class="bin-items">
+                            <div class="bin-item">
+                                <div class="bin-item-dot"></div><span>Food waste, fish scraps & marine</span>
+                            </div>
+                            <div class="bin-item">
+                                <div class="bin-item-dot"></div><span>Seaweed, natural fibre & plant</span>
+                            </div>
+                            <div class="bin-item">
+                                <div class="bin-item-dot"></div><span>Composting or biogas pathway</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bin-pillar bin-blue reveal reveal-delay-3">
+                    <div class="bin-band"></div>
+                    <div class="drum-wrap">
+                        <div class="drum">
+                            <div class="drum-rib"></div>
+                            <div class="drum-rib"></div>
+                            <div class="drum-rib"></div>
+                            <div class="drum-fill"></div>
+                        </div>
+                        <div class="bin-chip">Recyclables</div>
+                    </div>
+                    <div class="bin-content">
+                        <div class="bin-category">Dry Recyclables</div>
+                        <div class="bin-title">PET Plastics<br />& Ghost Nets</div>
+                        <div class="bin-desc">The economic engine of the system. This bin feeds directly into the Trash
+                            for Cash circular loop — every PET bottle, ghost net, and rigid plastic deposited here
+                            becomes raw revenue for the community's Beach Management Unit.</div>
+                        <div class="bin-items">
+                            <div class="bin-item">
+                                <div class="bin-item-dot"></div><span>PET bottles, rigid plastics & film</span>
+                            </div>
+                            <div class="bin-item">
+                                <div class="bin-item-dot"></div><span>Ghost fishing nets & marine cordage</span>
+                            </div>
+                            <div class="bin-item">
+                                <div class="bin-item-dot"></div><span>Sold to regional recyclers — BMU</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="colour-legend reveal reveal-delay-2">
+                <div class="cl-item">
+                    <div class="cl-swatch" style="background:#3a3a3a; border:1px solid rgba(0,0,0,0.2);"></div>
+                    <div class="cl-label">Black — General / Residual</div>
+                </div>
+                <div class="cl-item">
+                    <div class="cl-swatch" style="background:#16a34a;"></div>
+                    <div class="cl-label">Green — Biodegradable</div>
+                </div>
+                <div class="cl-item">
+                    <div class="cl-swatch" style="background:#2563eb;"></div>
+                    <div class="cl-label">Blue — Recyclables</div>
+                </div>
+                <div class="cl-item" style="border-left:1px solid var(--border-light); padding-left:14px;">
+                    <div class="cl-label" style="color:var(--text-muted); font-size:7px;">Aligned with Kenya National
+                        Waste Strategy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── INTERVENTIONS ── -->
+    <section class="section-interventions" id="interventions">
+        <div class="int-grid">
+            <div class="int-sticky-col reveal">
+                <div class="int-eyebrow">Project A.C.T. Phases</div>
+                <h2 class="int-title">Targeted<br /><em>Interventions.</em></h2>
+                <p class="int-desc">From coastal restoration to clinical care – our operational footprint spans four
+                    distinct domains, each designed to address a critical community need.</p>
+                <div class="int-media-capsule">
+                    <img src="images/intervention-1.jpg" class="int-media-img active" id="img-1"
+                        alt="Communal Safety Net" loading="lazy"
+                        srcset="images/intervention-1.jpg 1024w, images/intervention-1.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
+                    <img src="images/intervention-2.jpg" class="int-media-img" id="img-2" alt="Environmental Action"
+                        loading="lazy" srcset="images/intervention-2.jpg 1024w, images/intervention-2.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
+                    <img src="images/intervention-3.jpg" class="int-media-img" id="img-3" alt="Bio-hazard Intervention"
+                        loading="lazy" srcset="images/intervention-3.jpg 1024w, images/intervention-3.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
+                    <img src="images/intervention-4.jpg" class="int-media-img" id="img-4"
+                        alt="Clinical Medical Intervention" loading="lazy"
+                        srcset="images/intervention-4.jpg 1024w, images/intervention-4.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
+                </div>
+            </div>
+            <div class="int-list">
+                <div class="int-item reveal active-item" data-target="img-1">
+                    <div class="int-num">01.</div>
+                    <div class="int-content">
+                        <div class="int-item-title">Communal Safety Net <span class="int-arrow">→</span></div>
+                        <div class="int-item-text">Strengthened community resilience through targeted social welfare
+                            interventions, providing essential support to vulnerable groups and fostering a culture of
+                            shared responsibility.</div>
+                    </div>
+                </div>
+                <div class="int-item reveal reveal-delay-1" data-target="img-2">
+                    <div class="int-num">02.</div>
+                    <div class="int-content">
+                        <div class="int-item-title">Environmental Action <span class="int-arrow">→</span></div>
+                        <div class="int-item-text">Deployed coordinated strike teams to extract marine debris, ghost
+                            nets, and plastics from Kilifi's coastline – restoring ecosystems and installing permanent
+                            upcycled infrastructure.</div>
+                    </div>
+                </div>
+                <div class="int-item reveal reveal-delay-2" data-target="img-3">
+                    <div class="int-num">03.</div>
+                    <div class="int-content">
+                        <div class="int-item-title">Bio‑hazard Intervention <span class="int-arrow">→</span></div>
+                        <div class="int-item-text">Rapid-response mobilization to neutralize a severe sanitary waste
+                            crisis – extracting 2.35 tonnes of bio-hazard and eliminating disease vectors at their
+                            source.</div>
+                    </div>
+                </div>
+                <div class="int-item reveal reveal-delay-3" data-target="img-4">
+                    <div class="int-num">04.</div>
+                    <div class="int-content">
+                        <div class="int-item-title">Clinical Medical Intervention <span class="int-arrow">→</span></div>
+                        <div class="int-item-text">Facilitated a high-volume free eye camp in partnership with Lions
+                            International – screening 375 patients, dispensing 91 glasses, and funding 10 life-altering
+                            cataract surgeries.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PHASE 6 ── -->
+    <section class="section-phase6" id="phase6">
+        <div class="phase6-grid">
+            <div class="phase6-text reveal">
+                <div class="phase6-eyebrow">Phase 06 · World Environment Day</div>
+                <h2 class="phase6-title">5,000 Trees.<br /><em>20 Bins.</em></h2>
+                <p class="phase6-desc">On Friday, June 5, 2026, Project A.C.T. participated as a headline corporate
+                    partner in the official Kilifi County World Environment Day celebrations, hosted at Pwani
+                    University. The event brought together the County Government, NEMA, academia, and the private sector
+                    in a massive multi-stakeholder coalition.</p>
+                <div class="phase6-highlight">
+                    <p>"By planting 5,000 trees, we proved our willingness to do the hard, physical work of
+                        conservation. By donating 20 Legacy Bins, we proved our commitment to circular, sustainable
+                        infrastructure."</p>
+                </div>
+                <p class="phase6-desc">The Kilifi County Director of Environment publicly commended Project A.C.T. for
+                    its sustained, measurable impact — a milestone that cements Revital Healthcare's reputation as a
+                    premier corporate sustainability partner.</p>
+                <div class="phase6-kpi-strip">
+                    <div class="phase6-kpi-cell">
+                        <div class="phase6-kpi-num">5,000</div>
+                        <div class="phase6-kpi-lbl">Trees Planted</div>
+                    </div>
+                    <div class="phase6-kpi-cell">
+                        <div class="phase6-kpi-num">20</div>
+                        <div class="phase6-kpi-lbl">Legacy Bins Donated</div>
+                    </div>
+                    <div class="phase6-kpi-cell">
+                        <div class="phase6-kpi-num">Pwani</div>
+                        <div class="phase6-kpi-lbl">University · Kilifi</div>
+                    </div>
+                </div>
+                <div style="margin-top:16px;">
+                    <a href="world-environment-day.html" class="inline-link">View Full Phase 06 <span>→</span></a>
+                </div>
+            </div>
+            <div class="phase6-visuals reveal reveal-delay-1">
+                <div class="phase6-img-main"><img src="images/phase6-main.jpg"
+                        alt="World Environment Day at Pwani University" loading="lazy"
+                        srcset="images/phase6-main.jpg 1024w, images/phase6-main.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" /></div>
+                <div class="phase6-glass">
+                    <div class="phase6-glass-eyebrow">Operational Reach</div>
+                    <div class="phase6-glass-val">5,000<span> Trees</span></div>
+                    <div class="phase6-glass-desc">Planted across the Pwani University Forest Farm — expanding local
+                        tree cover and directly contributing to global climate resilience goals.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── OUTCOMES ── -->
+    <section class="section-outcomes" id="outcomes">
+        <div class="outcomes-header reveal">
+            <div>
+                <div class="outcomes-eyebrow">Vipingo Kichinjioni · 26 March 2026</div>
+                <h2 class="outcomes-title">The Human<br /><em>Equation.</em></h2>
+            </div>
+            <p class="outcomes-desc">Rapid‑response mobilization targeting a severe bio‑hazard crisis. 18 volunteers, 4
+                sectors cleared, and a record‑breaking 2.35‑tonne extraction – all executed with extreme fiscal
+                discipline.</p>
+        </div>
+        <div class="bento-grid">
+            <div class="bento-card card-hero reveal reveal-delay-1">
+                <img src="images/outcomes-hero.jpg" alt="Community Impact" class="card-hero-img" loading="lazy"
+                    srcset="images/outcomes-hero.jpg 1024w, images/outcomes-hero.webp 1024w"
+                    sizes="(max-width: 768px) 100vw, 50vw" />
+                <div class="hero-content">
+                    <div class="hero-tag">Phase 03 · Strike Force</div>
+                    <div class="hero-text">2.35 tonnes of bio‑hazard extracted from drainage channels and dense brush.
+                    </div>
+                    <div class="hero-sub">470 kg raw fecal matter neutralized · 7,800 soiled diapers removed · 4
+                        immediate community threats mitigated.</div>
+                </div>
+            </div>
+            <div class="bento-card card-stat reveal reveal-delay-2">
+                <svg class="stat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <div>
+                    <div class="stat-num"><span class="counter" data-target="2.35">0</span><span>T</span></div>
+                    <div class="stat-label">Total Bio‑Hazard Extracted</div>
+                </div>
+            </div>
+            <div class="bento-card card-stat reveal reveal-delay-3">
+                <svg class="stat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                    <div class="stat-num"><span class="counter" data-target="470">0</span><span>kg</span></div>
+                    <div class="stat-label">Fecal Matter Neutralized</div>
+                </div>
+            </div>
+            <div class="bento-card card-wide reveal reveal-delay-1">
+                <div class="quote-mark">"</div>
+                <div>
+                    <div class="quote-text">Transitioning from general environmental stewardship to targeted,
+                        data‑driven public health risk mitigation. This operation solidified the trust between Revital
+                        Healthcare and the Department of Public Health.</div>
+                    <div class="quote-author">Project A.C.T. Strategic Mandate &nbsp;<span>|&nbsp; Vipingo Intervention
+                            Report</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ARCHIVE ── -->
+    <section class="section-archive" id="archive">
+        <div class="archive-container">
+            <div class="archive-header reveal">
+                <div class="archive-eyebrow">Project A.C.T. Digital Archive</div>
+                <h2 class="archive-title">A Movement,<br /><em>Not an Event.</em></h2>
+            </div>
+            <div class="gallery-accordion reveal reveal-delay-1">
+                <div class="gallery-item">
+                    <a href="index.html">
+                        <img src="images/gallery-1.jpg" alt="Volunteer portrait" class="gallery-img" loading="lazy"
+                            srcset="images/gallery-1.jpg 1024w, images/gallery-1.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 25vw" />
+                        <div class="gallery-overlay"></div>
+                        <div class="gallery-float-title">The Coalition</div>
+                        <div class="gallery-content">
+                            <div class="g-num">Vol. I</div>
+                            <div class="g-title">The Coalition</div>
+                            <div class="g-desc">78 active participants from Revital Healthcare, KWS, and local CBOs
+                                united for a singular mission.</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="copacabana.html">
+                        <img src="images/gallery-2.jpg" alt="Beach Sweep" class="gallery-img" loading="lazy"
+                            srcset="images/gallery-2.jpg 1024w, images/gallery-2.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 25vw" />
+                        <div class="gallery-overlay"></div>
+                        <div class="gallery-float-title">Strike Teams</div>
+                        <div class="gallery-content">
+                            <div class="g-num">Vol. II</div>
+                            <div class="g-title">Strike Teams</div>
+                            <div class="g-desc">Six high-density strike teams cleared 300m of shoreline in a highly
+                                coordinated 4-hour operation.</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="eye-camp.html">
+                        <img src="images/gallery-3.jpg" alt="Eye Camp" class="gallery-img" loading="lazy"
+                            srcset="images/gallery-3.jpg 1024w, images/gallery-3.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 25vw" />
+                        <div class="gallery-overlay"></div>
+                        <div class="gallery-float-title">Eye Camp</div>
+                        <div class="gallery-content">
+                            <div class="g-num">Vol. III</div>
+                            <div class="g-title">Eye Camp</div>
+                            <div class="g-desc">375+ patients screened, 91 glasses dispensed, and 10 life-changing
+                                cataract surgeries funded at Kikambala.</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="infrastructure.html">
+                        <img src="images/gallery-4.jpg" alt="Legacy Installation" class="gallery-img" loading="lazy"
+                            srcset="images/gallery-4.jpg 1024w, images/gallery-4.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 25vw" />
+                        <div class="gallery-overlay"></div>
+                        <div class="gallery-float-title">Legacy Infrastructure</div>
+                        <div class="gallery-content">
+                            <div class="g-num">Vol. IV</div>
+                            <div class="g-title">Legacy Infrastructure</div>
+                            <div class="g-desc">15 permanent bins upcycled from the factory floor were installed to
+                                outlast the operation.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="phase5-teaser reveal reveal-delay-1">
+                <div class="phase5-stripe"></div>
+                <div class="phase5-body">
+                    <div style="flex:1">
+                        <div class="phase5-label">— Phase 05 · Eye Care Camp · Kikambala</div>
+                        <div class="phase5-title">Free Sight.<br /><em>Permanent Vision.</em></div>
+                        <div class="phase5-desc">Project A.C.T. Phase 05 delivered a free eye care camp at Kikambala,
+                            partnering with licensed optometrists to screen, diagnose, and treat community members with
+                            zero cost to participants. Hundreds received spectacles, early-stage cataract intervention
+                            referrals, and preventative care guidance in a single weekend operation.</div>
+                        <div style="margin-top:10px;">
+                            <a href="eye-camp.html" class="inline-link">View Phase 05 <span>→</span></a>
+                        </div>
+                    </div>
+                    <div class="phase5-meta">
+                        <div class="phase5-stat-num">375+</div>
+                        <div class="phase5-stat-lbl">Patients Seen</div>
+                        <div style="height:8px"></div>
+                        <div class="phase5-stat-num">91</div>
+                        <div class="phase5-stat-lbl">Glasses Dispensed</div>
+                        <div style="height:8px"></div>
+                        <div class="phase5-stat-num">10</div>
+                        <div class="phase5-stat-lbl">Surgeries Funded</div>
+                    </div>
+                </div>
+            </div>
+            <div class="closing-block reveal reveal-delay-2">
+                <div class="closing-quote">"By breaking bread with the residents and the KWS, Revital built a reservoir
+                    of goodwill that transcends standard corporate PR."</div>
+                <div class="closing-sub">Phase 3 awaits. With 100+ volunteers, a full kilometre of coastline could be
+                    cleared in a single operation. The benchmark has been set — and Project A.C.T. has every intention
+                    of surpassing it.</div>
+                <a href="vipingo.html" class="closing-btn">View Phase 03 — Vipingo <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+    FOOTER — DIRECTOR LARGER & CENTERED
+    ═══════════════════════════════════════════ -->
+    <footer class="section-footer" id="footer">
+        <div class="footer-ghost">ACT</div>
+
+        <div class="footer-inner">
+            <div class="footer-left reveal">
+                <div class="footer-eyebrow">Project A.C.T. — Digital Archive</div>
+                <div class="footer-logo-wrap">
+                    <div class="footer-logo-icon">
+                        <img src="images/act-logo.png" alt="Project A.C.T." onerror="this.style.display='none';"
+                            loading="lazy" />
+                    </div>
+                    <span
+                        style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--text-primary);">A.C.T.</span>
+                </div>
+                <h1>Action<br /><em>Changes</em><br />Things<span class="dot">.</span></h1>
+                <p class="footer-mission">Project A.C.T. is an employee-led Corporate Social Responsibility initiative.
+                    The interventions documented herein demonstrate our unwavering commitment to environmental
+                    ROI—proving that precision budgeting and grassroots connection can actively preserve and protect
+                    human life.</p>
+                <div class="footer-divider"></div>
+                <div class="footer-contact">
+                    Revital Healthcare (EPZ) Ltd.<br />Kilifi County, Kenya &nbsp;·&nbsp;
+                    <a href="https://revitalhcare.com/" target="_blank">www.revitalhealthcare.com</a>
+                </div>
+            </div>
+
+            <div class="footer-right reveal reveal-delay-1">
+                <div class="footer-headshot">
+                    <div class="headshot-image">
+                        <img src="images/director-headshot.jpg" alt="Roneek Vora – Head, Project A.C.T."
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>RONEEK VORA<br>HEADSHOT</div>'"
+                            loading="lazy" />
+                    </div>
+                    <div class="headshot-quote">"We don't just clean beaches – we build systems that keep them clean."
+                    </div>
+                    <div class="headshot-name">Roneek Vora</div>
+                    <div class="headshot-title">Head, Project A.C.T.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-corner"></div>
+        <div class="footer-bottom-bar">
+            <div class="footer-bottom-copy">© 2025-2026 Revital Healthcare (EPZ) Ltd. &nbsp;·&nbsp; Project
+                <span>A.C.T.</span> &nbsp;·&nbsp; All Rights Reserved
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true"
+                    target="_blank" class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg></a>
+                <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" class="footer-social-link"
+                    aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg></a>
+                <a href="https://revitalhcare.com/" target="_blank" class="footer-social-link" aria-label="Website"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                    </svg></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── HERO REDESIGN INLINE SCRIPT ── -->
+    <script>
+        (function () {
+            var heroVideo = document.querySelector('.hero__video');
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            var hero = document.querySelector('.hero');
+            var title = document.getElementById('heroTitle');
+            var topicEl = document.getElementById('newTopic');
+            var subEl = document.getElementById('rotatorSub');
+
+            var topics = [
+                ['Our', 'Mandate'],
+                ['Coastal', 'Restoration'],
+                ['Community', 'Health'],
+                ['Legacy', 'Infrastructure'],
+                ['People', 'Powered'],
+                ['Public', 'Health']
+            ];
+            var topicColors = [
+                '#16a34a',
+                '#ef4444',
+                '#2563eb',
+                '#16a34a',
+                '#ef4444',
+                '#2563eb'
+            ];
+            var subs = [
+                'Action Changes Things · Revital Healthcare·s employee-led movement turning environmental care into public health.',
+                'Restoring Kilifi·s coastline: strike teams clearing plastics, ghost nets, and marine debris from the shore.',
+                'Free eye camps in partnership with Lions International · screenings, glasses, and funded cataract surgeries.',
+                'Upcycled factory drums welded into permanent, three-stream Legacy Bins at zero capital cost.',
+                'A coalition of volunteers, county government, and academia · a movement, not a one-off event.',
+                'Health begins outside the clinic: treating the environment to protect the community at its source.'
+            ];
+
+            function setTopic(pair, color) {
+                topicEl.innerHTML = '<span>' + pair[0] + '</span> <em style="color:' + color + '">' + pair[1] + '</em>';
+            }
+
+            // FLIP: take the ORIGINAL A C T, lay them out horizontally as A.C.T. in the top-right,
+            // and animate them (full motion + shrink) from their vertical positions to the mark.
+            function collapseToActMark() {
+                var inits = [].slice.call(title.querySelectorAll('.initial'));
+                var first = inits.map(function (el) { return el.getBoundingClientRect(); });
+
+                var mark = document.createElement('div');
+                mark.className = 'hero__actmark';
+                mark.setAttribute('aria-hidden', 'true');
+                inits.forEach(function (el) {
+                    mark.appendChild(el);
+                    var d = document.createElement('span');
+                    d.className = 'dot'; d.textContent = '.';
+                    mark.appendChild(d);
+                });
+                hero.appendChild(mark);
+
+                var last = inits.map(function (el) { return el.getBoundingClientRect(); });
+                inits.forEach(function (el, i) {
+                    var dx = first[i].left - last[i].left;
+                    var dy = first[i].top - last[i].top;
+                    var s = first[i].height / last[i].height;
+                    el.style.transformOrigin = 'top left';
+                    el.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')';
+                });
+                void mark.offsetWidth;
+                inits.forEach(function (el) {
+                    el.style.transition = 'transform 1.6s cubic-bezier(0.16,1,0.3,1)';
+                    el.style.transform = 'translate(0,0) scale(1)';
+                });
+                window.setTimeout(function () { mark.classList.add('dots-in'); }, 1150);
+            }
+
+            function startRotation() {
+                if (reduce) return;
+                var i = 0;
+                window.setInterval(function () {
+                    i = (i + 1) % subs.length;
+                    topicEl.classList.add('is-out');
+                    subEl.classList.add('is-out');
+                    window.setTimeout(function () {
+                        setTopic(topics[i], topicColors[i]);
+                        subEl.textContent = subs[i];
+                        topicEl.classList.remove('is-out');
+                        subEl.classList.remove('is-out');
+                    }, 450);
+                }, 4200);
+            }
+
+            function runSequence() {
+                document.body.classList.add('ready');
+                if (reduce) return;
+                window.setTimeout(function () {
+                    document.body.classList.add('collapsed');
+                    window.setTimeout(collapseToActMark, 950);
+                    window.setTimeout(startRotation, 3200);
+                }, 5200);
+            }
+
+            // Run hero animation sequence (no pre-load overlay; that's handled by main.js via #page-intro)
+            window.setTimeout(runSequence, 2200);
+
+            if (heroVideo) {
+                heroVideo.play().catch(function () {
+                    var resume = function () {
+                        heroVideo.play();
+                        document.removeEventListener('click', resume);
+                        document.removeEventListener('touchstart', resume);
+                    };
+                    document.addEventListener('click', resume, { once: true });
+                    document.addEventListener('touchstart', resume, { once: true });
+                });
+            }
+            if (reduce && heroVideo) heroVideo.removeAttribute('autoplay');
+
+            // Scroll cue: clicking smoothly scrolls past the hero
+            var scrollCue = document.querySelector('.hero__scroll');
+            if (scrollCue) {
+                scrollCue.addEventListener('click', function () {
+                    var y = (hero && hero.offsetHeight) ? hero.offsetHeight : window.innerHeight;
+                    window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+                });
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

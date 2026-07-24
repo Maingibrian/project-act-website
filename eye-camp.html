@@ -6,53 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phase 05 — Kikambala Free Eye Camp | Project A.C.T.</title>
     <link rel="icon" type="image/png" href="images/act-logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap"
-        rel="stylesheet" />
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" />
+    </noscript>
 
     <link rel="stylesheet" href="css/eye-camp.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <script src="js/nav.js" defer></script>
 </head>
 
 <body>
 
     <!-- ── NAVIGATION ── -->
-    <nav class="site-nav" id="siteNav">
-
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-            <div class="nav-logo">
-                <div class="logo-placeholder">
-                    <div class="logo-icon">
-                        <img src="images/act-logo.png" alt="Project A.C.T."
-                            onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
-                    </div>
-                    <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
-                            class="dot">.</span></span>
-                </div>
-                <span class="nav-pipe"></span>
-                <span class="nav-sub">Action Changes Things</span>
-            </div>
+    <nav class="hero__nav is-stuck" aria-label="Primary">
+        <a href="index.html" class="hero__nav-brand">
+            <img src="images/act-logo.png" alt="ACT" class="hero__nav-brand-img" onerror="this.style.display='none'" />
+            <span class="hero__nav-brand-text">A<span class="dot">.</span>C<span class="dot">.</span>T<span class="dot">.</span></span>
         </a>
-        <ul class="nav-links">
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#execution">Execution</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#partners">Partners</a></li>
-            <li><a href="#impact">Impact</a></li>
-        </ul>
-        <div class="nav-progress" id="navProgress"></div>
+        <a href="index.html#philosophy" class="hero__nav-link">Philosophy</a>
+        <a href="infrastructure-wip.html" class="hero__nav-link">Infrastructure</a>
+        <div class="hero__nav-dropdown">
+            <button class="hero__nav-link active" type="button" aria-expanded="false" aria-haspopup="true">Chapters</button>
+            <div class="hero__nav-menu" role="menu">
+                <a href="archive.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">📁</span>Full Archive</a>
+                <a href="world-environment-day.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">06</span>World Env Day</a>
+                <a href="eye-camp.html" class="hero__nav-menu-item active" role="menuitem"><span class="phase-badge">05</span>Eye Camp</a>
+                <a href="vipingo.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">04</span>Vipingo</a>
+                <a href="kuruitu.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">03</span>Kuruitu</a>
+                <a href="copacabana.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">02</span>Copacabana</a>
+                <a href="green-olive.html" class="hero__nav-menu-item" role="menuitem"><span class="phase-badge">01</span>Green Olive</a>
+            </div>
+        </div>
+        <a href="donate.html" class="hero__nav-link">Donate</a>
+        <a href="contact.html" class="hero__nav-link">Contact</a>
     </nav>
 
     <!-- ── HERO WITH ROTATING BACKGROUND ── -->
     <section class="hero">
         <!-- Rotating Background Images -->
         <div class="hero-bg-container" id="heroBgContainer">
-            <img src="images/eye-hero-bg-1.jpg" class="hero-bg-slide active" alt="Eye camp background" loading="lazy" />
-            <img src="images/eye-hero-bg-2.jpg" class="hero-bg-slide" alt="Medical consultation" loading="lazy" />
-            <img src="images/eye-hero-bg-3.jpg" class="hero-bg-slide" alt="Patient fitting glasses" loading="lazy" />
-            <img src="images/eye-hero-bg-4.jpg" class="hero-bg-slide" alt="Pharmacy station" loading="lazy" />
+            <img src="images/eye-hero-bg-1.jpg" class="hero-bg-slide active" alt="Eye camp background" loading="lazy" srcset="images/eye-hero-bg-1.jpg 1x, images/eye-hero-bg-1.jpg 2x" sizes="100vw" />
+            <img src="images/eye-hero-bg-2.jpg" class="hero-bg-slide" alt="Medical consultation" loading="lazy" srcset="images/eye-hero-bg-2.jpg 1x, images/eye-hero-bg-2.jpg 2x" sizes="100vw" />
+            <img src="images/eye-hero-bg-3.jpg" class="hero-bg-slide" alt="Patient fitting glasses" loading="lazy" srcset="images/eye-hero-bg-3.jpg 1x, images/eye-hero-bg-3.jpg 2x" sizes="100vw" />
+            <img src="images/eye-hero-bg-4.jpg" class="hero-bg-slide" alt="Pharmacy station" loading="lazy" srcset="images/eye-hero-bg-4.jpg 1x, images/eye-hero-bg-4.jpg 2x" sizes="100vw" />
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-ghost">05</div>
@@ -91,8 +93,7 @@
             <div class="capsule-container">
                 <div class="capsule-echo"></div>
                 <div class="capsule-wrap">
-                    <img id="capsuleImage" src="images/eye-hero-bg-1.jpg" alt="Medical team consulting patient"
-                        loading="lazy" />
+                    <img id="capsuleImage" src="images/eye-hero-bg-1.jpg" alt="Medical team consulting patient" loading="lazy" srcset="images/eye-hero-bg-1.jpg 1x, images/eye-hero-bg-1.jpg 2x" sizes="(max-width: 768px) 100vw, 50vw" />
                     <div class="capsule-overlay"></div>
                 </div>
                 <div class="phase-medallion">
@@ -178,7 +179,7 @@
         </div>
         <div class="execution-grid">
             <div class="ex-card featured reveal">
-                <img class="ex-card-img" src="images/eye-hero-bg-2.jpg" alt="Medical team" loading="lazy" />
+                <img class="ex-card-img" src="images/eye-hero-bg-2.jpg" alt="Medical team" loading="lazy" srcset="images/eye-hero-bg-2.jpg 1x, images/eye-hero-bg-2.jpg 2x" sizes="(max-width: 768px) 100vw, 50vw" />
                 <div class="ex-card-body">
                     <div class="ex-card-num">2.1</div>
                     <h3 class="ex-card-title">The Partnership Matrix</h3>
@@ -516,7 +517,7 @@
                 <div class="footer-headshot">
                     <div class="headshot-image">
                         <img src="images/act-logo.png" alt="Project A.C.T. Committee"
-                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" />
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" loading="lazy" />
                     </div>
                     <div class="headshot-quote">"Health equity is achieved through strategic partnerships. 375 patients
                         screened, 91 glasses dispensed, and 10 life-changing surgeries funded in one transformative

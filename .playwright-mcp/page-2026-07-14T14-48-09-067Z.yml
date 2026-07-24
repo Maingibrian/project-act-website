@@ -1,0 +1,87 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - link "Project A.C.T. A.C.T. Action Changes Things" [ref=f1e3] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=f1e4]:
+        - generic [ref=f1e5]:
+          - img "Project A.C.T." [ref=f1e7]
+          - generic [ref=f1e8]: A.C.T.
+        - generic [ref=f1e10]: Action Changes Things
+    - list [ref=f1e11]:
+      - listitem [ref=f1e12]:
+        - link "Home" [ref=f1e13] [cursor=pointer]:
+          - /url: index.html
+      - listitem [ref=f1e14]:
+        - link "Projects Archive" [ref=f1e15] [cursor=pointer]:
+          - /url: archive.html
+      - listitem [ref=f1e16]:
+        - link "Contact" [ref=f1e17] [cursor=pointer]:
+          - /url: contact.html
+  - banner [ref=f1e18]:
+    - generic: CONTACT
+    - generic [ref=f1e19]: Project A.C.T. — Get In Touch
+    - heading [level=1] [ref=f1e20]:
+      - text: Let's Build
+      - emphasis [ref=f1e21]: Impact.
+    - paragraph [ref=f1e22]: Whether you represent a community organization, a government body, an academic institution, or a like-minded corporate partner — we want to hear from you. Collaboration is how Action Changes Things.
+  - generic [ref=f1e24]:
+    - generic [ref=f1e25]:
+      - generic [ref=f1e26]: Reach The Coalition
+      - heading [level=2] [ref=f1e27]:
+        - text: Direct
+        - emphasis [ref=f1e28]: Lines.
+      - paragraph [ref=f1e29]: Project A.C.T. is an employee-led CSR initiative of Revital Healthcare (EPZ) Ltd. Use the channels below or send a message and our team will respond.
+      - generic [ref=f1e30]:
+        - generic [ref=f1e36]:
+          - generic [ref=f1e37]: Headquarters
+          - generic [ref=f1e38]: Revital Healthcare (EPZ) Ltd.Kilifi County, Kenya
+        - generic [ref=f1e44]:
+          - generic [ref=f1e45]: Email
+          - link "act@revitalhealthcare.com" [ref=f1e47] [cursor=pointer]:
+            - /url: mailto:act@revitalhealthcare.com
+        - generic [ref=f1e52]:
+          - generic [ref=f1e53]: Phone
+          - link "+254 (0) 00 000 0000" [ref=f1e55] [cursor=pointer]:
+            - /url: tel:+254000000000
+        - generic [ref=f1e61]:
+          - generic [ref=f1e62]: Website
+          - link "www.revitalhealthcare.com" [ref=f1e64] [cursor=pointer]:
+            - /url: https://revitalhcare.com/
+      - generic [ref=f1e65]:
+        - link "LinkedIn" [ref=f1e66] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true
+        - link "Instagram" [ref=f1e70] [cursor=pointer]:
+          - /url: https://www.instagram.com/project_a.c.t_/
+        - link "Website" [ref=f1e74] [cursor=pointer]:
+          - /url: https://revitalhcare.com/
+    - generic [ref=f1e136]:
+      - heading "Message Received." [level=3] [ref=f1e140]
+      - paragraph [ref=f1e141]: Thank you for reaching out to Project A.C.T. Our team will be in touch shortly.
+      - button "Send Another Message" [ref=f1e142] [cursor=pointer]
+  - contentinfo [ref=f1e102]:
+    - generic: ACT
+    - generic [ref=f1e103]:
+      - generic [ref=f1e104]:
+        - generic [ref=f1e105]: Project A.C.T. — Digital Archive
+        - generic [ref=f1e106]:
+          - img "Project A.C.T." [ref=f1e108]
+          - generic [ref=f1e109]: A.C.T.
+        - heading [level=1] [ref=f1e110]:
+          - text: Action
+          - emphasis [ref=f1e111]: Changes
+          - text: Things.
+        - paragraph [ref=f1e112]: Project A.C.T. is an employee-led Corporate Social Responsibility initiative. The interventions documented herein demonstrate our unwavering commitment to environmental ROI—proving that precision budgeting and grassroots connection can actively preserve and protect human life.
+        - generic [ref=f1e114]:
+          - text: Revital Healthcare (EPZ) Ltd.Kilifi County, Kenya ·
+          - link "www.revitalhealthcare.com" [ref=f1e115] [cursor=pointer]:
+            - /url: https://www.revitalhealthcare.com
+      - img "Project A.C.T. Logo" [ref=f1e118]
+    - generic [ref=f1e120]:
+      - generic [ref=f1e121]: © 2025-2026 Revital Healthcare (EPZ) Ltd. · Project A.C.T. · All Rights Reserved
+      - generic [ref=f1e122]:
+        - link "LinkedIn" [ref=f1e123] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true
+        - link "Instagram" [ref=f1e127] [cursor=pointer]:
+          - /url: https://www.instagram.com/project_a.c.t_/
+        - link "Website" [ref=f1e131] [cursor=pointer]:
+          - /url: https://revitalhcare.com/

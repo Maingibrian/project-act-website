@@ -1,0 +1,116 @@
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - link "toptal-header-logo" [ref=e7] [cursor=pointer]:
+          - /url: https://www.toptal.com
+        - link "Utilities" [ref=e11] [cursor=pointer]:
+          - /url: https://www.toptal.com/utilities-tools
+        - generic "CSS Minifier" [ref=e17] [cursor=pointer]
+      - button "Open menu" [ref=e20] [cursor=pointer]
+    - generic [ref=e24]:
+      - main [ref=e25]:
+        - heading "Online CSS Minifier Tool and Compressor, with Fast and Simple API Access" [level=1] [ref=e27]
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - heading "Input CSS" [level=2] [ref=e31]
+            - textbox "code input" [active] [ref=e34]
+            - generic [ref=e35]:
+              - button "Clear" [disabled]
+              - button "Minify" [disabled]
+          - generic [ref=e36]:
+            - heading "Minified CSS Output" [level=2] [ref=e38]
+            - generic [ref=e42]:
+              - button "Copy to Clipboard" [disabled]
+      - complementary [ref=e43]:
+        - generic [ref=e45]:
+          - heading "CSS Minifier Tool Documentation" [level=2] [ref=e47]
+          - link [ref=e48] [cursor=pointer]:
+            - /url: /developers/cssminifier/documentation
+            - alert [ref=e49]:
+              - generic [ref=e50]: The API has changed, to see more please click here
+          - generic [ref=e55]:
+            - paragraph [ref=e56]: To minify/compress your CSS, perform a POST request to
+            - generic [ref=e57]: API https://www.toptal.com/developers/cssminifier/api/raw
+            - paragraph [ref=e60]: with the input parameter set to the CSS you want to minify.
+          - button "See the documentation" [ref=e61] [cursor=pointer]
+    - generic [ref=e64]:
+      - heading "Hire World Class Talent with Toptal" [level=2] [ref=e65]
+      - list [ref=e66]:
+        - listitem [ref=e67]:
+          - link "CSS Developers" [ref=e68] [cursor=pointer]:
+            - /url: https://toptal.com/css
+        - listitem [ref=e69]:
+          - link "Landing Page Designers" [ref=e70] [cursor=pointer]:
+            - /url: https://toptal.com/designers/landing-page
+        - listitem [ref=e71]:
+          - link "Animation Designers" [ref=e72] [cursor=pointer]:
+            - /url: https://toptal.com/designers/animation
+        - listitem [ref=e73]:
+          - link "Web Developers" [ref=e74] [cursor=pointer]:
+            - /url: https://toptal.com/web
+        - listitem [ref=e75]:
+          - link "Social Media Designers" [ref=e76] [cursor=pointer]:
+            - /url: https://toptal.com/designers/social-media
+        - listitem [ref=e77]:
+          - link "Webflow Designers" [ref=e78] [cursor=pointer]:
+            - /url: https://toptal.com/designers/webflow
+        - listitem [ref=e79]:
+          - link "Blog Designers" [ref=e80] [cursor=pointer]:
+            - /url: https://toptal.com/designers/blog-designers
+        - listitem [ref=e81]:
+          - link "Salesforce Consultants" [ref=e82] [cursor=pointer]:
+            - /url: https://toptal.com/salesforce-consultants
+        - listitem [ref=e83]:
+          - link "Mobile UI Designers" [ref=e84] [cursor=pointer]:
+            - /url: https://toptal.com/designers/mobile-ui
+        - listitem [ref=e85]:
+          - link "WPF Developers" [ref=e86] [cursor=pointer]:
+            - /url: https://toptal.com/wpf
+        - listitem [ref=e87]:
+          - link "Level Designers" [ref=e88] [cursor=pointer]:
+            - /url: https://toptal.com/designers/level
+        - listitem [ref=e89]:
+          - link "Mobile Game Designers" [ref=e90] [cursor=pointer]:
+            - /url: https://toptal.com/designers/mobile-game
+        - listitem [ref=e91]:
+          - link "CSS3 Developers" [ref=e92] [cursor=pointer]:
+            - /url: https://toptal.com/css3
+        - listitem [ref=e93]:
+          - link "VBA Developers" [ref=e94] [cursor=pointer]:
+            - /url: https://toptal.com/vba
+        - listitem [ref=e95]:
+          - link "Marketo Developers" [ref=e96] [cursor=pointer]:
+            - /url: https://toptal.com/marketo
+    - contentinfo [ref=e98]:
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - link "toptal-footer-logo" [ref=e101] [cursor=pointer]:
+            - /url: https://www.toptal.com
+          - link "Hire the top 3% of freelance talent" [ref=e105] [cursor=pointer]:
+            - /url: https://www.toptal.com/developers
+        - link "Join the Toptal Network" [ref=e106] [cursor=pointer]:
+          - /url: https://www.toptal.com/freelance-jobs
+      - generic [ref=e107]:
+        - paragraph [ref=e108]: Copyright 2010 - 2026 Toptal, LLC
+        - navigation "footer-nav" [ref=e109]:
+          - list [ref=e110]:
+            - listitem [ref=e111]:
+              - link "Privacy Policy" [ref=e112] [cursor=pointer]:
+                - /url: https://www.toptal.com/privacy
+            - listitem [ref=e113]:
+              - link "Website terms" [ref=e114] [cursor=pointer]:
+                - /url: https://www.toptal.com/tos
+    - dialog "cookie-banner" [ref=e116]:
+      - paragraph [ref=e117]:
+        - text: By continuing to use this site you agree to our
+        - link "Cookie Policy" [ref=e118] [cursor=pointer]:
+          - /url: https://www.toptal.com/cookie-policy
+        - link "Privacy Policy" [ref=e119] [cursor=pointer]:
+          - /url: https://www.toptal.com/privacy
+        - text: ", and"
+        - link "Terms of Use" [ref=e120] [cursor=pointer]:
+          - /url: https://www.toptal.com/company-tos
+        - text: .
+      - button "Got it" [ref=e122] [cursor=pointer]
+  - alert [ref=e123]

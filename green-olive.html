@@ -6,44 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phase 01 — Green Olive Children's Home | Project A.C.T.</title>
     <link rel="icon" type="image/png" href="images/act-logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap"
-        rel="stylesheet" />
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap" />
+    </noscript>
     <link rel="stylesheet" href="css/green-olive.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <script src="js/nav.js" defer></script>
 </head>
 
 <body>
-    <nav class="site-nav" id="siteNav">
-        <div class="nav-progress" id="navProgress"></div>
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-            <div class="nav-logo">
-                <div class="logo-placeholder">
-                    <div class="logo-icon">
-                        <img src="images/act-logo.png" alt="Project A.C.T."
-                            onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
-                    </div>
-                </div>
-                <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
-                        class="dot">.</span></span>
-                <span class="nav-pipe"></span>
-                <span class="nav-sub">Action Changes Things</span>
-            </div>
+    <!-- ── NAVIGATION ── -->
+    <nav class="hero__nav is-stuck" aria-label="Primary">
+        <a href="index.html" class="hero__nav-brand">
+            <img src="images/act-logo.png" alt="ACT" class="hero__nav-brand-img" onerror="this.style.display='none'" />
+            <span class="hero__nav-brand-text">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                    class="dot">.</span></span>
         </a>
-        <ul class="nav-links">
-            <li><a href="#overview">Report</a></li>
-            <li><a href="#story">Story</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-        </ul>
+        <a href="index.html#philosophy" class="hero__nav-link">Philosophy</a>
+        <a href="infrastructure-wip.html" class="hero__nav-link">Infrastructure</a>
+        <div class="hero__nav-dropdown">
+            <button class="hero__nav-link active" type="button" aria-expanded="false"
+                aria-haspopup="true">Chapters</button>
+            <div class="hero__nav-menu" role="menu">
+                <a href="archive.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">📁</span>Full Archive</a>
+                <a href="world-environment-day.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">06</span>World Env Day</a>
+                <a href="eye-camp.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">05</span>Eye Camp</a>
+                <a href="vipingo.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">04</span>Vipingo</a>
+                <a href="kuruitu.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">03</span>Kuruitu</a>
+                <a href="copacabana.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">02</span>Copacabana</a>
+                <a href="green-olive.html" class="hero__nav-menu-item active" role="menuitem"><span
+                        class="phase-badge">01</span>Green Olive</a>
+            </div>
+        </div>
+        <a href="donate.html" class="hero__nav-link">Donate</a>
+        <a href="contact.html" class="hero__nav-link">Contact</a>
     </nav>
 
     <section class="hero">
         <div class="hero-bg-container">
-            <img src="images/olive-hero-bg.jpg" class="hero-bg-slide active" alt="Green Olive" loading="lazy" />
-            <img src="images/olive-gallery-1.jpg" class="hero-bg-slide" alt="Team with children" loading="lazy" />
-            <img src="images/olive-gallery-3.jpg" class="hero-bg-slide" alt="Stationery" loading="lazy" />
+            <img src="images/olive-hero-bg.jpg" class="hero-bg-slide active" alt="Green Olive" loading="lazy"
+                srcset="images/olive-hero-bg.jpg 1024w, images/olive-hero-bg.webp 1024w" sizes="100vw" />
+            <img src="images/olive-gallery-1.jpg" class="hero-bg-slide" alt="Team with children" loading="lazy"
+                srcset="images/olive-gallery-1.jpg 1024w, images/olive-gallery-1.webp 1024w" sizes="100vw" />
+            <img src="images/olive-gallery-3.jpg" class="hero-bg-slide" alt="Stationery" loading="lazy"
+                srcset="images/olive-gallery-3.jpg 1024w, images/olive-gallery-3.webp 1024w" sizes="100vw" />
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-ghost">CARE</div>
@@ -79,7 +97,9 @@
             <div class="capsule-container">
                 <div class="capsule-echo"></div>
                 <div class="capsule-wrap">
-                    <img id="capsuleImage" src="images/olive-hero-bg.jpg" alt="Green Olive Children" loading="lazy" />
+                    <img id="capsuleImage" src="images/olive-hero-bg.jpg" alt="Green Olive Children" loading="lazy"
+                        srcset="images/olive-hero-bg.jpg 1024w, images/olive-hero-bg.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
                     <div class="capsule-overlay"></div>
                 </div>
                 <div class="phase-medallion">
@@ -245,7 +265,9 @@
             <h2 class="timeline-title reveal d1">Day of<br><em>Operations.</em></h2>
             <div class="tl-grid">
                 <div class="tl-item reveal">
-                    <div class="tl-img"><img src="images/olive-gallery-1.jpg" alt="Assembly" loading="lazy" /></div>
+                    <div class="tl-img"><img src="images/olive-gallery-1.jpg" alt="Assembly" loading="lazy"
+                            srcset="images/olive-gallery-1.jpg 1024w, images/olive-gallery-1.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 50vw" /></div>
                     <div class="tl-content">
                         <div class="tl-time">08:00 AM</div>
                         <div class="tl-heading">Team Assembly</div>
@@ -254,7 +276,9 @@
                     </div>
                 </div>
                 <div class="tl-item reveal d1">
-                    <div class="tl-img"><img src="images/olive-gallery-2.jpg" alt="Arrival" loading="lazy" /></div>
+                    <div class="tl-img"><img src="images/olive-gallery-2.jpg" alt="Arrival" loading="lazy"
+                            srcset="images/olive-gallery-2.jpg 1024w, images/olive-gallery-2.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 50vw" /></div>
                     <div class="tl-content">
                         <div class="tl-time">09:30 AM</div>
                         <div class="tl-heading">Welcome to Green Olive</div>
@@ -263,7 +287,9 @@
                     </div>
                 </div>
                 <div class="tl-item reveal d2">
-                    <div class="tl-img"><img src="images/olive-gallery-3.jpg" alt="Packs" loading="lazy" /></div>
+                    <div class="tl-img"><img src="images/olive-gallery-3.jpg" alt="Packs" loading="lazy"
+                            srcset="images/olive-gallery-3.jpg 1024w, images/olive-gallery-3.webp 1024w"
+                            sizes="(max-width: 768px) 100vw, 50vw" /></div>
                     <div class="tl-content">
                         <div class="tl-time">10:00 AM</div>
                         <div class="tl-heading">Personal Dignity Packs</div>
@@ -449,7 +475,8 @@
                 <div class="footer-headshot">
                     <div class="headshot-image">
                         <img src="images/act-logo.png" alt="Project A.C.T. Committee"
-                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" />
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'"
+                            loading="lazy" />
                     </div>
                     <div class="headshot-quote">"Social welfare creates the foundation for all interventions. 88 dignity
                         packs, 110 meals, and unscripted connections proved that purpose-driven resourcefulness can
@@ -509,14 +536,6 @@
             });
         }, { threshold: 0.5 });
         counters.forEach(el => counterObserver.observe(el));
-
-        // ── NAV SCROLL ──
-        const nav = document.getElementById('siteNav'), prog = document.getElementById('navProgress');
-        window.addEventListener('scroll', () => {
-            nav.style.background = window.scrollY > 50 ? 'rgba(255,255,255,.98)' : 'linear-gradient(to bottom, rgba(255,255,255,.98) 0%, rgba(255,255,255,.94) 55%, rgba(255,255,255,.72) 100%)';
-            const d = document.documentElement.scrollHeight - window.innerHeight;
-            prog.style.width = (d > 0 ? (window.scrollY / d) * 100 : 0) + '%';
-        }, { passive: true });
 
         // ── GALLERY TOGGLE ──
         function toggleGallery() {

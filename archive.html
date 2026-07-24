@@ -6,39 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project A.C.T. — Mission Archive</title>
     <link rel="icon" type="image/png" href="images/act-logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap"
-        rel="stylesheet" />
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" />
+    </noscript>
 
     <link rel="stylesheet" href="css/archive.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <script src="js/nav.js" defer></script>
 </head>
 
 <body>
 
     <!-- ── NAVIGATION ── -->
-    <nav class="site-nav" id="siteNav">
-        <div class="nav-progress-indicator" id="navProgressIndicator"></div>
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-            <div class="nav-logo">
-                <div class="logo-placeholder">
-                    <div class="logo-icon">
-                        <img src="images/act-logo.png" alt="Project A.C.T."
-                            onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
-                    </div>
-                    <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span
-                            class="dot">.</span></span>
-                </div>
-                <span class="nav-pipe"></span>
-                <span class="nav-sub">Action Changes Things</span>
-            </div>
+    <nav class="hero__nav is-stuck" aria-label="Primary">
+        <a href="index.html" class="hero__nav-brand">
+            <img src="images/act-logo.png" alt="ACT" class="hero__nav-brand-img" onerror="this.style.display='none'" />
+            <span class="hero__nav-brand-text">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                    class="dot">.</span></span>
         </a>
-        <ul class="nav-links">
-            <!-- HOME LINK UPDATED → points to index.html -->
-            <li><a href="index.html">Home</a></li>
-            <li><a href="archive.html" class="active">Projects Archive</a></li>
-        </ul>
+        <a href="index.html#philosophy" class="hero__nav-link">Philosophy</a>
+        <a href="infrastructure-wip.html" class="hero__nav-link">Infrastructure</a>
+        <div class="hero__nav-dropdown">
+            <button class="hero__nav-link" type="button" aria-expanded="false" aria-haspopup="true">Chapters</button>
+            <div class="hero__nav-menu" role="menu">
+                <a href="archive.html" class="hero__nav-menu-item active" role="menuitem"><span
+                        class="phase-badge">📁</span>Full Archive</a>
+                <a href="world-environment-day.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">06</span>World Env Day</a>
+                <a href="eye-camp.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">05</span>Eye Camp</a>
+                <a href="vipingo.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">04</span>Vipingo</a>
+                <a href="kuruitu.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">03</span>Kuruitu</a>
+                <a href="copacabana.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">02</span>Copacabana</a>
+                <a href="green-olive.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">01</span>Green Olive</a>
+            </div>
+        </div>
+        <a href="donate.html" class="hero__nav-link">Donate</a>
+        <a href="contact.html" class="hero__nav-link">Contact</a>
     </nav>
 
     <!-- ── HERO ── -->
@@ -60,10 +74,12 @@
         <article class="project-block current-phase">
             <div class="timeline-node">06</div>
 
-            <a href="world-environment-day.html" class="project-visual reveal" style="text-decoration:none;color:inherit;display:block;">
+            <a href="world-environment-day.html" class="project-visual reveal"
+                style="text-decoration:none;color:inherit;display:block;">
                 <div class="visual-frame">
-                    <img src="images/archive-cover-phase6.jpg" alt="World Environment Day Mobilization"
-                        loading="lazy" />
+                    <img src="images/archive-cover-phase6.jpg" alt="World Environment Day Mobilization" loading="lazy"
+                        srcset="images/archive-cover-phase6.jpg 1024w, images/archive-cover-phase6.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <div class="phase-badge">
                     <span class="pb-vol">Vol.</span>
@@ -73,7 +89,9 @@
 
             <div class="project-text reveal delay-1">
                 <div class="p-meta">June 2026 &nbsp;|&nbsp; Global Alignment</div>
-                <h2 class="p-title"><a href="world-environment-day.html" style="text-decoration:none;color:inherit;">World Environment<br><em>Day Mobilization.</em></a></h2>
+                <h2 class="p-title"><a href="world-environment-day.html"
+                        style="text-decoration:none;color:inherit;">World Environment<br><em>Day Mobilization.</em></a>
+                </h2>
                 <p class="p-desc">
                     Scaling localized action to meet international mandates. Phase 06 represented a mass mobilization
                     event, uniting corporate resources, civic leaders, and the broader community to restore critical
@@ -96,9 +114,12 @@
         <article class="project-block">
             <div class="timeline-node">05</div>
 
-            <a href="eye-camp.html" class="project-visual reveal" style="text-decoration:none;color:inherit;display:block;">
+            <a href="eye-camp.html" class="project-visual reveal"
+                style="text-decoration:none;color:inherit;display:block;">
                 <div class="visual-frame">
-                    <img src="images/archive-cover-phase5.jpg" alt="Clinical eye screening" loading="lazy" />
+                    <img src="images/archive-cover-phase5.jpg" alt="Clinical eye screening" loading="lazy"
+                        srcset="images/archive-cover-phase5.jpg 1024w, images/archive-cover-phase5.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <div class="phase-badge">
                     <span class="pb-vol">Vol.</span>
@@ -108,7 +129,8 @@
 
             <div class="project-text reveal delay-1">
                 <div class="p-meta">April 2026 &nbsp;|&nbsp; Medical Outreach</div>
-                <h2 class="p-title"><a href="eye-camp.html" style="text-decoration:none;color:inherit;">Kikambala Free<br><em>Eye Camp.</em></a></h2>
+                <h2 class="p-title"><a href="eye-camp.html" style="text-decoration:none;color:inherit;">Kikambala
+                        Free<br><em>Eye Camp.</em></a></h2>
                 <p class="p-desc">
                     A deliberate pivot to direct medical intervention. Partnering with licensed ophthalmologists and the
                     Lions Club, we transformed factory grounds into a high-capacity triage center, bypassing financial
@@ -131,9 +153,12 @@
         <article class="project-block">
             <div class="timeline-node">04</div>
 
-            <a href="kuruitu.html" class="project-visual reveal" style="text-decoration:none;color:inherit;display:block;">
+            <a href="kuruitu.html" class="project-visual reveal"
+                style="text-decoration:none;color:inherit;display:block;">
                 <div class="visual-frame">
-                    <img src="images/archive-cover-phase4.jpg" alt="Beach restoration" loading="lazy" />
+                    <img src="images/archive-cover-phase4.jpg" alt="Beach restoration" loading="lazy"
+                        srcset="images/archive-cover-phase4.jpg 1024w, images/archive-cover-phase4.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <div class="phase-badge">
                     <span class="pb-vol">Vol.</span>
@@ -143,7 +168,8 @@
 
             <div class="project-text reveal delay-1">
                 <div class="p-meta">March 2026 &nbsp;|&nbsp; Marine Conservation</div>
-                <h2 class="p-title"><a href="kuruitu.html" style="text-decoration:none;color:inherit;">Kuruitu Coastal<br><em>Restoration.</em></a></h2>
+                <h2 class="p-title"><a href="kuruitu.html" style="text-decoration:none;color:inherit;">Kuruitu
+                        Coastal<br><em>Restoration.</em></a></h2>
                 <p class="p-desc">
                     Proving the zero-capital sustainability model. Beyond clearing half a tonne of debris from the tidal
                     zone, this operation installed 15 permanent, color-coded segregation bins upcycled from the factory
@@ -167,9 +193,12 @@
         <article class="project-block">
             <div class="timeline-node">03</div>
 
-            <a href="vipingo.html" class="project-visual reveal" style="text-decoration:none;color:inherit;display:block;">
+            <a href="vipingo.html" class="project-visual reveal"
+                style="text-decoration:none;color:inherit;display:block;">
                 <div class="visual-frame">
-                    <img src="images/archive-cover-phase3.jpg" alt="Bio-hazard drainage intervention" loading="lazy" />
+                    <img src="images/archive-cover-phase3.jpg" alt="Bio-hazard drainage intervention" loading="lazy"
+                        srcset="images/archive-cover-phase3.jpg 1024w, images/archive-cover-phase3.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <div class="phase-badge">
                     <span class="pb-vol">Vol.</span>
@@ -179,7 +208,8 @@
 
             <div class="project-text reveal delay-1">
                 <div class="p-meta">February 2026 &nbsp;|&nbsp; Public Health</div>
-                <h2 class="p-title"><a href="vipingo.html" style="text-decoration:none;color:inherit;">Vipingo Kichinjioni<br><em>Intervention.</em></a></h2>
+                <h2 class="p-title"><a href="vipingo.html" style="text-decoration:none;color:inherit;">Vipingo
+                        Kichinjioni<br><em>Intervention.</em></a></h2>
                 <p class="p-desc">
                     A rapid-response mobilization addressing a severe localized bio-hazard. A specialized strike team
                     extracted heavily soiled sanitary waste from deep drainage ditches, instantly neutralizing an
@@ -203,9 +233,12 @@
         <article class="project-block">
             <div class="timeline-node">02</div>
 
-            <a href="infrastructure.html" class="project-visual reveal" style="text-decoration:none;color:inherit;display:block;">
+            <a href="infrastructure.html" class="project-visual reveal"
+                style="text-decoration:none;color:inherit;display:block;">
                 <div class="visual-frame">
-                    <img src="images/archive-cover-phase2.jpg" alt="Early coastal assessment" loading="lazy" />
+                    <img src="images/archive-cover-phase2.jpg" alt="Early coastal assessment" loading="lazy"
+                        srcset="images/archive-cover-phase2.jpg 1024w, images/archive-cover-phase2.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <div class="phase-badge">
                     <span class="pb-vol">Vol.</span>
@@ -215,7 +248,8 @@
 
             <div class="project-text reveal delay-1">
                 <div class="p-meta">January 2026 &nbsp;|&nbsp; Environmental Mapping</div>
-                <h2 class="p-title"><a href="infrastructure.html" style="text-decoration:none;color:inherit;">Establishing the<br><em>Eco-Blueprint.</em></a></h2>
+                <h2 class="p-title"><a href="infrastructure.html"
+                        style="text-decoration:none;color:inherit;">Establishing the<br><em>Eco-Blueprint.</em></a></h2>
                 <p class="p-desc">
                     Transitioning from social welfare to environmental stewardship. Phase 2 laid the logistical
                     groundwork for all future marine operations. We mapped hotspot pollution zones across the coastline
@@ -238,10 +272,12 @@
         <article class="project-block">
             <div class="timeline-node">01</div>
 
-            <a href="green-olive.html" class="project-visual reveal" style="text-decoration:none;color:inherit;display:block;">
+            <a href="green-olive.html" class="project-visual reveal"
+                style="text-decoration:none;color:inherit;display:block;">
                 <div class="visual-frame">
-                    <img src="images/archive-cover-phase1.jpg" alt="Community support at children's home"
-                        loading="lazy" />
+                    <img src="images/archive-cover-phase1.jpg" alt="Community support at children's home" loading="lazy"
+                        srcset="images/archive-cover-phase1.jpg 1024w, images/archive-cover-phase1.webp 1024w"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <div class="phase-badge">
                     <span class="pb-vol">Vol.</span>
@@ -251,7 +287,8 @@
 
             <div class="project-text reveal delay-1">
                 <div class="p-meta">December 2025 &nbsp;|&nbsp; Social Welfare</div>
-                <h2 class="p-title"><a href="green-olive.html" style="text-decoration:none;color:inherit;">Green Olive<br><em>Children's Home.</em></a></h2>
+                <h2 class="p-title"><a href="green-olive.html" style="text-decoration:none;color:inherit;">Green
+                        Olive<br><em>Children's Home.</em></a></h2>
                 <p class="p-desc">
                     Genesis. Our inaugural mission established the cultural blueprint of Project A.C.T. A direct social
                     intervention providing essential nutritional supplies, infrastructural support, and human connection
@@ -281,12 +318,17 @@
                 <div class="footer-eyebrow">Project A.C.T. — Digital Archive</div>
                 <div class="footer-logo-wrap">
                     <div class="footer-logo-icon">
-                        <img src="images/act-logo.png" alt="Project A.C.T." onerror="this.style.display='none';" />
+                        <img src="images/act-logo.png" alt="Project A.C.T." onerror="this.style.display='none';"
+                            loading="lazy" />
                     </div>
-                    <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--white);">A.C.T.</span>
+                    <span
+                        style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--white);">A.C.T.</span>
                 </div>
                 <h1>Action<br /><em>Changes</em><br />Things<span class="dot">.</span></h1>
-                <p class="footer-mission">Project A.C.T. is an employee-led Corporate Social Responsibility initiative. The interventions documented herein demonstrate our unwavering commitment to environmental ROI—proving that precision budgeting and grassroots connection can actively preserve and protect human life.</p>
+                <p class="footer-mission">Project A.C.T. is an employee-led Corporate Social Responsibility initiative.
+                    The interventions documented herein demonstrate our unwavering commitment to environmental
+                    ROI—proving that precision budgeting and grassroots connection can actively preserve and protect
+                    human life.</p>
                 <div class="footer-divider"></div>
                 <div class="footer-contact">
                     Revital Healthcare (EPZ) Ltd.<br />Kilifi County, Kenya &nbsp;·&nbsp;
@@ -295,37 +337,59 @@
             </div>
 
             <div class="footer-right reveal reveal-delay-1">
-                
-                    <div class="logo-main">
-                        <img src="images/act-logo.png" alt="Project A.C.T. Logo"
-                            onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'color:rgba(255,255,255,0.4);font-size:8px;letter-spacing:0.2em;text-transform:uppercase;text-align:center;padding:16px;\'>PROJECT A.C.T.<br>LOGO</div>'" />
-                    </div>
-                   
+
+                <div class="logo-main">
+                    <img src="images/act-logo.png" alt="Project A.C.T. Logo"
+                        onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'color:rgba(255,255,255,0.4);font-size:8px;letter-spacing:0.2em;text-transform:uppercase;text-align:center;padding:16px;\'>PROJECT A.C.T.<br>LOGO</div>'"
+                        loading="lazy" />
                 </div>
+
             </div>
+        </div>
         </div>
 
         <div class="footer-corner"></div>
         <div class="footer-bottom-bar">
-            <div class="footer-bottom-copy">© 2025-2026 Revital Healthcare (EPZ) Ltd. &nbsp;·&nbsp; Project <span>A.C.T.</span> &nbsp;·&nbsp; All Rights Reserved</div>
+            <div class="footer-bottom-copy">© 2025-2026 Revital Healthcare (EPZ) Ltd. &nbsp;·&nbsp; Project
+                <span>A.C.T.</span> &nbsp;·&nbsp; All Rights Reserved
+            </div>
             <div class="footer-social">
-                <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true" target="_blank" class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-                <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" class="footer-social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                <a href="https://revitalhcare.com/" target="_blank" class="footer-social-link" aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
+                <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true"
+                    target="_blank" class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg></a>
+                <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" class="footer-social-link"
+                    aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg></a>
+                <a href="https://revitalhcare.com/" target="_blank" class="footer-social-link" aria-label="Website"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                    </svg></a>
             </div>
         </div>
     </footer>
 
     <!-- ── SCRIPTS ── -->
     <script>
-        // Nav Scroll
-        const nav = document.getElementById('siteNav');
+        // Nav Scroll (guard against missing elements)
+        const siteNav = document.getElementById('siteNav');
         const navIndicator = document.getElementById('navProgressIndicator');
         window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 40);
+            if (siteNav) siteNav.classList.toggle('scrolled', window.scrollY > 40);
             const docH = document.documentElement.scrollHeight - window.innerHeight;
             const pct = docH > 0 ? (window.scrollY / docH) * 100 : 0;
-            navIndicator.style.width = pct + '%';
+            if (navIndicator) navIndicator.style.width = pct + '%';
         }, { passive: true });
 
         // Scroll Reveal

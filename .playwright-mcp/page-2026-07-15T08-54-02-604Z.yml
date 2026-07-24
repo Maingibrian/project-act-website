@@ -1,0 +1,178 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Project A.C.T. A.C.T. Action Changes Things" [ref=e3] [cursor=pointer]:
+      - /url: index.html
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img "Project A.C.T." [ref=e7]
+          - generic [ref=e8]: A.C.T.
+        - generic [ref=e10]: Action Changes Things
+    - list [ref=e11]:
+      - listitem [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: index.html
+      - listitem [ref=e14]:
+        - link "Projects Archive" [ref=e15] [cursor=pointer]:
+          - /url: archive.html
+      - listitem [ref=e16]:
+        - link "Donate" [ref=e17] [cursor=pointer]:
+          - /url: donate.html
+      - listitem [ref=e18]:
+        - link "Contact" [ref=e19] [cursor=pointer]:
+          - /url: contact.html
+  - banner [ref=e20]:
+    - generic: DONATE
+    - generic [ref=e21]: Project A.C.T. — Give With Impact
+    - heading [level=1] [ref=e22]:
+      - text: Donate to
+      - emphasis [ref=e23]: Use.
+    - paragraph [ref=e24]: Every shilling you give is put to work on the ground — on a real intervention you can name. Choose what to fund, and we will send you the receipt.
+  - generic [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e27]: How your gift is used
+      - heading [level=2] [ref=e28]:
+        - text: From your handto the
+        - emphasis [ref=e29]: ground.
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]: "01"
+        - heading "You give" [level=3] [ref=e33]
+        - paragraph [ref=e34]: Pick an amount and a cause that moves you. There is no minimum, and no overhead taken.
+      - generic [ref=e35]:
+        - generic [ref=e36]: "02"
+        - heading "We deploy" [level=3] [ref=e37]
+        - paragraph [ref=e38]: Your gift funds a real A.C.T. intervention, in full — on a beach, in a clinic, or on a hillside.
+      - generic [ref=e39]:
+        - generic [ref=e40]: "03"
+        - heading "You see it used" [level=3] [ref=e41]
+        - paragraph [ref=e42]: "We send you the receipt: the photos, the figures, and the faces your gift reached."
+  - generic [ref=e44]:
+    - generic [ref=e45]:
+      - generic [ref=e46]: Where your gift goes
+      - heading [level=2] [ref=e47]:
+        - text: The Impact
+        - emphasis [ref=e48]: Ledger.
+      - paragraph [ref=e49]: A transparent accounting of exactly what your donation buys. Every line is a real A.C.T. output from our field work. Pick a line, and start there.
+    - generic [ref=e50]:
+      - link "Eye Screening & Medication Phase 05 · Eye Camp Funds KES 1,500 One person screened, treated, and sent home with follow-up medication. Start with this →" [ref=e51] [cursor=pointer]:
+        - /url: mailto:info@rhcare-epz.com?subject=Donation%20enquiry%20%E2%80%94%20Eye%20screening
+        - generic [ref=e58]:
+          - text: Eye Screening & Medication
+          - generic [ref=e59]: Phase 05 · Eye Camp
+        - generic [ref=e61]:
+          - generic [ref=e62]: Funds
+          - text: KES 1,500
+        - generic [ref=e63]: One person screened, treated, and sent home with follow-up medication.
+        - generic [ref=e66]:
+          - text: Start with this
+          - generic [ref=e67]: →
+      - link "Tree Planted Phase 06 · World Environment Day Funds KES 200 One mangrove or indigenous tree in the ground, counted and cared for. Start with this →" [ref=e68] [cursor=pointer]:
+        - /url: mailto:info@rhcare-epz.com?subject=Donation%20enquiry%20%E2%80%94%20Tree%20planted
+        - generic [ref=e74]:
+          - text: Tree Planted
+          - generic [ref=e75]: Phase 06 · World Environment Day
+        - generic [ref=e77]:
+          - generic [ref=e78]: Funds
+          - text: KES 200
+        - generic [ref=e79]: One mangrove or indigenous tree in the ground, counted and cared for.
+        - generic [ref=e82]:
+          - text: Start with this
+          - generic [ref=e83]: →
+      - link "Legacy Bin Fabricated & Installed Phase 06 · Infrastructure Funds KES 8,000 One upcycled 200L drum bin, branded and placed where a community needs it. Start with this →" [ref=e84] [cursor=pointer]:
+        - /url: mailto:info@rhcare-epz.com?subject=Donation%20enquiry%20%E2%80%94%20Legacy%20Bin
+        - generic [ref=e91]:
+          - text: Legacy Bin Fabricated & Installed
+          - generic [ref=e92]: Phase 06 · Infrastructure
+        - generic [ref=e94]:
+          - generic [ref=e95]: Funds
+          - text: KES 8,000
+        - generic [ref=e96]: One upcycled 200L drum bin, branded and placed where a community needs it.
+        - generic [ref=e99]:
+          - text: Start with this
+          - generic [ref=e100]: →
+      - link "Beach Cleanup Phase 02 · 03 · Copacabana & Kuruitu Funds KES 3,000 One cleanup toolkit and roughly one tonne of debris removed from the shore. Start with this →" [ref=e101] [cursor=pointer]:
+        - /url: mailto:info@rhcare-epz.com?subject=Donation%20enquiry%20%E2%80%94%20Beach%20cleanup
+        - generic [ref=e108]:
+          - text: Beach Cleanup
+          - generic [ref=e109]: Phase 02 · 03 · Copacabana & Kuruitu
+        - generic [ref=e111]:
+          - generic [ref=e112]: Funds
+          - text: KES 3,000
+        - generic [ref=e113]: One cleanup toolkit and roughly one tonne of debris removed from the shore.
+        - generic [ref=e116]:
+          - text: Start with this
+          - generic [ref=e117]: →
+      - link "Olive Livelihood Kit Phase 01 · Green Olive Funds KES 2,500 One olive sapling plus a season of care for a local smallholder family. Start with this →" [ref=e118] [cursor=pointer]:
+        - /url: mailto:info@rhcare-epz.com?subject=Donation%20enquiry%20%E2%80%94%20Olive%20livelihood
+        - generic [ref=e125]:
+          - text: Olive Livelihood Kit
+          - generic [ref=e126]: Phase 01 · Green Olive
+        - generic [ref=e128]:
+          - generic [ref=e129]: Funds
+          - text: KES 2,500
+        - generic [ref=e130]: One olive sapling plus a season of care for a local smallholder family.
+        - generic [ref=e133]:
+          - text: Start with this
+          - generic [ref=e134]: →
+      - link "Crew Safety Kit Phase 04 · Vipingo Funds KES 4,000 One OHS and PPE kit keeping a cleanup crew safe on the ground. Start with this →" [ref=e135] [cursor=pointer]:
+        - /url: mailto:info@rhcare-epz.com?subject=Donation%20enquiry%20%E2%80%94%20Crew%20safety
+        - generic [ref=e142]:
+          - text: Crew Safety Kit
+          - generic [ref=e143]: Phase 04 · Vipingo
+        - generic [ref=e145]:
+          - generic [ref=e146]: Funds
+          - text: KES 4,000
+        - generic [ref=e147]: One OHS and PPE kit keeping a cleanup crew safe on the ground.
+        - generic [ref=e150]:
+          - text: Start with this
+          - generic [ref=e151]: →
+  - generic [ref=e152]:
+    - generic [ref=e153]:
+      - generic [ref=e154]: What previous gifts have already used
+      - heading [level=2] [ref=e155]:
+        - text: Already
+        - emphasis [ref=e156]: working.
+    - generic [ref=e157]:
+      - generic [ref=e158]:
+        - generic [ref=e159]: "0"
+        - generic [ref=e160]: Legacy Bins Donated
+      - generic [ref=e161]:
+        - generic [ref=e162]: "0"
+        - generic [ref=e163]: Trees Planted
+      - generic [ref=e164]:
+        - generic [ref=e165]: "0"
+        - generic [ref=e166]: People Screened
+  - generic [ref=e167]:
+    - heading [level=2] [ref=e168]:
+      - text: Ready to put your gift to
+      - emphasis [ref=e169]: use?
+    - link "Email info@rhcare-epz.com to donate" [ref=e170] [cursor=pointer]:
+      - /url: mailto:info@rhcare-epz.com?subject=Donation%20enquiry%20%E2%80%94%20Project%20A.C.T.
+    - paragraph [ref=e171]: Tell us your amount, your cause, and how to reach you. If you are willing and interested in supporting A.C.T., our team will take it from there.
+  - contentinfo [ref=e172]:
+    - generic: ACT
+    - generic [ref=e173]:
+      - generic [ref=e174]:
+        - generic [ref=e175]: Project A.C.T. — Donate to Use
+        - generic [ref=e176]:
+          - img "Project A.C.T." [ref=e178]
+          - generic [ref=e179]: A.C.T.
+        - heading [level=1] [ref=e180]:
+          - text: Action
+          - emphasis [ref=e181]: Changes
+          - text: Things.
+        - paragraph [ref=e182]: Project A.C.T. is an employee-led Corporate Social Responsibility initiative. The interventions documented herein demonstrate our unwavering commitment to environmental ROI—proving that precision budgeting and grassroots connection can actively preserve and protect human life.
+        - generic [ref=e184]:
+          - text: Revital Healthcare (EPZ) Ltd.Kilifi County, Kenya ·
+          - link "www.revitalhealthcare.com" [ref=e185] [cursor=pointer]:
+            - /url: https://www.revitalhealthcare.com
+      - img "Project A.C.T. Logo" [ref=e188]
+    - generic [ref=e190]:
+      - generic [ref=e191]: © 2025-2026 Revital Healthcare (EPZ) Ltd. · Project A.C.T. · All Rights Reserved
+      - generic [ref=e192]:
+        - link "LinkedIn" [ref=e193] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr/?viewAsMember=true
+        - link "Instagram" [ref=e197] [cursor=pointer]:
+          - /url: https://www.instagram.com/project_a.c.t_/
+        - link "Website" [ref=e201] [cursor=pointer]:
+          - /url: https://revitalhcare.com/

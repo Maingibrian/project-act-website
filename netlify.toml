@@ -3,6 +3,10 @@
   command = ""
   publish = "."
 
+  # Netlify automatically deploys the _headers file from the publish directory.
+  # Static assets (CSS, JS, images, fonts) are served with long-term immutable caching.
+  # HTML pages use no-cache to ensure users always receive fresh content.
+
 # Redirect all unknown routes to index.html for clean navigation
 [[redirects]]
   from = "/*"

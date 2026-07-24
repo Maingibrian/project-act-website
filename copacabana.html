@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phase 02 — Copacabana Beach Clean‑up | Project A.C.T.</title>
     <link rel="icon" type="image/png" href="images/act-logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" />
+    </noscript>
 
     <link rel="stylesheet" href="css/copacabana.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <script src="js/nav.js" defer></script>
 </head>
+
 <body>
 
-
-    <nav class="site-nav" id="siteNav">
-
-                <a href="index.html" style="text-decoration: none; color: inherit;">
-                <div class="nav-logo">
-            <div class="logo-placeholder">
-                <div class="logo-icon">
-                    <img src="images/act-logo.png" alt="Project A.C.T." onerror="this.style.display='none';this.parentElement.textContent='ACT'" />
-                </div>
-                <span class="nav-logotype">A<span class="dot">.</span>C<span class="dot">.</span>T<span class="dot">.</span></span>
+    <!-- ── NAVIGATION ── -->
+    <nav class="hero__nav is-stuck" aria-label="Primary">
+        <a href="index.html" class="hero__nav-brand">
+            <img src="images/act-logo.png" alt="ACT" class="hero__nav-brand-img" onerror="this.style.display='none'" />
+            <span class="hero__nav-brand-text">A<span class="dot">.</span>C<span class="dot">.</span>T<span
+                    class="dot">.</span></span>
+        </a>
+        <a href="index.html#philosophy" class="hero__nav-link">Philosophy</a>
+        <a href="infrastructure-wip.html" class="hero__nav-link">Infrastructure</a>
+        <div class="hero__nav-dropdown">
+            <button class="hero__nav-link active" type="button" aria-expanded="false"
+                aria-haspopup="true">Chapters</button>
+            <div class="hero__nav-menu" role="menu">
+                <a href="archive.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">📁</span>Full Archive</a>
+                <a href="world-environment-day.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">06</span>World Env Day</a>
+                <a href="eye-camp.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">05</span>Eye Camp</a>
+                <a href="vipingo.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">04</span>Vipingo</a>
+                <a href="kuruitu.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">03</span>Kuruitu</a>
+                <a href="copacabana.html" class="hero__nav-menu-item active" role="menuitem"><span
+                        class="phase-badge">02</span>Copacabana</a>
+                <a href="green-olive.html" class="hero__nav-menu-item" role="menuitem"><span
+                        class="phase-badge">01</span>Green Olive</a>
             </div>
-            <span class="nav-pipe"></span>
-            <span class="nav-sub">Action Changes Things</span>
         </div>
-                </a>
-        <ul class="nav-links">
-            <li><a href="#before-after">Restoration</a></li>
-            <li><a href="#tally">The Audit</a></li>
-            <li><a href="#sweep">Chronology</a></li>
-            <li><a href="#gallery">Record</a></li>
-            <li><a href="#impact">Impact</a></li>
-        </ul>
-        <div class="nav-progress" id="navProgress"></div>
+        <a href="donate.html" class="hero__nav-link">Donate</a>
+        <a href="contact.html" class="hero__nav-link">Contact</a>
     </nav>
 
-        <!-- ── HERO with rotating background ── -->
+    <!-- ── HERO with rotating background ── -->
     <section class="hero">
         <div class="hero-bg-container">
-            <img src="images/copa-before.jpg" class="hero-bg-slide active" alt="Copacabana before" loading="lazy" />
-            <img src="images/copa-after.jpg" class="hero-bg-slide" alt="Copacabana after" loading="lazy" />
-            <img src="images/copa-team.jpg" class="hero-bg-slide" alt="Clean-up team" loading="lazy" />
+            <img src="images/copa-before.jpg" class="hero-bg-slide active" alt="Copacabana before" loading="lazy"
+                srcset="images/copa-before.jpg 1024w, images/copa-before.webp 1024w" sizes="100vw" />
+            <img src="images/copa-after.jpg" class="hero-bg-slide" alt="Copacabana after" loading="lazy"
+                srcset="images/copa-after.jpg 1x, images/copa-after.jpg 2x" sizes="100vw" />
+            <img src="images/copa-team.jpg" class="hero-bg-slide" alt="Clean-up team" loading="lazy"
+                srcset="images/copa-team.jpg 1x, images/copa-team.jpg 2x" sizes="100vw" />
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-ghost">CLEAN</div>
@@ -51,7 +72,9 @@
             <div class="hero-eyebrow reveal">&#9670; Phase 02 &middot; Marine Conservation</div>
             <h1 class="hero-title reveal d1">Copacabana<br><em>Beach</em><br>Clean-up<span class="red">.</span></h1>
             <p class="hero-desc reveal d2">
-                <strong>February 21, 2026.</strong> 33 volunteers mobilised to restore Copacabana Beach, removing <strong>608 kg</strong> of mixed waste and installing <strong>5 legacy bins</strong> in a landmark employee-led community intervention.
+                <strong>February 21, 2026.</strong> 33 volunteers mobilised to restore Copacabana Beach, removing
+                <strong>608 kg</strong> of mixed waste and installing <strong>5 legacy bins</strong> in a landmark
+                employee-led community intervention.
             </p>
             <div class="hero-kpis reveal d3">
                 <div>
@@ -76,7 +99,9 @@
             <div class="capsule-container">
                 <div class="capsule-echo"></div>
                 <div class="capsule-wrap">
-                    <img id="capsuleImage" src="images/copa-before.jpg" alt="Copacabana Beach" loading="lazy" />
+                    <img id="capsuleImage" src="images/copa-before.jpg" alt="Copacabana Beach" loading="lazy"
+                        srcset="images/copa-before.jpg 1x, images/copa-before.jpg 2x"
+                        sizes="(max-width: 768px) 100vw, 50vw" />
                     <div class="capsule-overlay"></div>
                 </div>
                 <div class="phase-medallion">
@@ -93,15 +118,21 @@
         <div class="reveal">
             <div class="section-label">01 · Visual Comparison</div>
             <h2 class="heading-lg">The Shore<br><em>Reclaimed.</em></h2>
-            <p class="ba-body">Drag the slider to witness the transformation. Over 4 hours of coordinated effort, the team turned a littered, hazardous shoreline back into a pristine public sanctuary.</p>
+            <p class="ba-body">Drag the slider to witness the transformation. Over 4 hours of coordinated effort, the
+                team turned a littered, hazardous shoreline back into a pristine public sanctuary.</p>
         </div>
         <div class="slider-container reveal d1" id="slider">
             <div class="slider-before"><img src="images/copa-before.jpg" alt="Before cleanup" loading="lazy" /></div>
-            <div class="slider-after" id="sliderAfter"><img src="images/copa-after.jpg" alt="After cleanup" loading="lazy" /></div>
+            <div class="slider-after" id="sliderAfter"><img src="images/copa-after.jpg" alt="After cleanup"
+                    loading="lazy" /></div>
             <div class="slider-handle" id="sliderHandle">
                 <div class="slider-knob">
-                    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -115,27 +146,41 @@
             <div class="tally-grid">
                 <div class="tally-card reveal">
                     <div class="tally-icon-wrap">
-                        <svg viewBox="0 0 24 24"><path d="M4 7h16l-1 13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L4 7z"/><path d="M3 7h18"/><path d="M8 7V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 7h16l-1 13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L4 7z" />
+                            <path d="M3 7h18" />
+                            <path d="M8 7V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3" />
+                        </svg>
                     </div>
                     <div class="tally-num counter" data-target="40">0</div>
                     <div class="tally-lbl">Sacks Filled</div>
-                    <div class="tally-desc">PET plastics, ghost nets, waterlogged tires, sand bags — every sack weighed and verified.</div>
+                    <div class="tally-desc">PET plastics, ghost nets, waterlogged tires, sand bags — every sack weighed
+                        and verified.</div>
                 </div>
                 <div class="tally-card reveal d1">
                     <div class="tally-icon-wrap">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <line x1="9" y1="3" x2="9" y2="21" />
+                            <line x1="15" y1="3" x2="15" y2="21" />
+                        </svg>
                     </div>
                     <div class="tally-num counter" data-target="21">0</div>
                     <div class="tally-lbl">Bins Installed</div>
-                    <div class="tally-desc">200‑litre industrial drums — upcycled from Revital's factory, permanently anchored.</div>
+                    <div class="tally-desc">200‑litre industrial drums — upcycled from Revital's factory, permanently
+                        anchored.</div>
                 </div>
                 <div class="tally-card reveal d2">
                     <div class="tally-icon-wrap">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
                     </div>
                     <div class="tally-num">4<span style="font-size:24px; color:var(--sand);">hrs</span></div>
                     <div class="tally-lbl">Field Operation</div>
-                    <div class="tally-desc">08:30 – 12:30, from OHS briefing to fully licensed county municipal disposal.</div>
+                    <div class="tally-desc">08:30 – 12:30, from OHS briefing to fully licensed county municipal
+                        disposal.</div>
                 </div>
             </div>
         </div>
@@ -149,18 +194,114 @@
         </div>
         <div class="sweep-track-wrap">
             <div class="sweep-track" id="sweepTrack">
-                <div class="sweep-step"><div class="sweep-dot">1</div><div class="sweep-card"><div class="sweep-time">08:30 AM</div><div class="sweep-title">OHS Briefing</div><div class="sweep-desc">20 volunteers assemble. PPE issued, hazard protocols confirmed. The Human Rake formation plan is finalised by team leads.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">2</div><div class="sweep-card"><div class="sweep-time">09:00 AM</div><div class="sweep-title">Bin Installation</div><div class="sweep-desc">21 Legacy Bins anchored at primary access points. The Human Rake formation begins — waterline to high‑tide mark.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">3</div><div class="sweep-card"><div class="sweep-time">10:30 AM</div><div class="sweep-title">Hydration Check</div><div class="sweep-desc">Bottled water replenishment. The team regroups and evaluates progress before the intensive deep extraction phase.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">4</div><div class="sweep-card"><div class="sweep-time">10:45 AM</div><div class="sweep-title">Deep Extraction</div><div class="sweep-desc">Sand bags, buried plastics, and soiled marine textiles removed. The most heavily embedded debris is manually extracted.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">5</div><div class="sweep-card"><div class="sweep-time">12:15 PM</div><div class="sweep-title">Weigh‑In & Audit</div><div class="sweep-desc">All 40 sacks centrally weighed via digital scale. Full record logged and verified by the County Department of Environment.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">6</div><div class="sweep-card"><div class="sweep-time">12:30 PM</div><div class="sweep-title">Secure Disposal</div><div class="sweep-desc">Waste trucked to Kilifi County dumpsite — strictly statutory compliant. The beach is officially left transformed.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">1</div><div class="sweep-card"><div class="sweep-time">08:30 AM</div><div class="sweep-title">OHS Briefing</div><div class="sweep-desc">20 volunteers assemble. PPE issued, hazard protocols confirmed. The Human Rake formation plan is finalised by team leads.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">2</div><div class="sweep-card"><div class="sweep-time">09:00 AM</div><div class="sweep-title">Bin Installation</div><div class="sweep-desc">21 Legacy Bins anchored at primary access points. The Human Rake formation begins — waterline to high‑tide mark.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">3</div><div class="sweep-card"><div class="sweep-time">10:30 AM</div><div class="sweep-title">Hydration Check</div><div class="sweep-desc">Bottled water replenishment. The team regroups and evaluates progress before the intensive deep extraction phase.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">4</div><div class="sweep-card"><div class="sweep-time">10:45 AM</div><div class="sweep-title">Deep Extraction</div><div class="sweep-desc">Sand bags, buried plastics, and soiled marine textiles removed. The most heavily embedded debris is manually extracted.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">5</div><div class="sweep-card"><div class="sweep-time">12:15 PM</div><div class="sweep-title">Weigh‑In & Audit</div><div class="sweep-desc">All 40 sacks centrally weighed via digital scale. Full record logged and verified by the County Department of Environment.</div></div></div>
-                <div class="sweep-step"><div class="sweep-dot">6</div><div class="sweep-card"><div class="sweep-time">12:30 PM</div><div class="sweep-title">Secure Disposal</div><div class="sweep-desc">Waste trucked to Kilifi County dumpsite — strictly statutory compliant. The beach is officially left transformed.</div></div></div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">1</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">08:30 AM</div>
+                        <div class="sweep-title">OHS Briefing</div>
+                        <div class="sweep-desc">20 volunteers assemble. PPE issued, hazard protocols confirmed. The
+                            Human Rake formation plan is finalised by team leads.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">2</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">09:00 AM</div>
+                        <div class="sweep-title">Bin Installation</div>
+                        <div class="sweep-desc">21 Legacy Bins anchored at primary access points. The Human Rake
+                            formation begins — waterline to high‑tide mark.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">3</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">10:30 AM</div>
+                        <div class="sweep-title">Hydration Check</div>
+                        <div class="sweep-desc">Bottled water replenishment. The team regroups and evaluates progress
+                            before the intensive deep extraction phase.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">4</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">10:45 AM</div>
+                        <div class="sweep-title">Deep Extraction</div>
+                        <div class="sweep-desc">Sand bags, buried plastics, and soiled marine textiles removed. The most
+                            heavily embedded debris is manually extracted.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">5</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">12:15 PM</div>
+                        <div class="sweep-title">Weigh‑In & Audit</div>
+                        <div class="sweep-desc">All 40 sacks centrally weighed via digital scale. Full record logged and
+                            verified by the County Department of Environment.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">6</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">12:30 PM</div>
+                        <div class="sweep-title">Secure Disposal</div>
+                        <div class="sweep-desc">Waste trucked to Kilifi County dumpsite — strictly statutory compliant.
+                            The beach is officially left transformed.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">1</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">08:30 AM</div>
+                        <div class="sweep-title">OHS Briefing</div>
+                        <div class="sweep-desc">20 volunteers assemble. PPE issued, hazard protocols confirmed. The
+                            Human Rake formation plan is finalised by team leads.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">2</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">09:00 AM</div>
+                        <div class="sweep-title">Bin Installation</div>
+                        <div class="sweep-desc">21 Legacy Bins anchored at primary access points. The Human Rake
+                            formation begins — waterline to high‑tide mark.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">3</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">10:30 AM</div>
+                        <div class="sweep-title">Hydration Check</div>
+                        <div class="sweep-desc">Bottled water replenishment. The team regroups and evaluates progress
+                            before the intensive deep extraction phase.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">4</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">10:45 AM</div>
+                        <div class="sweep-title">Deep Extraction</div>
+                        <div class="sweep-desc">Sand bags, buried plastics, and soiled marine textiles removed. The most
+                            heavily embedded debris is manually extracted.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">5</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">12:15 PM</div>
+                        <div class="sweep-title">Weigh‑In & Audit</div>
+                        <div class="sweep-desc">All 40 sacks centrally weighed via digital scale. Full record logged and
+                            verified by the County Department of Environment.</div>
+                    </div>
+                </div>
+                <div class="sweep-step">
+                    <div class="sweep-dot">6</div>
+                    <div class="sweep-card">
+                        <div class="sweep-time">12:30 PM</div>
+                        <div class="sweep-title">Secure Disposal</div>
+                        <div class="sweep-desc">Waste trucked to Kilifi County dumpsite — strictly statutory compliant.
+                            The beach is officially left transformed.</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -170,20 +311,37 @@
         <div class="section-label reveal">04 · Visual Record</div>
         <h2 class="heading-lg reveal d1">Fragments of<br><em>Impact.</em></h2>
         <div class="scatter-grid">
-            <div class="scatter-item reveal"><img src="images/copa-sweep.jpg" alt="Sweep" loading="lazy" /><div class="scatter-overlay"><span>The Initial Sweep</span></div></div>
-            <div class="scatter-item reveal d1"><img src="images/copa-briefing.jpg" alt="Briefing" loading="lazy" /><div class="scatter-overlay"><span>OHS Briefing</span></div></div>
-            <div class="scatter-item reveal d2"><img src="images/copa-team.jpg" alt="Team" loading="lazy" /><div class="scatter-overlay"><span>Team Cohesion</span></div></div>
-            <div class="scatter-item reveal d3"><img src="images/copa-debris.jpg" alt="Debris" loading="lazy" /><div class="scatter-overlay"><span>Extracted Debris</span></div></div>
-            <div class="scatter-item reveal"><img src="images/copa-after.jpg" alt="Aftermath" loading="lazy" /><div class="scatter-overlay"><span>The Restored Shoreline</span></div></div>
+            <div class="scatter-item reveal"><img src="images/copa-sweep.jpg" alt="Sweep" loading="lazy" />
+                <div class="scatter-overlay"><span>The Initial Sweep</span></div>
+            </div>
+            <div class="scatter-item reveal d1"><img src="images/copa-briefing.jpg" alt="Briefing" loading="lazy" />
+                <div class="scatter-overlay"><span>OHS Briefing</span></div>
+            </div>
+            <div class="scatter-item reveal d2"><img src="images/copa-team.jpg" alt="Team" loading="lazy" />
+                <div class="scatter-overlay"><span>Team Cohesion</span></div>
+            </div>
+            <div class="scatter-item reveal d3"><img src="images/copa-debris.jpg" alt="Debris" loading="lazy" />
+                <div class="scatter-overlay"><span>Extracted Debris</span></div>
+            </div>
+            <div class="scatter-item reveal"><img src="images/copa-after.jpg" alt="Aftermath" loading="lazy" />
+                <div class="scatter-overlay"><span>The Restored Shoreline</span></div>
+            </div>
         </div>
         <!-- Hidden gallery (show more) -->
         <div class="gallery-hidden" id="galleryHidden">
-            <div class="scatter-item"><img src="images/copa-bins.jpg" alt="Community" loading="lazy" /><div class="scatter-overlay"><span>Community Impact</span></div></div>
-            <div class="scatter-item"><img src="images/copa-team.jpg" alt="Volunteers" loading="lazy" /><div class="scatter-overlay"><span>Volunteer Spirit</span></div></div>
-            <div class="scatter-item"><img src="images/copa-bins.jpg" alt="Bins" loading="lazy" /><div class="scatter-overlay"><span>Legacy Bins</span></div></div>
+            <div class="scatter-item"><img src="images/copa-bins.jpg" alt="Community" loading="lazy" />
+                <div class="scatter-overlay"><span>Community Impact</span></div>
+            </div>
+            <div class="scatter-item"><img src="images/copa-team.jpg" alt="Volunteers" loading="lazy" />
+                <div class="scatter-overlay"><span>Volunteer Spirit</span></div>
+            </div>
+            <div class="scatter-item"><img src="images/copa-bins.jpg" alt="Bins" loading="lazy" />
+                <div class="scatter-overlay"><span>Legacy Bins</span></div>
+            </div>
         </div>
         <div class="gallery-toggle-wrap">
-            <button class="gallery-toggle-btn" id="galleryToggle" onclick="toggleGallery()">Show More <span>↓</span></button>
+            <button class="gallery-toggle-btn" id="galleryToggle" onclick="toggleGallery()">Show More
+                <span>↓</span></button>
         </div>
     </section>
 
@@ -193,10 +351,26 @@
             <div class="section-label reveal">05 · Qualitative Impact</div>
             <h2 class="heading-lg reveal d1">A Shore<br><em>Restored.</em></h2>
             <div class="impact-grid">
-                <div class="impact-card reveal"><h3>40 Sacks — Marine Debris Extracted</h3><p>PET plastics, ghost fishing gear, waterlogged tires, and sand bags removed from the tidal zone. Every sector of the targeted beach was aggressively cleared to the micro-level.</p></div>
-                <div class="impact-card reveal d1"><h3>21 Legacy Bins — Permanent Infrastructure</h3><p>200‑litre industrial drums — upcycled directly from Revital's factory floor, sanitized, branded, and permanently anchored at primary access points at near‑zero capital cost.</p></div>
-                <div class="impact-card reveal d2"><h3>0% Leakage — Full Accountability</h3><p><strong>KES 36,000</strong> cash deployed. Every shilling accounted for. Bins and PPE sourced internally. Zero waste abandonment — the chain‑of‑custody remained entirely unbroken.</p></div>
-                <div class="impact-card reveal d3"><h3>Inter‑Organizational Blueprint</h3><p>Phase 02 proved A.C.T.'s capacity to manage complex environmental interventions. The operation cemented long-term trust between Revital Healthcare and the local government.</p></div>
+                <div class="impact-card reveal">
+                    <h3>40 Sacks — Marine Debris Extracted</h3>
+                    <p>PET plastics, ghost fishing gear, waterlogged tires, and sand bags removed from the tidal zone.
+                        Every sector of the targeted beach was aggressively cleared to the micro-level.</p>
+                </div>
+                <div class="impact-card reveal d1">
+                    <h3>21 Legacy Bins — Permanent Infrastructure</h3>
+                    <p>200‑litre industrial drums — upcycled directly from Revital's factory floor, sanitized, branded,
+                        and permanently anchored at primary access points at near‑zero capital cost.</p>
+                </div>
+                <div class="impact-card reveal d2">
+                    <h3>0% Leakage — Full Accountability</h3>
+                    <p><strong>KES 36,000</strong> cash deployed. Every shilling accounted for. Bins and PPE sourced
+                        internally. Zero waste abandonment — the chain‑of‑custody remained entirely unbroken.</p>
+                </div>
+                <div class="impact-card reveal d3">
+                    <h3>Inter‑Organizational Blueprint</h3>
+                    <p>Phase 02 proved A.C.T.'s capacity to manage complex environmental interventions. The operation
+                        cemented long-term trust between Revital Healthcare and the local government.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -207,34 +381,57 @@
         <div class="footer-inner">
             <div class="footer-left reveal">
 
-            <h1 class="footer-title">Action<br><em>Changes</em><br>Things<span class="dot">.</span></h1>
-            <div class="footer-divider"></div>
-            <div class="footer-contact">
-                Revital Healthcare (EPZ) Ltd.<br>
-                Kilifi County, Kenya &nbsp;·&nbsp;
-                <a href="https://revitalhcare.com/" target="_blank" rel="noopener">revitalhcare.com</a>
-            </div>
-            <div class="footer-socials">
-                <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-                <a href="https://revitalhcare.com/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10"/></svg></a>
-            </div>
-        
+                <h1 class="footer-title">Action<br><em>Changes</em><br>Things<span class="dot">.</span></h1>
+                <div class="footer-divider"></div>
+                <div class="footer-contact">
+                    Revital Healthcare (EPZ) Ltd.<br>
+                    Kilifi County, Kenya &nbsp;·&nbsp;
+                    <a href="https://revitalhcare.com/" target="_blank" rel="noopener">revitalhcare.com</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/project_a.c.t_/" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <path d="M16 11.37A4 4 0 1112.63 8" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg></a>
+                    <a href="https://www.linkedin.com/company/project-a-c-t-revital-healthcare-csr" target="_blank"
+                        rel="noopener" class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg></a>
+                    <a href="https://revitalhcare.com/" target="_blank" rel="noopener" class="footer-social-link"
+                        aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path d="M12 2a15.3 15.3 0 014 10" />
+                        </svg></a>
+                </div>
+
             </div>
             <div class="footer-right reveal reveal-delay-1">
                 <div class="footer-headshot">
                     <div class="headshot-image">
-                        <img src="images/act-logo.png" alt="Project A.C.T. Committee" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'" />
+                        <img src="images/act-logo.png" alt="Project A.C.T. Committee"
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'placeholder-text\'>ACT<br>Committee</div>'"
+                            loading="lazy" />
                     </div>
-                    <div class="headshot-quote">"Marine restoration begins with community action. Six coordinated strike teams removed 608kg of waste, proving that collective effort transforms our shores."</div>
+                    <div class="headshot-quote">"Marine restoration begins with community action. Six coordinated strike
+                        teams removed 608kg of waste, proving that collective effort transforms our shores."</div>
                     <div class="headshot-name">ACT Committee</div>
                     <div class="headshot-title">Project A.C.T.</div>
                 </div>
             </div>
         </div>
         <div class="footer-bar">
-            <div class="footer-copy">© 2026 Revital Healthcare (EPZ) Ltd. &nbsp;·&nbsp; Project <span>A.C.T.</span></div>
-            <div class="footer-copy" style="color:rgba(255,255,255,.25);">Phase 02 — Copacabana Beach Clean‑up &nbsp;·&nbsp; January 31, 2026</div>
+            <div class="footer-copy">© 2026 Revital Healthcare (EPZ) Ltd. &nbsp;·&nbsp; Project <span>A.C.T.</span>
+            </div>
+            <div class="footer-copy" style="color:rgba(255,255,255,.25);">Phase 02 — Copacabana Beach Clean‑up
+                &nbsp;·&nbsp; January 31, 2026</div>
         </div>
         <div class="red-corner"></div>
     </footer>
@@ -244,31 +441,33 @@
 
         // Nav Progress
         const nav = document.getElementById('siteNav'), prog = document.getElementById('navProgress');
-        window.addEventListener('scroll', ()=>{
-            nav.style.background = window.scrollY>50 ? 'rgba(0,10,20,.95)' : 'linear-gradient(to bottom, rgba(0,10,20,.95) 0%, rgba(0,10,20,.7) 70%, transparent 100%)';
-            nav.style.borderBottom = window.scrollY>50 ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(255,255,255,0.03)';
+        window.addEventListener('scroll', () => {
+            nav.style.background = window.scrollY > 50 ? 'rgba(0,10,20,.95)' : 'linear-gradient(to bottom, rgba(0,10,20,.95) 0%, rgba(0,10,20,.7) 70%, transparent 100%)';
+            nav.style.borderBottom = window.scrollY > 50 ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(255,255,255,0.03)';
             const d = document.documentElement.scrollHeight - window.innerHeight;
-            prog.style.width = (d>0 ? (window.scrollY/d)*100 : 0)+'%';
-        },{passive:true});
+            prog.style.width = (d > 0 ? (window.scrollY / d) * 100 : 0) + '%';
+        }, { passive: true });
 
         // Intersection Observer for Reveals & Counters
         const countersDone = new Set();
-        const observer = new IntersectionObserver(entries=>{ entries.forEach(entry=>{ 
-            if(!entry.isIntersecting) return; 
-            entry.target.classList.add('active'); 
-            entry.target.querySelectorAll('.counter').forEach(el=>{ 
-                if(countersDone.has(el)) return; 
-                countersDone.add(el); 
-                const t = parseFloat(el.dataset.target); 
-                let c=0; 
-                const iv=setInterval(()=>{ 
-                    c+=t/40; 
-                    if(c>=t){ el.textContent = t%1!==0 ? t.toFixed(0) : t; clearInterval(iv); } 
-                    else { el.textContent = Math.ceil(c); } 
-                },30); 
-            }); 
-        }); },{threshold:0.15});
-        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                entry.target.querySelectorAll('.counter').forEach(el => {
+                    if (countersDone.has(el)) return;
+                    countersDone.add(el);
+                    const t = parseFloat(el.dataset.target);
+                    let c = 0;
+                    const iv = setInterval(() => {
+                        c += t / 40;
+                        if (c >= t) { el.textContent = t % 1 !== 0 ? t.toFixed(0) : t; clearInterval(iv); }
+                        else { el.textContent = Math.ceil(c); }
+                    }, 30);
+                });
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // Hero Background Toggle
         const toggleBtns = document.querySelectorAll('.hero-toggle-btn');
@@ -320,4 +519,5 @@
         }
     </script>
 </body>
+
 </html>
